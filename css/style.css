@@ -1,0 +1,171 @@
+@charset "utf-8";
+
+body {
+	margin:0;
+	padding:0;
+	width:100%;
+	color:#666666;
+	background: #333333 url(images/corps_bg.gif) repeat-x bottom;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+}
+
+#wrapper {
+	background:url(images/corps_entete_bg.gif) repeat-x top;
+}
+
+#entete {
+	height:95px;
+}
+
+h1 {
+	margin:0;
+	padding:30px 0 0 20px;
+	font:bold 38px/1.2em Arial;
+	letter-spacing:-2px;
+	color:#434343;
+}
+
+h1 span {
+	color:#ffffff;
+}
+
+h1 small {
+	padding:0 10px;
+	font:normal 12px/1.2em Arial;
+	letter-spacing:normal;
+	color:#000000;
+}
+
+h2 {
+	padding:8px 0;
+	margin:0;
+	color:#333333;
+	font-family: Arial;
+	font-size: 35px;
+	font-weight: normal;
+	text-align: center;
+}
+
+p {
+	margin:8px 0;
+	padding:0 0 8px 0;
+	font:normal 12px/1.8em Arial;
+}
+
+.menu {
+	margin:0 0 10px;
+	padding:4px;
+	border:1px solid #d8d8d8;
+	background:#FFF;
+}
+
+.menu ul {
+	list-style:none;
+	margin:0;
+	padding:0;
+	background:url(images/menu_bg.gif) repeat-x;
+	height:38px;
+}
+
+.menu ul li {
+	margin:0;
+	padding:0 2px 0 0;
+	float:left;
+	background:url(images/menu_ligne.gif) no-repeat right;
+}
+
+.menu ul li a {
+	display:block;
+	margin:0;
+	padding:11px 25px;
+	color:#d8d8d8;
+	text-decoration:none;
+	font-size:13px;
+	line-height:16px;
+}
+
+.menu ul li.active a, .menu ul li a:hover {
+	color:#fff;
+	text-decoration:none;
+	background:#c80203;
+}
+
+#corps {
+	padding:9px;
+	border:1px solid #a1a1a1;
+}
+
+.haut {
+	padding:12px;
+	background:#fff;
+}
+
+.texte {
+	width:1200px;
+	margin:0;
+	padding:10px 15px 5px;
+}
+
+.texte a{
+	font-size:14px;
+	margin: 0 10px;
+	text-decoration:none;
+	color: #333;	
+}
+
+.texte a:hover{
+	font-weight:bold;
+	font-size:16px;
+	color: #c80203;
+}
+
+.texte .spec a {
+	text-decoration:none;
+	padding:7px 15px;
+	background:#c80203;
+	color:#FFF;
+}
+
+.texte img {
+	position: absolute;
+	margin-top: -60px;
+	width: 220px;
+	height:220px;
+	float: left;
+}
+
+.texte form {
+	font-size: 16px;
+	font-style: oblique;
+	color: black;
+}
+
+.bas {
+	padding:10px 0;
+	background-color: #c80203;
+	height: 35px;
+}
+
+#piedpage {
+	margin:0 auto;
+	padding:20px 0;
+	width:885px;
+	color:#ffffff;
+}
+
+#piedpage address {
+	text-align: center;
+	margin:0;
+	line-height:normal;
+	color:#ffffff;
+}
+
+.clr {
+	clear:both;
+	padding:0;
+	margin:0;
+	width:100%;
+	font-size:0;
+	line-height:0;
+}
