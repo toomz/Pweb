@@ -1,0 +1,7 @@
+parameters:
+#    pweb_compte.example.class: Pweb\CompteBundle\Example
+
+services:
+#    pweb_compte.example:
+#        class: %pweb_compte.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]
