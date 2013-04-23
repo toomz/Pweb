@@ -1,0 +1,28 @@
+{% extends '::base.html.twig' %}
+
+{% block title %} Les produits {% endblock %}
+
+{% block body %}
+	
+	<h3>Vous êtes dans la section des produits</h3>
+  <h4>C'est ici que vos petits yeux vont briller de mille feux</h4>
+  
+  <table style="width:100%">
+		<tbody>
+     <tr>
+      {% for i in prod %}
+        <td>{{ i }}</td>
+      {% endfor %}
+    </tr>
+    
+    <tr>
+      {% for i in 6..10 %}
+        <td>Produit n°{{ i }}</td>
+      {% endfor %}
+    </tr>
+      
+		</tbody>
+
+	</table>
+  
+{% endblock %}

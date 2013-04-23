@@ -5,3 +5,8 @@ pweb_accueil:
 pweb_patch:
     pattern:  /
     defaults: { _controller: PwebAccueilBundle:Accueil:index }
+
+pweb_produits:
+    pattern:  /Produits
+    defaults: { _controller: PwebAccueilBundle:Produits:index }
+

@@ -155,3 +155,9 @@ p {
 	font-size:0;
 	line-height:0;
 }
+
+table, th, td{  
+  border: 1px solid black;
+  background-color:lightgrey;
+  color:black
+}
