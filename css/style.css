@@ -4,10 +4,10 @@ body {
 	margin:0;
 	padding:0;
 	width:100%;
-	color:#666666;
-	background: #333333 url(images/corps_bg.gif) repeat-x bottom;
+	color:#000000;
+	background: #434343 url(images/corps_bg.gif) repeat-x bottom;
 	font-family: Arial, Helvetica, sans-serif;
-	font-size: 12px;
+	font-size: 14px;
 }
 
 #wrapper {
@@ -23,7 +23,7 @@ h1 {
 	padding:30px 0 0 20px;
 	font:bold 38px/1.2em Arial;
 	letter-spacing:-2px;
-	color:#434343;
+	color:#000000;
 }
 
 h1 span {
@@ -48,9 +48,9 @@ h2 {
 }
 
 p {
-	margin:8px 0;
-	padding:0 0 8px 0;
-	font:normal 12px/1.8em Arial;
+	margin:0 0;
+	padding:0 0 0 0;
+	font:normal Arial;
 }
 
 .menu {
@@ -107,19 +107,6 @@ p {
 	padding:10px 15px 5px;
 }
 
-.texte a{
-	font-size:14px;
-	margin: 0 10px;
-	text-decoration:none;
-	color: #333;	
-}
-
-.texte a:hover{
-	font-weight:bold;
-	font-size:16px;
-	color: #c80203;
-}
-
 .texte .spec a {
 	text-decoration:none;
 	padding:7px 15px;
@@ -136,9 +123,8 @@ p {
 }
 
 .texte form {
-	font-size: 16px;
-	font-style: oblique;
-	color: black;
+	font-size: 14px;
+	font-weight: bold;
 }
 
 .bas {

@@ -4,6 +4,12 @@ namespace Pweb\UserBundle;
 
 use Symfony\Component\HttpKernel\Bundle\Bundle;
 
-class PwebUserBundle extends Bundle
-{
+class PwebUserBundle extends Bundle{
+
+	public function getParent(){
+
+		return 'FOSUserBundle';
+	
+	}
+
 }

@@ -11,3 +11,5 @@ class DefaultController extends Controller
         return $this->render('PwebUserBundle:Default:index.html.twig', array('name' => $name));
     }
 }
+
+?>

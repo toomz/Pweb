@@ -1,0 +1,14 @@
+{% extends '::base.html.twig' %}
+
+{% block body %}
+	
+	<p>Compte</p>
+	
+	{% if is_granted('IS_AUTHENTICATED_REMEMBERED') %}
+		{# Données de l'utilisateur #}
+		<a href="{{ path('logout') }}">Déconnexion</a>
+	{% else %}
+		<a href="{{ path('login') }}">Connexion</a>
+	{% endif %}
+
+{% endblock %}
