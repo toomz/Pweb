@@ -156,7 +156,7 @@ p {
 	line-height:0;
 }
 
-table, th, td{  
+.tab{  
   border: 1px solid black;
   background-color:lightgrey;
   color:black

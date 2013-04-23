@@ -7,17 +7,17 @@
 	<h3>Vous êtes dans la section des produits</h3>
   <h4>C'est ici que vos petits yeux vont briller de mille feux</h4>
   
-  <table style="width:100%">
+  <table class="tab" style="width:100%">
 		<tbody>
-     <tr>
+     <tr class="tab">
       {% for i in prod %}
-        <td>{{ i }}</td>
+        <td class="tab">{{ i }}</td>
       {% endfor %}
     </tr>
     
-    <tr>
+    <tr class="tab">
       {% for i in 6..10 %}
-        <td>Produit n°{{ i }}</td>
+        <td class="tab">Produit n°{{ i }}</td>
       {% endfor %}
     </tr>
       
