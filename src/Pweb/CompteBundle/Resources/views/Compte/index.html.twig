@@ -2,13 +2,20 @@
 
 {% block body %}
 	
-	<p>Compte</p>
-	
-	{% if is_granted('IS_AUTHENTICATED_REMEMBERED') %}
-		{# Données de l'utilisateur #}
-		<a href="{{ path('logout') }}">Déconnexion</a>
-	{% else %}
-		<a href="{{ path('login') }}">Connexion</a>
-	{% endif %}
+	<div class="text">
+		
+		<h2><b>Compte</b></h2>
+		<br/><br/>
+
+		{% if is_granted('IS_AUTHENTICATED_REMEMBERED') %}
+			{# Données de l'utilisateur #}
+			<p class="spec"><a href="{{ path('logout') }}">Déconnexion</a></p>
+		{% else %}
+			<p class="spec"><a href="{{ path('login') }}">Connexion</a></p>
+		{% endif %}
+
+	</div>
+
+	<br/>
 
 {% endblock %}

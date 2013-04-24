@@ -14,6 +14,9 @@ body {
 	background:url(images/corps_entete_bg.gif) repeat-x top;
 }
 
+
+/**** HEADER ****/
+
 #entete {
 	height:95px;
 }
@@ -79,7 +82,7 @@ p {
 	display:block;
 	margin:0;
 	padding:11px 25px;
-	color:#d8d8d8;
+	color:#000000;
 	text-decoration:none;
 	font-size:13px;
 	line-height:16px;
@@ -90,6 +93,9 @@ p {
 	text-decoration:none;
 	background:#c80203;
 }
+
+
+/**** BODY ****/
 
 #corps {
 	padding:9px;
@@ -127,11 +133,40 @@ p {
 	font-weight: bold;
 }
 
+.tab{  
+  border: 1px solid black;
+  background-color:lightgrey;
+  color:black
+}
+
+.liste_choix ul {
+	list-style:none;
+}
+
+.liste_choix ul li {
+	float:left;
+}
+
+.liste_choix a{
+	margin: 0 10px;
+	text-decoration:none;
+	color: #333;	
+}
+
+.liste_choix a:hover{
+	font-weight:bold;
+	font-size:14px;
+	color: #c80203;
+}
+
 .bas {
 	padding:10px 0;
 	background-color: #c80203;
 	height: 35px;
 }
+
+
+/**** FOOTER ****/
 
 #piedpage {
 	margin:0 auto;
@@ -154,10 +189,4 @@ p {
 	width:100%;
 	font-size:0;
 	line-height:0;
-}
-
-.tab{  
-  border: 1px solid black;
-  background-color:lightgrey;
-  color:black
 }

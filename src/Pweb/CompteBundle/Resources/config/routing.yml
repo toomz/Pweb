@@ -1,3 +1,19 @@
 pweb_compte:
     pattern:  /compte
     defaults: { _controller: PwebCompteBundle:Compte:index }
+
+pweb_admin:
+    pattern: /admin
+    defaults: { _controller: PwebCompteBundle:Admin:index }
+
+pweb_admin_util:
+    pattern: /admin/utilisateur
+    defaults: { _controller: PwebCompteBundle:Util:index }
+
+pweb_admin_cmd:
+    pattern: /admin/commande
+    defaults: { _controller: PwebCompteBundle:Cmd:index }
+
+pweb_admin_prod:
+    pattern: /admin/produit
+    defaults: { _controller: PwebCompteBundle:Prod:index }

@@ -1,0 +1,20 @@
+{% extends '::base.html.twig' %}
+
+{% block body %}
+
+	<table style="margin:15px 15px">
+		<tr>
+			<th style="padding:10px">Identifiant</th>
+			<th style="padding:10px">Role</th>
+		</tr>
+
+		{% for user in user_list %}
+		<tr>
+			<td style="padding:7px">{{ user.username }}</td>
+		<tr>
+		{% else %}
+		<p>Aucun utilisateur enregistré</p>
+		{% endfor %}
+	</table>
+
+{% endblock %}

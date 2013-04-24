@@ -19,6 +19,9 @@
 				    		<li class="active"><a href="{{ path('pweb_accueil') }}">Accueil</a></li>
 				    		<li><a href={{ path('pweb_produits') }}>Produits</a></li>
 				    		<li><a href="{{ path('pweb_compte') }}">Mon compte</a></li>
+				    		{% if is_granted('ROLE_ADMIN') %}
+				    			<li><a href="{{ path('pweb_admin') }}">Paramètres</a></li>
+				    		{% endif %}
 						</ul>
 			    	</div>
 
