@@ -7,22 +7,32 @@
 	<h3>Vous êtes dans la section des produits</h3>
   <h4>C'est ici que vos petits yeux vont briller de mille feux</h4>
   
-  <table class="tab" style="width:100%">
-		<tbody>
-     <tr class="tab">
-      {% for i in prod %}
-        <td class="tab">{{ i }}</td>
-      {% endfor %}
-    </tr>
-    
-    <tr class="tab">
-      {% for i in 6..10 %}
-        <td class="tab">Produit n°{{ i }}</td>
-      {% endfor %}
-    </tr>
-      
-		</tbody>
+  {% for p in prod %}
+    <div class="image">
+      <li>
+        <a>{{ p.libelle }}</a>
+        <a><img src="{{ p.image.url }}" alt=""/img></a>
+      </li>
+    </div>
+  {% endfor %}
+  
 
-	</table>
   
 {% endblock %}
+
+{# 
+
+.image {
+  display:block;
+}
+
+.image li {
+  float:left;
+  position:relative;
+}
+
+.image li img{
+  transform: scale(0.25);
+}
+
+#}

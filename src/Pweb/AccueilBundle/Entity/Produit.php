@@ -36,7 +36,7 @@ class Produit
     private $description;
     
     /**
-     * @ORM\OneToOne(targetEntity="Pweb\AccueilBundle\Entity\Categorie", cascade={"persist"})
+     * @ORM\ManyToOne(targetEntity="Pweb\AccueilBundle\Entity\Categorie", cascade={"persist"})
      */
     private $categorie;
 
