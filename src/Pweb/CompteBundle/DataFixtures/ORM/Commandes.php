@@ -1,21 +1,33 @@
 <?php
  
-namespace Pweb\AccueilBundle\DataFixtures\ORM;
+namespace Pweb\CompteBundle\DataFixtures\ORM;
  
 use Doctrine\Common\DataFixtures\AbstractFixture;
 use Doctrine\Common\DataFixtures\OrderedFixtureInterface;
 use Doctrine\Common\DataFixtures\FixtureInterface;
 use Doctrine\Common\Persistence\ObjectManager;
 use Pweb\AccueilBundle\Entity\Produit; 
-use Pweb\AccueilBundle\Entity\Image; 
-use Pweb\AccueilBundle\Entity\Categorie; 
+use Pweb\CompteBundle\Entity\Commande;
+use Pweb\CompteBundle\Entity\StatutCom; 
 
-class Produits extends AbstractFixture implements OrderedFixtureInterface{
+class Commandes extends AbstractFixture implements OrderedFixtureInterface{
 
     public function load(ObjectManager $manager){
  
       // premier
-      $prod = new Produit();
+      $com = new Commande();
+      $com->setDate(new \DateTime);
+      
+      $stat = $manager->getRepository("PwebCompteBundle:StatutCom")->findOneBy(array('libelle' => "en cours"));
+      $com->setStatut($stat);
+      
+      $prod = $manager->getRepository("PwebAccueilBundle:Produit")->findOneBy(array('libelle' => "Samsung Galaxy S3"));
+      $prod2 = $manager->getRepository("PwebAccueilBundle:Produit")->findOneBy(array('libelle' => "Sony Ericsson w995"));
+      $com->addProduits($prod);
+      $com->addProduits($prod2);
+      
+      $manager->persist($com);
+      /*
       $prod->setLibelle("Samsung Galaxy S3");
       $prod->setDescription("Une des dernières trouvailles de samsungs");
       $prod->setPrix(300);
@@ -72,6 +84,7 @@ class Produits extends AbstractFixture implements OrderedFixtureInterface{
       $prod->setCategorie($cat);
       $prod->setMarque($marque);
       $manager->persist($prod);
+      * */
       
       $manager->flush();
 
@@ -84,3 +97,4 @@ class Produits extends AbstractFixture implements OrderedFixtureInterface{
 }
 
 ?>
+

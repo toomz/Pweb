@@ -17,7 +17,11 @@ class Categories extends AbstractFixture implements OrderedFixtureInterface{
       $manager->persist($cat);
       
       $cat = new Categorie();
-      $cat->setLibelle("old-school");
+      $cat->setLibelle("portable");
+      $manager->persist($cat);
+      
+      $cat = new Categorie();
+      $cat->setLibelle("tablette");
       $manager->persist($cat);
       
       $manager->flush();

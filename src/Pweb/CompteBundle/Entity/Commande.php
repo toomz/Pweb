@@ -27,7 +27,24 @@ class Commande
      * @ORM\Column(name="date", type="datetime")
      */
     private $date;
-
+    
+    /**
+     * @ORM\ManyToMany(targetEntity="Pweb\AccueilBundle\Entity\Produit", cascade={"persist"})
+     */
+    private $produits;
+    
+    /**
+     * @ORM\ManyToOne(targetEntity="Pweb\CompteBundle\Entity\StatutCom", cascade={"persist"})
+     * @ORM\JoinColumn(nullable=false)
+     */
+    private $statut;
+    
+    /* Constructeur pour initialiser la liste de produits
+     * */
+    public function __construct()
+    {
+        $this->produits = new \Doctrine\Common\Collections\ArrayCollection();
+    }
 
     /**
      * Get id
@@ -61,4 +78,58 @@ class Commande
     {
         return $this->date;
     }
+    
+    /**
+     * Set produits
+     *
+     * @param \Pweb\AccueilBundle\Entity\Produit $produit
+     * @return produits
+     */
+    public function addProduits(\Pweb\AccueilBundle\Entity\Produit $prod)
+    {
+        $this->produits[] = $prod;
+    
+        return $this;
+    }
+
+    /**
+     * Get produits
+     *
+     * @return Pweb\AccueilBundle\Entity\Produits 
+     */
+    public function getProduits()
+    {
+        return $this->produits;
+    }
+    
+    /**
+     * Remove produits
+     *
+     * @param \Pweb\AccueilBundle\Entity\Produit $produit
+     */
+    public function removeProduits(\Pweb\AccueilBundle\Entity\Produit $prod)
+    {
+        $this->produits->removeElement($prod);
+    }
+    
+    /**
+     * Set Statut
+     * 
+     * @param \Pweb\CompteBundle\Entity\Statut $stat
+     */
+    public function setStatut(\Pweb\CompteBundle\Entity\StatutCom $stat)
+    {
+      $this->statut = $stat;
+    } 
+
+     /** 
+       * Get Statut
+       * 
+       * @return \Pweb\CompteBundle\Entity\Statut
+       */
+     public function getStatut()
+     {
+       return $this->statut;
+     }
+     
 }

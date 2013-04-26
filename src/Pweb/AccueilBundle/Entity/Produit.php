@@ -37,9 +37,16 @@ class Produit
     
     /**
      * @ORM\ManyToOne(targetEntity="Pweb\AccueilBundle\Entity\Categorie", cascade={"persist"})
+     * @ORM\JoinColumn(nullable=false)
      */
     private $categorie;
-
+    
+    /**
+     * @ORM\ManyToOne(targetEntity="Pweb\AccueilBundle\Entity\Marque", cascade={"persist"})
+     * @ORM\JoinColumn(nullable=false)
+     */
+    private $marque;
+  
     /**
      * @var float
      *
@@ -162,35 +169,51 @@ class Produit
         return $this->poids;
     }
     
-	/**
-	* @param \Pweb\AccueilBundle\Entity\Image $image
-	*/
-	public function setImage(\Pweb\AccueilBundle\Entity\Image $image = null)
-	{
-		$this->image = $image;
-	}
+    /**
+    * @param \Pweb\AccueilBundle\Entity\Image $image
+    */
+    public function setImage(\Pweb\AccueilBundle\Entity\Image $image)
+    {
+      $this->image = $image;
+    }
 
-	/**
-	* @return \Pweb\AccueilBundle\Entity\Image
-	*/
-	public function getImage()
-	{
-		return $this->image;
-	}
-	
-	/**
-	* @param \Pweb\AccueilBundle\Entity\Categorie $image
-	*/
-	public function setCategorie(\Pweb\AccueilBundle\Entity\categorie $categorie = null)
-	{
-		$this->categorie = $categorie;
-	}
+    /**
+    * @return \Pweb\AccueilBundle\Entity\Image
+    */
+    public function getImage()
+    {
+      return $this->image;
+    }
+    
+    /**
+    * @param \Pweb\AccueilBundle\Entity\Categorie $categorie
+    */
+    public function setCategorie(\Pweb\AccueilBundle\Entity\Categorie $categorie)
+    {
+      $this->categorie = $categorie;
+    }
 
-	/**
-	* @return \Pweb\AccueilBundle\Entity\Categorie
-	*/
-	public function getCategorit()
-	{
-		return $this->categorie;
-	}
+    /**
+    * @return \Pweb\AccueilBundle\Entity\Categorie
+    */
+    public function getCategorie()
+    {
+      return $this->categorie;
+    }
+    
+    /**
+    * @param \Pweb\AccueilBundle\Entity\Marque $marque
+    */
+    public function setMarque(\Pweb\AccueilBundle\Entity\Marque $marque)
+    {
+      $this->marque = $marque;
+    }
+
+    /**
+    * @return \Pweb\AccueilBundle\Entity\Marque
+    */
+    public function getMarque()
+    {
+      return $this->marque;
+    }
 }
