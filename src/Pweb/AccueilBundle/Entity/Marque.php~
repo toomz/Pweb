@@ -5,12 +5,12 @@ namespace Pweb\AccueilBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * Categorie
+ * Marque
  *
  * @ORM\Table()
- * @ORM\Entity(repositoryClass="Pweb\AccueilBundle\Entity\CategorieRepository")
+ * @ORM\Entity(repositoryClass="Pweb\AccueilBundle\Entity\MarqueRepository")
  */
-class Categorie
+class Marque
 {
     /**
      * @var integer
@@ -43,7 +43,7 @@ class Categorie
      * Set libelle
      *
      * @param string $libelle
-     * @return Categorie
+     * @return Marque
      */
     public function setLibelle($libelle)
     {

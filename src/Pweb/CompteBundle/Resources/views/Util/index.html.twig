@@ -1,6 +1,10 @@
-{% extends '::base.html.twig' %}
+{% extends 'PwebCompteBundle:Admin:index.html.twig' %}
 
-{% block body %}
+{% block title %}
+	Admin - Utilisateurs
+{% endblock %}
+
+{% block bodyadmin %}
 
 	<table style="margin:15px 15px">
 		<tr>
@@ -8,13 +12,21 @@
 			<th style="padding:10px">Role</th>
 		</tr>
 
-		{% for user in user_list %}
+	{% for user in user_list %}
 		<tr>
 			<td style="padding:7px">{{ user.username }}</td>
+			{#<td style="padding:7px">{{ user.roles }}</td>#}
 		<tr>
-		{% else %}
-		<p>Aucun utilisateur enregistré</p>
-		{% endfor %}
+	
+	{% else %}
+		<tr>
+			<td style="padding:7px">NULL</td>
+			<td style="padding:7px">NULL</td>
+		<tr>
+		
+		<br/><br/><p>Aucun utilisateur enregistré</p>
+	{% endfor %}
+	
 	</table>
 
 {% endblock %}
