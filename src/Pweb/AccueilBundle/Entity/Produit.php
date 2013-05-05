@@ -26,7 +26,7 @@ class Produit
      *
      * @ORM\Column(name="libelle", type="string", length=255)
      */
-    private $libelle;
+    private $libelleProd;
 
     /**
      * @var string
@@ -75,29 +75,6 @@ class Produit
     public function getId()
     {
         return $this->id;
-    }
-
-    /**
-     * Set libelle
-     *
-     * @param string $libelle
-     * @return Produit
-     */
-    public function setLibelle($libelle)
-    {
-        $this->libelle = $libelle;
-    
-        return $this;
-    }
-
-    /**
-     * Get libelle
-     *
-     * @return string 
-     */
-    public function getLibelle()
-    {
-        return $this->libelle;
     }
 
     /**
@@ -215,5 +192,28 @@ class Produit
     public function getMarque()
     {
       return $this->marque;
+    }
+
+    /**
+     * Set libelleProd
+     *
+     * @param string $libelleProd
+     * @return Produit
+     */
+    public function setLibelleProd($libelleProd)
+    {
+        $this->libelleProd = $libelleProd;
+    
+        return $this;
+    }
+
+    /**
+     * Get libelleProd
+     *
+     * @return string 
+     */
+    public function getLibelleProd()
+    {
+        return $this->libelleProd;
     }
 }

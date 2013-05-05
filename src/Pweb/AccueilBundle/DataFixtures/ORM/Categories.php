@@ -13,15 +13,15 @@ class Categories extends AbstractFixture implements OrderedFixtureInterface{
     public function load(ObjectManager $manager){
 
       $cat = new Categorie();
-      $cat->setLibelle("smartphone");
+      $cat->setLibelleCat("smartphone");
       $manager->persist($cat);
       
       $cat = new Categorie();
-      $cat->setLibelle("portable");
+      $cat->setLibelleCat("portable");
       $manager->persist($cat);
       
       $cat = new Categorie();
-      $cat->setLibelle("tablette");
+      $cat->setLibelleCat("tablette");
       $manager->persist($cat);
       
       $manager->flush();

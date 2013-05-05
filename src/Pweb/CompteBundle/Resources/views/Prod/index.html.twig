@@ -18,12 +18,12 @@
 	
 	{% for produit in produit_list %}		
 		<tr>
-			<td style="padding:7px">{{ produit.libelle }}</td>
+			<td style="padding:7px">{{ produit.libelleProd }}</td>
 			<td style="padding:7px">{{ produit.description }}</td>
-			<td style="padding:7px">{{ produit.marque }}</td>
-			<td style="padding:7px">{{ produit.categorie }}</td>
-			<td style="padding:7px">{{ produit.prix }}</td>
-			<td style="padding:7px">{{ produit.poids }}</td>
+			<td style="padding:7px">{{ produit.libelleMar }}</td>
+			<td style="padding:7px">{{ produit.libelleCat }}</td>
+			<td style="padding:7px">{{ produit.prix }} €</td>
+			<td style="padding:7px">{{ produit.poids }} g</td>
 		<tr>
 		
 	{% else %}

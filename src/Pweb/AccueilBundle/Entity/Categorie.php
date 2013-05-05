@@ -26,7 +26,7 @@ class Categorie
      *
      * @ORM\Column(name="libelle", type="string", length=255)
      */
-    private $libelle;
+    private $libelleCat;
 
 
     /**
@@ -40,25 +40,25 @@ class Categorie
     }
 
     /**
-     * Set libelle
+     * Set libelleCat
      *
-     * @param string $libelle
+     * @param string $libelleCat
      * @return Categorie
      */
-    public function setLibelle($libelle)
+    public function setLibelleCat($libelleCat)
     {
-        $this->libelle = $libelle;
+        $this->libelleCat = $libelleCat;
     
         return $this;
     }
 
     /**
-     * Get libelle
+     * Get libelleCat
      *
      * @return string 
      */
-    public function getLibelle()
+    public function getLibelleCat()
     {
-        return $this->libelle;
+        return $this->libelleCat;
     }
 }

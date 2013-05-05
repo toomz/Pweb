@@ -26,7 +26,7 @@ class Marque
      *
      * @ORM\Column(name="libelle", type="string", length=255)
      */
-    private $libelle;
+    private $libelleMar;
 
 
     /**
@@ -40,25 +40,25 @@ class Marque
     }
 
     /**
-     * Set libelle
+     * Set libelleMar
      *
-     * @param string $libelle
+     * @param string $libelleMar
      * @return Marque
      */
-    public function setLibelle($libelle)
+    public function setLibelleMar($libelleMar)
     {
-        $this->libelle = $libelle;
+        $this->libelleMar = $libelleMar;
     
         return $this;
     }
 
     /**
-     * Get libelle
+     * Get libelleMar
      *
      * @return string 
      */
-    public function getLibelle()
+    public function getLibelleMar()
     {
-        return $this->libelle;
+        return $this->libelleMar;
     }
 }
