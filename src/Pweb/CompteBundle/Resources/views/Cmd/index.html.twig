@@ -1,32 +1,32 @@
 {% extends 'PwebCompteBundle:Admin:index.html.twig' %}
 
 {% block title %}
-	Admin - Utilisateurs
+	Admin - Commandes
 {% endblock %}
 
 {% block bodyadmin %}
 
 	<table style="margin:15px 15px">
 		<tr>
-			<th style="padding:10px">Identifiant</th>
-			<th style="padding:10px">Role</th>
+			<th style="padding:10px">Date</th>
+			<th style="padding:10px">Statut</th>
 		</tr>
-
-	{% for user in user_list %}
-		<tr>
-			<td style="padding:7px">{{ user.username }}</td>
-			{#<td style="padding:7px">{{ user.roles }}</td>#}
-		<tr>
 	
+	{% for commande in commande_list %}		
+		<tr>
+			<td style="padding:7px">{{ commande.date }}</td>
+			<td style="padding:7px">{{ commande.statut }}</td>
+		<tr>
+		
 	{% else %}
 		<tr>
 			<td style="padding:7px">NULL</td>
 			<td style="padding:7px">NULL</td>
 		<tr>
 		
-		<br/><br/><p>Aucun utilisateur enregistré</p>
+		<br/><br/><p>Aucune commande enregistrée</p>
 	{% endfor %}
-	
-	</table>
 
+	</table>
+	
 {% endblock %}

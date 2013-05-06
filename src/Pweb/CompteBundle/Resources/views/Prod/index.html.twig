@@ -1,0 +1,44 @@
+{% extends 'PwebCompteBundle:Admin:index.html.twig' %}
+
+{% block title %}
+	Admin - Produits
+{% endblock %}
+
+{% block bodyadmin %}
+	
+	<table style="margin:15px 15px">
+		<tr>
+			<th style="padding:10px">Libellé</th>
+			<th style="padding:10px">Description</th>
+			<th style="padding:10px">Marque</th>
+			<th style="padding:10px">Catégorie</th>
+			<th style="padding:10px">Prix</th>
+			<th style="padding:10px">Poids</th>
+		</tr>
+	
+	{% for produit in produit_list %}		
+		<tr>
+			<td style="padding:7px">{{ produit.libelleProd }}</td>
+			<td style="padding:7px">{{ produit.description }}</td>
+			<td style="padding:7px">{{ produit.libelleMar }}</td>
+			<td style="padding:7px">{{ produit.libelleCat }}</td>
+			<td style="padding:7px">{{ produit.prix }} €</td>
+			<td style="padding:7px">{{ produit.poids }} g</td>
+		<tr>
+		
+	{% else %}
+		<tr>
+			<td style="padding:7px">NULL</td>
+			<td style="padding:7px">NULL</td>
+			<td style="padding:7px">NULL</td>
+			<td style="padding:7px">NULL</td>
+			<td style="padding:7px">NULL</td>
+			<td style="padding:7px">NULL</td>
+		<tr>
+		
+		<br/><br/><p>Aucun produit enregistré</p>
+	{% endfor %}
+
+	</table>
+
+{% endblock %}

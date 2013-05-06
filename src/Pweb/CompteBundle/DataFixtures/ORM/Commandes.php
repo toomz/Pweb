@@ -21,8 +21,8 @@ class Commandes extends AbstractFixture implements OrderedFixtureInterface{
       $stat = $manager->getRepository("PwebCompteBundle:StatutCom")->findOneBy(array('libelle' => "en cours"));
       $com->setStatut($stat);
       
-      $prod = $manager->getRepository("PwebAccueilBundle:Produit")->findOneBy(array('libelle' => "Samsung Galaxy S3"));
-      $prod2 = $manager->getRepository("PwebAccueilBundle:Produit")->findOneBy(array('libelle' => "Sony Ericsson w995"));
+      $prod = $manager->getRepository("PwebAccueilBundle:Produit")->findOneBy(array('libelleProd' => "Samsung Galaxy S3"));
+      $prod2 = $manager->getRepository("PwebAccueilBundle:Produit")->findOneBy(array('libelleProd' => "Sony Ericsson w995"));
       $com->addProduits($prod);
       $com->addProduits($prod2);
       
@@ -62,7 +62,7 @@ class Commandes extends AbstractFixture implements OrderedFixtureInterface{
   }
 
   public function getOrder(){
-    return 2; // the order in which fixtures will be loaded
+    return 3; // the order in which fixtures will be loaded
   }
 
 }

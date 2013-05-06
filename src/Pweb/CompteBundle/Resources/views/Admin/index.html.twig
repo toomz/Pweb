@@ -1,5 +1,9 @@
 {% extends '::base.html.twig' %}
 
+{% block title %}
+	Administrateur
+{% endblock %}
+
 {% block body %}
 
 	<div class="liste_choix">
@@ -9,12 +13,17 @@
 			<li><a href="{{ path('pweb_admin_cmd') }}">Commande</a></li>
 		</ul>
 	</div>
-
-	<div class="texte">
-		<h2><b>Administrateur</b></h2>
-		<br/><br/>
-		<p class="spec"><a href="{{ path('logout') }}">Déconnexion</a></p> 
-	</div>
 	<br/>
+
+	{% block bodyadmin %}
+
+		<div class="texte">
+			<h2><b>Administrateur</b></h2>
+			<br/><br/>
+			<p class="spec"><a href="{{ path('logout') }}">Déconnexion</a></p> 
+		</div>
+		<br/>
+
+	{% endblock %}
 
 {% endblock %}

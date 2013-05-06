@@ -11,8 +11,6 @@ use Symfony\Component\Security\Core\SecurityContext;
 class UtilController extends Controller{
 
 	public function indexAction(){
-
-		
 		
 		$em = $this->getDoctrine()->getEntityManager();
     	$user_list = $em->getRepository("PwebUserBundle:User")->findAll();

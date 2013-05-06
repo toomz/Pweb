@@ -40,25 +40,25 @@ class Marque
     }
 
     /**
-     * Set libelleMar
+     * Set libelle
      *
-     * @param string $libelleMar
+     * @param string $libelle
      * @return Marque
      */
-    public function setLibelleMar($libelleMar)
+    public function setLibelle($libelle)
     {
-        $this->libelleMar = $libelleMar;
+        $this->libelle = $libelle;
     
         return $this;
     }
 
     /**
-     * Get libelleMar
+     * Get libelle
      *
      * @return string 
      */
-    public function getLibelleMar()
+    public function getLibelle()
     {
-        return $this->libelleMar;
+        return $this->libelle;
     }
 }

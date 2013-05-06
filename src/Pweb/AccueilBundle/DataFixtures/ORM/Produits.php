@@ -16,8 +16,8 @@ class Produits extends AbstractFixture implements OrderedFixtureInterface{
  
       /**************************************************************/
       $prod = new Produit();
-      $prod->setLibelle("Samsung Galaxy S3");
-      $prod->setDescription("Une des dernières trouvailles de Samsungs");
+      $prod->setLibelleProd("Samsung Galaxy S3");
+      $prod->setDescription("Une des dernières trouvailles de samsungs");
       $prod->setPrix(300);
       $prod->setPoids(132);
       
@@ -26,8 +26,8 @@ class Produits extends AbstractFixture implements OrderedFixtureInterface{
       $image->setAlt("");
       $manager->persist($image);
       
-      $cat = $manager->getRepository("PwebAccueilBundle:Categorie")->findOneBy(array('libelle' => "smartphone"));
-      $marque = $manager->getRepository("PwebAccueilBundle:Marque")->findOneBy(array('libelle' => "Samsung"));
+      $cat = $manager->getRepository("PwebAccueilBundle:Categorie")->findOneBy(array('libelleCat' => "smartphone"));
+      $marque = $manager->getRepository("PwebAccueilBundle:Marque")->findOneBy(array('libelleMar' => "Samsung"));
       
       $prod->setImage($image);
       $prod->setCategorie($cat);
@@ -36,8 +36,8 @@ class Produits extends AbstractFixture implements OrderedFixtureInterface{
      
       /**************************************************************/
       $prod = new Produit();
-      $prod->setLibelle("Sony Ericsson w995");
-      $prod->setDescription("Une des dernières trouvailles de Sony");
+      $prod->setLibelleProd("Sony Ericsson w995");
+      $prod->setDescription("Une des dernières trouvailles de sony");
       $prod->setPrix(150);
       $prod->setPoids(104);
       
@@ -46,8 +46,8 @@ class Produits extends AbstractFixture implements OrderedFixtureInterface{
       $image->setAlt("");
       $manager->persist($image);
       
-      $cat = $manager->getRepository("PwebAccueilBundle:Categorie")->findOneBy(array('libelle' => "portable"));
-      $marque = $manager->getRepository("PwebAccueilBundle:Marque")->findOneBy(array('libelle' => "Sony Ericsson"));
+      $cat = $manager->getRepository("PwebAccueilBundle:Categorie")->findOneBy(array('libelleCat' => "portable"));
+      $marque = $manager->getRepository("PwebAccueilBundle:Marque")->findOneBy(array('libelleMar' => "Sony Ericsson"));
       
       $prod->setImage($image);
       $prod->setCategorie($cat);
@@ -56,8 +56,8 @@ class Produits extends AbstractFixture implements OrderedFixtureInterface{
       
       /**************************************************************/
       $prod = new Produit();
-      $prod->setLibelle("Nokia Lumia 920");
-      $prod->setDescription("Une des dernières trouvailles de Microsoft");
+      $prod->setLibelleProd("Nokia Lumia 920");
+      $prod->setDescription("Une des dernières trouvailles de microsoft");
       $prod->setPrix(250);
       $prod->setPoids(185);
       
@@ -66,8 +66,8 @@ class Produits extends AbstractFixture implements OrderedFixtureInterface{
       $image->setAlt("");
       $manager->persist($image);
       
-      $cat = $manager->getRepository("PwebAccueilBundle:Categorie")->findOneBy(array('libelle' => "smartphone"));
-      $marque = $manager->getRepository("PwebAccueilBundle:Marque")->findOneBy(array('libelle' => "Nokia"));
+      $cat = $manager->getRepository("PwebAccueilBundle:Categorie")->findOneBy(array('libelleCat' => "smartphone"));
+      $marque = $manager->getRepository("PwebAccueilBundle:Marque")->findOneBy(array('libelleMar' => "Nokia"));
       
       $prod->setImage($image);
       $prod->setCategorie($cat);
