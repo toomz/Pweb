@@ -6,6 +6,8 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpKernel\Exception\AccessDeniedHttpException;
 use JMS\SecurityExtraBundle\Annotation\Secure;
 use Pweb\CompteBundle\Entity\Commande;
+use Pweb\CompteBundle\Entity\StatutCom;
+use Pweb\AccueilBundle\Entity\Produit;
 use Symfony\Component\Security\Core\SecurityContext;
 
 class CmdController extends Controller{
@@ -13,9 +15,10 @@ class CmdController extends Controller{
 	public function indexAction(){	
 		
 		$em = $this->getDoctrine()->getEntityManager();
-    	$commande_list = $em->getRepository("PwebCompteBundle:Commande")->findAll();
-    	return $this->render('PwebCompteBundle:Cmd:index.html.twig',array('commande_list'=>$commande_list));
-		
+    	$query = $em->createQuery('SELECT c.date, p.libelleProd, s.libelle FROM PwebAccueilBundle:Commande p LEFT JOIN p.categorie c LEFT JOIN p.marque m');
+		$produit_list = $query->getResult();
+		return $this->render('PwebCompteBundle:Prod:index.html.twig', array('produit_list' => $produit_list));
+
 	}
 
 }
