@@ -15,7 +15,7 @@ class CmdController extends Controller{
 	public function indexAction(){	
 		
 		$em = $this->getDoctrine()->getEntityManager();
-    	$query = $em->createQuery('SELECT c.date, p.libelleProd, s.libelle FROM PwebAccueilBundle:Commande p LEFT JOIN p.categorie c LEFT JOIN p.marque m');
+    	$query = $em->createQuery('SELECT c.date, p.libelleProd, s.libelle FROM PwebCompteBundle:Commande p LEFT JOIN p.categorie c LEFT JOIN p.marque m');
 		$produit_list = $query->getResult();
 		return $this->render('PwebCompteBundle:Prod:index.html.twig', array('produit_list' => $produit_list));
 
