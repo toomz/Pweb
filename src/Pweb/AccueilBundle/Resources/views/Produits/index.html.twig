@@ -7,32 +7,27 @@
 	<h3>Vous êtes dans la section des produits</h3>
   <h4>C'est ici que vos petits yeux vont briller de mille feux</h4>
   
+  
+  <div style="display:block;position:relative;">
+    <a><img onClick="images()" src="{{ prod.image.url }}" alt="{{ prod.image.alt }}"/img></a>
+  </div>
+  
+  {#
+  <div style="display:block;position:relative;">
+  <ul>
   {% for p in prod %}
-    <div class="image">
-      <li>
-        <a>{{ p.libelle }}</a>
-        <a><img src="{{ p.image.url }}" alt=""/img></a>
-      </li>
-    </div>
-  {% endfor %}
-  
 
-  
+        <a>
+          <img src="{{ p.image.url }}" alt="{{ p.image.alt }}" onClick="images()"/img>
+        </a>
+    
+  {% endfor %}
+  </ul>
+  </div>
+  #}
 {% endblock %}
 
-{# 
+{% block javascripts %}
+	<script type="text/javascript" src="{{ asset('js/javascript.js') }}"></script>
+{% endblock %}
 
-.image {
-  display:block;
-}
-
-.image li {
-  float:left;
-  position:relative;
-}
-
-.image li img{
-  transform: scale(0.25);
-}
-
-#}
