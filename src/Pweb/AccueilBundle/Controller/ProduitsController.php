@@ -12,7 +12,7 @@ class ProduitsController extends Controller
     $em = $this->getDoctrine()->getEntityManager();
     
     //$prod = $em->getRepository("PwebAccueilBundle:Produit")->findAll();
-    $prod = $em->getRepository("PwebAccueilBundle:Produit")->findOneBy(array('libelle' => "Samsung Galaxy S3"));
+    $prod = $em->getRepository("PwebAccueilBundle:Produit")->findOneBy(array('libelleProd' => "Samsung Galaxy S3"));
     
     return $this->render('PwebAccueilBundle:Produits:index.html.twig', array('prod' => $prod));
 	}

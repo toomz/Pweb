@@ -6,19 +6,7 @@
 	
 	<h3>Vous êtes dans la section des produits</h3>
   <h4>C'est ici que vos petits yeux vont briller de mille feux</h4>
-  
-<<<<<<< HEAD
-=======
-  {% for p in prod %}
-    <div class="image">
-      <li>
-        <a>{{ p.libelleProd }}</a>
-        <a><img src="{{ p.image.url }}" alt=""/img></a>
-      </li>
-    </div>
-  {% endfor %}
->>>>>>> edf55cb1989a7a62415402ebe965c2b68e58dc4e
-  
+
   <div style="display:block;position:relative;">
     <a><img onClick="images()" src="{{ prod.image.url }}" alt="{{ prod.image.alt }}"/img></a>
   </div>
