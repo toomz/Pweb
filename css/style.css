@@ -205,6 +205,12 @@ p {
 	height: 35px;
 }
 
+img {
+  display:block;
+  position:relative;
+  float:left;
+}
+
 
 /**** FOOTER ****/
 

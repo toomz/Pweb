@@ -14,7 +14,7 @@ class Produits extends AbstractFixture implements OrderedFixtureInterface{
 
     public function load(ObjectManager $manager){
  
-      // premier
+      /**************************************************************/
       $prod = new Produit();
       $prod->setLibelleProd("Samsung Galaxy S3");
       $prod->setDescription("Une des dernières trouvailles de samsungs");
@@ -23,7 +23,7 @@ class Produits extends AbstractFixture implements OrderedFixtureInterface{
       
       $image = new Image();
       $image->setUrl("/Pweb/images/samsung-galaxy-s3.jpg");
-      $image->setAlt("alt");
+      $image->setAlt("");
       $manager->persist($image);
       
       $cat = $manager->getRepository("PwebAccueilBundle:Categorie")->findOneBy(array('libelleCat' => "smartphone"));
@@ -34,7 +34,7 @@ class Produits extends AbstractFixture implements OrderedFixtureInterface{
       $prod->setMarque($marque);
       $manager->persist($prod);
      
-      //  troisième
+      /**************************************************************/
       $prod = new Produit();
       $prod->setLibelleProd("Sony Ericsson w995");
       $prod->setDescription("Une des dernières trouvailles de sony");
@@ -43,7 +43,7 @@ class Produits extends AbstractFixture implements OrderedFixtureInterface{
       
       $image = new Image();
       $image->setUrl("/Pweb/images/sony-ericsson-w995.jpg");
-      $image->setAlt("alt");
+      $image->setAlt("");
       $manager->persist($image);
       
       $cat = $manager->getRepository("PwebAccueilBundle:Categorie")->findOneBy(array('libelleCat' => "portable"));
@@ -54,6 +54,7 @@ class Produits extends AbstractFixture implements OrderedFixtureInterface{
       $prod->setMarque($marque);
       $manager->persist($prod);
       
+      /**************************************************************/
       $prod = new Produit();
       $prod->setLibelleProd("Nokia Lumia 920");
       $prod->setDescription("Une des dernières trouvailles de microsoft");
@@ -62,11 +63,51 @@ class Produits extends AbstractFixture implements OrderedFixtureInterface{
       
       $image = new Image();
       $image->setUrl("/Pweb/images/nokia-lumia-920-yellow.jpg");
-      $image->setAlt("alt");
+      $image->setAlt("");
       $manager->persist($image);
       
       $cat = $manager->getRepository("PwebAccueilBundle:Categorie")->findOneBy(array('libelleCat' => "smartphone"));
       $marque = $manager->getRepository("PwebAccueilBundle:Marque")->findOneBy(array('libelleMar' => "Nokia"));
+      
+      $prod->setImage($image);
+      $prod->setCategorie($cat);
+      $prod->setMarque($marque);
+      $manager->persist($prod);
+      
+      /**************************************************************/
+      $prod = new Produit();
+      $prod->setLibelle("Ipad 5");
+      $prod->setDescription("Une des dernières trouvailles d'Apple");
+      $prod->setPrix(500);
+      $prod->setPoids(500);
+      
+      $image = new Image();
+      $image->setUrl("/Pweb/images/ipad-5.jpg");
+      $image->setAlt("");
+      $manager->persist($image);
+      
+      $cat = $manager->getRepository("PwebAccueilBundle:Categorie")->findOneBy(array('libelle' => "tablette"));
+      $marque = $manager->getRepository("PwebAccueilBundle:Marque")->findOneBy(array('libelle' => "Apple"));
+      
+      $prod->setImage($image);
+      $prod->setCategorie($cat);
+      $prod->setMarque($marque);
+      $manager->persist($prod);
+      
+      /**************************************************************/
+      $prod = new Produit();
+      $prod->setLibelle("HTC One");
+      $prod->setDescription("Une des dernières trouvailles d'HTC");
+      $prod->setPrix(300);
+      $prod->setPoids(143);
+      
+      $image = new Image();
+      $image->setUrl("/Pweb/images/htc-one.jpg");
+      $image->setAlt("HTC One");
+      $manager->persist($image);
+      
+      $cat = $manager->getRepository("PwebAccueilBundle:Categorie")->findOneBy(array('libelle' => "smartphone"));
+      $marque = $manager->getRepository("PwebAccueilBundle:Marque")->findOneBy(array('libelle' => "HTC"));
       
       $prod->setImage($image);
       $prod->setCategorie($cat);
