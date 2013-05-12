@@ -13,15 +13,15 @@ class StatutComs extends AbstractFixture implements OrderedFixtureInterface{
     public function load(ObjectManager $manager){
 
       $stat = new StatutCom();
-      $stat->setLibelle("en cours");
+      $stat->setLibelleStat("en cours");
       $manager->persist($stat);
       
       $stat = new StatutCom();
-      $stat->setLibelle("en livraison");
+      $stat->setLibelleStat("en livraison");
       $manager->persist($stat);
       
       $stat = new StatutCom();
-      $stat->setLibelle("close");
+      $stat->setLibelleStat("close");
       $manager->persist($stat);
       
       $manager->flush();

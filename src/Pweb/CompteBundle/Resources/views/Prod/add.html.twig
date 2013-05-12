@@ -1,0 +1,39 @@
+{% extends 'PwebCompteBundle:Admin:index.html.twig' %}
+
+{% block title %}
+	Admin - Produits - Ajouter
+{% endblock %}
+
+{% block bodyadmin %}
+
+	<br/>
+	<div class="liste_choix2">
+		<ul>
+			<li><a href="{{ path('pweb_prod_add') }}">Ajouter un produit</a></li>
+			<li><a href="{{ path('pweb_prod_remove') }}">Supprimer un produit</a></li>
+			<li><a href="{{ path('pweb_admin_prod') }}">Voir tous les produits</a></li>
+		</ul>
+	</div>
+	<br/>
+
+	<div class="texte">
+		<br/>
+		<form method="post" {{ form_enctype(form) }}>
+			    {{ form_errors(form) }}
+
+			    {{ form_row(form.libelleProd) }}
+			    {{ form_row(form.description) }}
+			    {{ form_row(form.prix) }}
+			    {{ form_row(form.poids) }}
+			    {{ form_row(form.image) }}
+			    {{ form_row(form.categorie) }}
+			    {{ form_row(form.marque) }}
+
+			    {{ form_rest(form) }}
+			    <input type="submit" value="Envoyer" />
+		</form>
+	
+	
+</div>
+
+{% endblock %}

@@ -10,12 +10,14 @@
 		<tr>
 			<th style="padding:10px">Date</th>
 			<th style="padding:10px">Statut</th>
+			<th style="padding:10px">Produits</th>
 		</tr>
 	
 	{% for commande in commande_list %}		
 		<tr>
-			<td style="padding:7px">{{ commande.date }}</td>
-			<td style="padding:7px">{{ commande.statut }}</td>
+			<td style="padding:7px">{{ commande.date|date('d/m/Y') }}</td>
+			<td style="padding:7px">{{ commande.libelleStat }}</td>
+			<td style="padding:7px">{{ commande.libelleProd }}</td>
 		<tr>
 		
 	{% else %}

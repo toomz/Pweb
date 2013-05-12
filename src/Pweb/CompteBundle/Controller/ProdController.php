@@ -21,4 +21,79 @@ class ProdController extends Controller{
 
 	}
 
+	public function addAction(){
+
+		$produit = new Produit();
+
+    	$entityManager = $this->getDoctrine()->getEntityManager();
+    	
+    	$marques = $entityManager->getRepository("PwebAccueilBundle:Marque")->findAll();
+    	$stackMar = array();
+    	$categories = $entityManager->getRepository("PwebAccueilBundle:Categorie")->findAll();
+    	$stackCat = array();
+
+    	foreach($marques as $marque)
+        	array_push($stackMar,$marque->getLibelleMar());
+		
+		foreach($categories as $categorie)
+        	array_push($stackCat,$categorie->getLibelleCat());
+
+      	$formBuilder = $this->createFormBuilder($produit);
+      	$formBuilder
+        	->add('libelleProd','text', array('label' => 'Libellé'))
+        	->add('description', 'text', array('label' => 'Description'))
+        	->add('prix', 'text', array('label' => 'Prix'))
+        	->add('poids', 'text', array('label' => 'Poids'))
+        	->add('image', 'text')
+        	->add('categorie', 'choice', array(
+            	'choices' => $stackCat,
+              	'required' => false,'label'=>'Catégories','multiple'=>false, 'empty_value' => '-- Sélectionnez une catégorie --'))
+        	->add('marque', 'choice', array(
+            	'choices' => $stackMar,
+              	'required' => false,'label'=>'Marques','multiple'=>false, 'empty_value' => '-- Sélectionnez une marque --')
+        	);
+
+      	$form = $formBuilder->getForm();
+      	$request = $this->get('request');
+      
+      	if ($request->getMethod() == 'POST'){
+      
+      		$form->bind($request);
+
+      		if ($form->isValid()){
+          		$em = $this->getDoctrine()->getManager();
+          
+          		if($em->getRepository("PwebCompteBundle:Prod")->findOneBy(array('libelleProd' => $produit->getLibelleProd()))!=NULL)
+            		return $this->render('PwebCompteBundle:Prod:add.html.twig',array(
+                		'form'=>$form->createView(),
+                		'error'=>'Le produit "'.$prod->getLibelleProd().'" n\'a pas été ajouté  : Le nom eqiste déjà',
+                		'sucess'=>''
+              		));
+          
+          		$em->persist($produit);
+          		$em->flush();
+        
+          		return $this->render('PwebCompteBundle:Prod:add.html.twig',array(
+            		'form'=>$form->createView(),
+            		'sucess'=>'Le produit "'.$produit->getLibelleProd().'" a été ajouté.',
+            		'error'=>''
+          		));       
+      		}
+
+      	}
+
+      	return $this->render('PwebCompteBundle:Prod:add.html.twig',array(
+        	'form'=>$form->createView(),
+          	'error'=>'',
+          	'sucess'=>''
+      	));
+
+	}
+
+	public function removeAction(){
+
+		return $this->render('PwebCompteBundle:Prod:remove.html.twig');
+
+	}
+
 }
