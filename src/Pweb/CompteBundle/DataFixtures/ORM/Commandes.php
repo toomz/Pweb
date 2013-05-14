@@ -18,7 +18,7 @@ class Commandes extends AbstractFixture implements OrderedFixtureInterface{
       $com = new Commande();
       $com->setDate(new \DateTime);
       
-      $stat = $manager->getRepository("PwebCompteBundle:StatutCom")->findOneBy(array('libelle' => "en cours"));
+      $stat = $manager->getRepository("PwebCompteBundle:StatutCom")->findOneBy(array('libelleStat' => "en cours"));
       $com->setStatut($stat);
       
       $prod = $manager->getRepository("PwebAccueilBundle:Produit")->findOneBy(array('libelleProd' => "Samsung Galaxy S3"));
@@ -32,7 +32,7 @@ class Commandes extends AbstractFixture implements OrderedFixtureInterface{
       $com = new Commande();
       $com->setDate(new \DateTime);
       
-      $stat = $manager->getRepository("PwebCompteBundle:StatutCom")->findOneBy(array('libelle' => "en cours"));
+      $stat = $manager->getRepository("PwebCompteBundle:StatutCom")->findOneBy(array('libelleStat' => "en cours"));
       $com->setStatut($stat);
       
       $prod = $manager->getRepository("PwebAccueilBundle:Produit")->findOneBy(array('libelleProd' => "HTC One"));
@@ -46,7 +46,7 @@ class Commandes extends AbstractFixture implements OrderedFixtureInterface{
       $com = new Commande();
       $com->setDate(new \DateTime);
       
-      $stat = $manager->getRepository("PwebCompteBundle:StatutCom")->findOneBy(array('libelle' => "en cours"));
+      $stat = $manager->getRepository("PwebCompteBundle:StatutCom")->findOneBy(array('libelleStat' => "en cours"));
       $com->setStatut($stat);
       
       $prod = $manager->getRepository("PwebAccueilBundle:Produit")->findOneBy(array('libelleProd' => "Nokia Lumia 920"));

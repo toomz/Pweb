@@ -70,6 +70,12 @@ class Produits extends AbstractFixture implements OrderedFixtureInterface{
       $cat = $manager->getRepository("PwebAccueilBundle:Categorie")->findOneBy(array('libelleCat' => "tablette"));
       $marque = $manager->getRepository("PwebAccueilBundle:Marque")->findOneBy(array('libelleMar' => "Apple"));
       
+
+      $cat = $manager->getRepository("PwebAccueilBundle:Categorie")->findOneBy(array('libelleCat' => "tablette"));
+      $marque = $manager->getRepository("PwebAccueilBundle:Marque")->findOneBy(array('libelleMar' => "Apple"));
+      
+      $prod->setImage($image);
+
       $prod->setCategorie($cat);
       $prod->setMarque($marque);
       $manager->persist($prod);
@@ -81,7 +87,12 @@ class Produits extends AbstractFixture implements OrderedFixtureInterface{
       $prod->setPrix(300);
       $prod->setPoids(143);
       $prod->setImage("/Pweb/images/htc-one.jpg");
-      
+
+      $image = new Image();
+      $image->setUrl("/Pweb/images/htc-one.jpg");
+      $image->setAlt("HTC One");
+      $manager->persist($image);
+
       $cat = $manager->getRepository("PwebAccueilBundle:Categorie")->findOneBy(array('libelleCat' => "smartphone"));
       $marque = $manager->getRepository("PwebAccueilBundle:Marque")->findOneBy(array('libelleMar' => "HTC"));
       

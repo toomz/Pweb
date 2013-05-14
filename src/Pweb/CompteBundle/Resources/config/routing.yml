@@ -17,3 +17,11 @@ pweb_admin_cmd:
 pweb_admin_prod:
     pattern: /admin/produit
     defaults: { _controller: PwebCompteBundle:Prod:index }
+
+pweb_prod_add:
+    pattern: /admin/produit/add
+    defaults: { _controller: PwebCompteBundle:Prod:add }
+
+pweb_prod_remove:
+    pattern: /admin/produit/remove
+    defaults: { _controller: PwebCompteBundle:Prod:remove }

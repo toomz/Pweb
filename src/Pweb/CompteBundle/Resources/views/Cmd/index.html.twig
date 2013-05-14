@@ -9,13 +9,16 @@
 	<table style="margin:15px 15px">
 		<tr>
 			<th style="padding:10px">Date</th>
+			<th style="padding:10px">Produits</th>
 			<th style="padding:10px">Statut</th>
 		</tr>
 	
 	{% for commande in commande_list %}		
 		<tr>
-			<td style="padding:7px">{{ commande.date }}</td>
-			<td style="padding:7px">{{ commande.statut }}</td>
+			<td style="padding:7px">{{ commande.date|date('d/m/Y') }}</td>
+			<td style="padding:7px">{% for produit in commande.produits %}{{ produit.libelleProd }} | {% endfor %}</td>
+			<td style="padding:7px">{{ commande.statut.libelleStat }}</td>
+			<td style="padding:7px"><input type="button" value="Modifier le statut"></input></td>
 		<tr>
 		
 	{% else %}
@@ -29,4 +32,15 @@
 
 	</table>
 	
+{% endblock %}
+
+{% block javascripts %}
+	<script type="text/javascript" src="{{ asset('js/jquery-1.9.1.js') }}"></script>
+	<script type="text/javascript">
+		$(document).ready(function(){
+			$('input').click(function(event){ 
+				alert('Merci pour votre visite');
+			}); 
+		}); 
+	</script>
 {% endblock %}

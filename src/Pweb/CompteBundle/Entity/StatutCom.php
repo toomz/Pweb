@@ -24,9 +24,9 @@ class StatutCom
     /**
      * @var string
      *
-     * @ORM\Column(name="libelle", type="string", length=255)
+     * @ORM\Column(name="libelleStat", type="string", length=255)
      */
-    private $libelle;
+    private $libelleStat;
 
 
     /**
@@ -40,25 +40,25 @@ class StatutCom
     }
 
     /**
-     * Set libelle
+     * Set libelleStat
      *
-     * @param string $libelle
+     * @param string $libelleStat
      * @return StatutCom
      */
-    public function setLibelle($libelle)
+    public function setLibelleStat($libelleStat)
     {
-        $this->libelle = $libelle;
+        $this->libelleStat = $libelleStat;
     
         return $this;
     }
 
     /**
-     * Get libelle
+     * Get libelleStat
      *
      * @return string 
      */
-    public function getLibelle()
+    public function getLibelleStat()
     {
-        return $this->libelle;
+        return $this->libelleStat;
     }
 }

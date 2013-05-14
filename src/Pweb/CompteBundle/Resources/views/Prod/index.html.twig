@@ -6,6 +6,15 @@
 
 {% block bodyadmin %}
 	
+	<br/>
+	<div class="liste_choix2">
+		<ul>
+			<li><a href="{{ path('pweb_prod_add') }}">Ajouter un produit</a></li>
+			<li><a href="{{ path('pweb_prod_remove') }}">Supprimer un produit</a></li>
+			<li><a href="{{ path('pweb_admin_prod') }}">Voir tous les produits</a></li>
+	</div>
+	<br/>	
+
 	<table style="margin:15px 15px">
 		<tr>
 			<th style="padding:10px">Libellé</th>
