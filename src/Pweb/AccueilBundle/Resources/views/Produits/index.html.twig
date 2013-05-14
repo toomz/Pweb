@@ -9,7 +9,8 @@
   
   {% for p in prod %}
   <ol>
-    <li><img src="{{ p.image.url }}" alt="{{ p.image.alt }}" class="img_prod"/> 
+    <li>
+      <ol><img src="{{ p.image }}" alt="{{ p.libelleProd }}" class="img_prod"/> </ol>
       <ol><input type="button" value="Voir" class="btn_voir_prod"/></ol>
       <ol><input type="button" value="Ajouter au panier" class="btn_ajout_prod"/></ol>
     </li> 
