@@ -76,7 +76,7 @@ class Produits extends AbstractFixture implements OrderedFixtureInterface{
       
       /**************************************************************/
       $prod = new Produit();
-      $prod->setLibelle("Ipad 5");
+      $prod->setLibelleProd("Ipad 5");
       $prod->setDescription("Une des dernières trouvailles d'Apple");
       $prod->setPrix(500);
       $prod->setPoids(500);
@@ -86,8 +86,8 @@ class Produits extends AbstractFixture implements OrderedFixtureInterface{
       $image->setAlt("");
       $manager->persist($image);
       
-      $cat = $manager->getRepository("PwebAccueilBundle:Categorie")->findOneBy(array('libelle' => "tablette"));
-      $marque = $manager->getRepository("PwebAccueilBundle:Marque")->findOneBy(array('libelle' => "Apple"));
+      $cat = $manager->getRepository("PwebAccueilBundle:Categorie")->findOneBy(array('libelleCat' => "tablette"));
+      $marque = $manager->getRepository("PwebAccueilBundle:Marque")->findOneBy(array('libelleMar' => "Apple"));
       
       $prod->setImage($image);
       $prod->setCategorie($cat);
@@ -96,7 +96,7 @@ class Produits extends AbstractFixture implements OrderedFixtureInterface{
       
       /**************************************************************/
       $prod = new Produit();
-      $prod->setLibelle("HTC One");
+      $prod->setLibelleProd("HTC One");
       $prod->setDescription("Une des dernières trouvailles d'HTC");
       $prod->setPrix(300);
       $prod->setPoids(143);
@@ -106,8 +106,8 @@ class Produits extends AbstractFixture implements OrderedFixtureInterface{
       $image->setAlt("HTC One");
       $manager->persist($image);
       
-      $cat = $manager->getRepository("PwebAccueilBundle:Categorie")->findOneBy(array('libelle' => "smartphone"));
-      $marque = $manager->getRepository("PwebAccueilBundle:Marque")->findOneBy(array('libelle' => "HTC"));
+      $cat = $manager->getRepository("PwebAccueilBundle:Categorie")->findOneBy(array('libelleCat' => "smartphone"));
+      $marque = $manager->getRepository("PwebAccueilBundle:Marque")->findOneBy(array('libelleMar' => "HTC"));
       
       $prod->setImage($image);
       $prod->setCategorie($cat);

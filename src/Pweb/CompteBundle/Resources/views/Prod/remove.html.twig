@@ -14,7 +14,22 @@
 			<li><a href="{{ path('pweb_admin_prod') }}">Voir tous les produits</a></li>
 		</ul>
 	</div>
-	<br/>
+	<br/><br/>
 
-	<p>Supprimer un produit</p>
+	{% if error != '' %}
+		<p>{{ error }}</p>
+	{% endif %}
+
+	{% if success != '' %}
+		<p>{{ success }}</p>
+	{% endif %}
+
+	<div class="texte">
+		<form method="post" {{ form_enctype(form) }} class="form">
+	    	{{ form_errors(form) }}
+	    	{{ form_rest(form) }}
+	    	<input type="submit" value="Supprimer" />
+		</form>
+	</div>
+
 {% endblock %}

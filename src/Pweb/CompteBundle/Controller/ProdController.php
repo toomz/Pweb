@@ -14,8 +14,8 @@ class ProdController extends Controller{
 
 	public function indexAction(){	
 		
-    	$em = $this->getDoctrine()->getEntityManager();
-    	$query = $em->createQuery('SELECT p.libelleProd, p.description, c.libelleCat, m.libelleMar, p.prix, p.poids FROM PwebAccueilBundle:Produit p LEFT JOIN p.categorie c LEFT JOIN p.marque m');
+    $em = $this->getDoctrine()->getEntityManager();
+    $query = $em->createQuery('SELECT p.libelleProd, p.description, c.libelleCat, m.libelleMar, p.prix, p.poids FROM PwebAccueilBundle:Produit p LEFT JOIN p.categorie c LEFT JOIN p.marque m');
 		$produit_list = $query->getResult();
 		return $this->render('PwebCompteBundle:Prod:index.html.twig', array('produit_list' => $produit_list));
 
@@ -25,15 +25,15 @@ class ProdController extends Controller{
 
 		$produit = new Produit();
 
-    	$entityManager = $this->getDoctrine()->getEntityManager();
-    	
-    	$marques = $entityManager->getRepository("PwebAccueilBundle:Marque")->findAll();
-    	$stackMar = array();
-    	$categories = $entityManager->getRepository("PwebAccueilBundle:Categorie")->findAll();
-    	$stackCat = array();
+  	$entityManager = $this->getDoctrine()->getEntityManager();
+  	
+  	$marques = $entityManager->getRepository("PwebAccueilBundle:Marque")->findAll();
+  	$stackMar = array();
+  	$categories = $entityManager->getRepository("PwebAccueilBundle:Categorie")->findAll();
+  	$stackCat = array();
 
-    	foreach($marques as $marque)
-        	array_push($stackMar,$marque->getLibelleMar());
+  	foreach($marques as $marque)
+      	array_push($stackMar,$marque->getLibelleMar());
 		
 		foreach($categories as $categorie)
         	array_push($stackCat,$categorie->getLibelleCat());
@@ -92,8 +92,66 @@ class ProdController extends Controller{
 
 	public function removeAction(){
 
-		return $this->render('PwebCompteBundle:Prod:remove.html.twig');
+    $em = $this->getDoctrine()->getEntityManager();
+    $produit_list = $em->getRepository("PwebAccueilBundle:Produit")->findAll();
+    $stack = array();
+      
+    foreach($produit_list as $produit)
+      $stack[$produit->getlibelleProd()] = $produit->getLibelleProd();
+      
+    $produit = new Produit();
+    $formBuilder = $this->createFormBuilder($produit);
+    $formBuilder
+      ->add('libelleProd', 'choice', array(
+        'choices' => $stack,
+        'required' => false,'label'=>'Produits : ','multiple'=>false
+      ));
 
-	}
+    $form = $formBuilder->getForm();
+    $request = $this->get('request');
+    
+    if ($request->getMethod() == 'POST'){
+      
+      $form->bind($request);
+
+      if ($form->isValid()){
+
+        unset($stack[$produit->getLibelleProd()]);
+
+        $produit = $em->getRepository("PwebAccueilBundle:Produit")->findOneBy(array('libelleProd'=>$produit->getLibelleProd()));
+        $formBuilder = $this->createFormBuilder($produit);
+        $formBuilder
+          ->add('libelleProd', 'choice', array(
+        'choices' => $stack,
+        'required' => false,'label'=>'Produits : ','multiple'=>false
+        ));
+        
+        $form = $formBuilder->getForm();
+        $em->remove($produit);
+        $em->flush();
+
+        return $this->render('PwebACompteBundle:Prod:remove.html.twig',array(
+          'form'=>$form->createView(),
+          'success'=>'Le produit "'.$produit->getLibelleProd().'" a été supprimé avec succès.',
+          'error'=>''
+          ));
+
+      }
+
+      return $this->render('PwebCompteBundle:Prod:remove.html.twig',array(
+        'form'=>$form->createView(),
+        'success'=>'',
+        'error'=>'ERROR : something wrong happened but i don\'t know what ! '
+        ));
+
+    }
+
+    return $this->render('PwebCompteBundle:Prod:remove.html.twig',array(
+        'form'=>$form->createView(),
+        'success'=>'',
+        'error'=>''
+    ));
+    
+    }
 
 }
