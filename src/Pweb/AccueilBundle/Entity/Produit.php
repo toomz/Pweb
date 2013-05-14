@@ -62,8 +62,9 @@ class Produit
     private $poids;
 
     /**
-     * @ORM\OneToOne(targetEntity="Pweb\AccueilBundle\Entity\Image", cascade={"persist"})
-     * @ORM\JoinColumn(nullable=false)
+     * @var string
+     *
+     * @ORM\Column(name="image", type="string", length=255)
      */
     private $image;
 
@@ -147,15 +148,18 @@ class Produit
     }
     
     /**
-    * @param \Pweb\AccueilBundle\Entity\Image $image
+    * @param string $url
+    * @return Produit
     */
-    public function setImage(\Pweb\AccueilBundle\Entity\Image $image)
+    public function setImage($url)
     {
-      $this->image = $image;
+      $this->image = $url;
+      
+      return $this;
     }
 
     /**
-    * @return \Pweb\AccueilBundle\Entity\Image
+    * @return string
     */
     public function getImage()
     {

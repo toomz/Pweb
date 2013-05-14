@@ -4,7 +4,7 @@
         <meta charset="UTF-8" />
         <title>{% block title %}Welcome!{% endblock %}</title>
         <link rel="stylesheet" media="screen" href="/Pweb/css/style.css" />
-        <!--<script type="text/javascript" src="/Pweb/js/javascript.js"></script>-->
+        <!--<script type="text/javascript" src="public/js/produits.js"></script>-->
     </head>
     <body>
     	<div id="wrapper">
@@ -30,17 +30,17 @@
 	           			{% block body %}{% endblock %}
 			    	</div>
 				</div>
-
-				<div class="bas">
-			    	<div class="clr"></div>	
-				</div>
-
-		    </div>
-		    
-		    <div id="peidpage">
-		    </div>
-
-    	</div>
+            </div>
+        </div>
     </body>
-    {% block javascripts %}{% endblock %}
+    
+<footer> 
+    <div class="bas">
+        <div class="clr"></div>	
+    </div>   
+    <div id="piedpage">
+    </div>
+</footer>
+{% block javascripts %}{% endblock %}
+
 </html>
