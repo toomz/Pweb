@@ -103,18 +103,20 @@ p {
 #corps {
 	padding:9px;
 	border:1px solid #a1a1a1;
+        height:100%;
 }
 
 .haut {
 	padding:12px;
 	background:#fff;
+        height:100%;
 }
 
 .texte {
-	width:1200px;
 	margin:0;
 	padding:10px 15px 5px;
 	width:100%;
+        height:100%;
 }
 
 .texte .spec a {
@@ -125,11 +127,11 @@ p {
 }
 
 .texte img {
-	position: absolute;
-	margin-top: -60px;
-	width: 220px;
-	height:220px;
+	position: relative;
+	width: 100px;
+	height:100px;
 	float: left;
+        display: block;
 }
 
 .texte form {
@@ -163,16 +165,64 @@ p {
 	color: #c80203;
 }
 
+/*********************************************/
+/*********************************************/
+
+#lean_overlay {
+    position: fixed;
+    z-index:100;
+    top: 0px;
+    left: 0px;
+    height:100%;
+    width:100%;
+    background: #000;
+    display: none;
+}
+
+li, ol {
+        display: block;
+        float: left;
+        margin: 0;
+        padding: 0;
+}
+
+ol li {
+	width: 15%;
+	margin: 0em 0em 0em 0em;
+	line-height: 1.5em;
+	margin-top: 20px;
+        /* Bordures arrondies dans les coins */
+}
+
+ol li ol {
+	width: 100%;
+	/*height: 7em;*/
+	font-size: 0.8em;
+	border: none;
+	margin: 0;
+}
+
+img.img_prod {
+	display: block;
+	padding: 0em 0em 0em 0em;
+	font-weight: bold;
+}
+
+input.btn_voir_prod input.btn_ajout_prod {
+	display: block;
+	padding: 0em 0em 0em 1em;
+	font-size: 1.1em;
+	font-weight: bold;
+        border-radius:10%;
+}
+
+/*********************************************/
+/*********************************************/
+
 .bas {
 	padding:10px 0;
 	background-color: #c80203;
 	height: 35px;
-}
-
-img {
-  display:block;
-  position:relative;
-  float:left;
 }
 
 
