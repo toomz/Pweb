@@ -1,0 +1,41 @@
+{% extends '::base.html.twig' %}
+
+{% block title %} Les produits {% endblock %}
+
+{% block body %}
+	{#
+	<h3>Vous êtes dans la section des produits</h3>
+  <h4>C'est ici que vos petits yeux vont briller de mille feux</h4>
+  
+  <div class="liste_prod">
+  {% for p in prod %}
+  <ol id="{{ p.id }}">
+    <li>
+      <ol><img src="{{ p.image }}" alt="{{ p.libelleProd }}" class="img_prod"/><a>{{ p.libelleProd }}</a></ol>
+      <ol>
+        <button type="button" class="btn_voir_prod" style="background:url({{ asset('icons/loupe-icone-4171-32.png') }})" 
+            data-path="{{ path('info_produits', {'idProd': p.id}) }}"/>
+      </ol>
+      <ol><button type="button" class="btn_ajout_prod" style="background:url({{ asset('icons/Shopping_basket_add_Icon_32.png') }})"/></ol>
+    </li> 
+  </ol>  
+  {% endfor %}
+  </div>
+  #}
+
+  <div class="col_img">
+    <img src="{{ prod.image }}"/>
+  </div>
+
+  <div class="col_desc">
+      <p> {{ prod.libelleProd }} </p>
+      <p> {{ prod.description }} </p>
+  </div>
+
+{% endblock %}
+
+{% block javascripts %}
+  <script type="text/javascript" src="{{ asset('js/jquery-1.9.1.js') }}"></script>
+	<script type="text/javascript" src="{{ asset('js/produits.js') }}" ></script>
+  <script type="text/javascript" src="{{ asset('js/jquery.elevateZoom-2.5.5.min.js') }}" ></script>
+{% endblock %}
