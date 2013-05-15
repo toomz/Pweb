@@ -1,14 +1,18 @@
 $(document).ready(function(){
   
-  $('.img_prod').click(function(){
-      window.open(this.src, this.alt, config='height=1000, width=1000');
+  $('.col_img > img').click(function(){
+      window.open(this.src, this.alt);
   })
 
-  $('.col_img > img').elevateZoom();   
+//  $('.col_img > img').elevateZoom();   
   
   $('.btn_voir_prod').click(function(){
     var path = $(this).attr("data-path");
-    window.open(path, "_newtab", config='height=400, width=400, ');
+    window.open(path);
+  })
+
+  $('.btn_ajout_prod').click(function(){
+    alert('fonctionnalité en cours de construction');
   })
 
   $('select').change(function () {

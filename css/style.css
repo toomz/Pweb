@@ -207,8 +207,9 @@ p {
 
 div#col_gauche {
 	float: left;
+	padding-left: 0.7%;
     width: 10%;
-    background: #F5F5DC ;
+    background: #DCDCDC ;
 }
 
 div#col_prod {
@@ -265,9 +266,14 @@ ol li ol {
 
 ol li ol p {
 	font-weight: bold;
-	
+	font-size:15px;
 	width:100em;
 	float:center;
+}
+
+.col_img > img {
+	width:190px;
+	height:400px;
 }
 
 button.btn_voir_prod , button.btn_ajout_prod {

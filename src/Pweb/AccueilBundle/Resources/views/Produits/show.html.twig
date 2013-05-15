@@ -28,8 +28,15 @@
   </div>
 
   <div class="col_desc">
-      <p> {{ prod.libelleProd }} </p>
-      <p> {{ prod.description }} </p>
+      <ul><h4> {{ prod.libelleProd }} </h4></ul>
+      <ul><p> {{ prod.description }} </p></ul>
+      <ul><p> Prix : {{ prod.prix }} € </p></ul>
+      <ul><p> Poids : {{ prod.poids }} gr.</p></ul>
+      <ul>
+        <button type="button" class="btn_ajout_prod" style="background:url({{ asset('icons/Shopping_basket_add_Icon_32.png') }})" 
+                data-path="{{ path('info_produits', {'idProd': prod.id}) }}"/>
+      </ul>
+
   </div>
 
 {% endblock %}
