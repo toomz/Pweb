@@ -6,6 +6,15 @@
 
 {% block bodyadmin %}
 
+	<br/>
+	<div class="liste_choix2">
+		<ul>
+			<li><a href="{{ path('pweb_cmd_modif') }}">Modifier une commande</a></li>
+			<li><a href="{{ path('pweb_admin_cmd') }}">Voir les commandes</a></li>
+		</ul>
+	</div>
+	<br/>
+
 	<table style="margin:15px 15px">
 		<tr>
 			<th style="padding:10px">Date</th>
@@ -18,7 +27,6 @@
 			<td style="padding:7px">{{ commande.date|date('d/m/Y') }}</td>
 			<td style="padding:7px">{% for produit in commande.produits %}{{ produit.libelleProd }} | {% endfor %}</td>
 			<td style="padding:7px">{{ commande.statut.libelleStat }}</td>
-			<td style="padding:7px"><input type="button" value="Modifier le statut"></input></td>
 		<tr>
 		
 	{% else %}

@@ -1,0 +1,39 @@
+{% extends 'PwebCompteBundle:Admin:index.html.twig' %}
+
+{% block title %}
+	Admin - Marques
+{% endblock %}
+
+{% block bodyadmin %}
+	
+	<br/>
+	<div class="liste_choix2">
+		<ul>
+			<li><a href="{{ path('pweb_mar_add') }}">Ajouter une marque</a></li>
+			<li><a href="{{ path('pweb_mar_remove') }}">Supprimer une marque</a></li>
+			<li><a href="{{ path('pweb_admin_mar') }}">Voir toutes les marques</a></li>
+		</ul>
+	</div>
+	<br/>	
+
+	<table style="margin:15px 15px">
+		<tr>
+			<th style="padding:10px">Libellé</th>
+		</tr>
+	
+	{% for marque in marque_list %}		
+		<tr>
+			<td style="padding:7px">{{ marque.libelleMar }}</td>
+		<tr>
+		
+	{% else %}
+		<tr>
+			<td style="padding:7px">NULL</td>
+		<tr>
+		
+		<br/><br/><p>Aucune marque enregistrée</p>
+	{% endfor %}
+
+	</table>
+
+{% endblock %}

@@ -1,0 +1,39 @@
+{% extends 'PwebCompteBundle:Admin:index.html.twig' %}
+
+{% block title %}
+	Admin - Catégories
+{% endblock %}
+
+{% block bodyadmin %}
+	
+	<br/>
+	<div class="liste_choix2">
+		<ul>
+			<li><a href="{{ path('pweb_cat_add') }}">Ajouter une catégorie</a></li>
+			<li><a href="{{ path('pweb_cat_remove') }}">Supprimer une catégorie</a></li>
+			<li><a href="{{ path('pweb_admin_cat') }}">Voir toutes les catégories</a></li>
+		</ul>
+	</div>
+	<br/>	
+
+	<table style="margin:15px 15px">
+		<tr>
+			<th style="padding:10px">Libellé</th>
+		</tr>
+	
+	{% for categorie in categorie_list %}		
+		<tr>
+			<td style="padding:7px">{{ categorie.libelleCat }}</td>
+		<tr>
+		
+	{% else %}
+		<tr>
+			<td style="padding:7px">NULL</td>
+		<tr>
+		
+		<br/><br/><p>Aucune catégorie enregistrée</p>
+	{% endfor %}
+
+	</table>
+
+{% endblock %}

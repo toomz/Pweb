@@ -6,6 +6,7 @@ namespace Pweb\UserBundle\Entity;
 
 use Symfony\Component\Security\Core\User\UserInterface;
 use Doctrine\ORM\Mapping as ORM;
+use Pweb\CompteBundle\Entity\Acheteur;
  
 /**
  * @ORM\Entity(repositoryClass="Pweb\UserBundle\Entity\UserRepository")
@@ -20,7 +21,7 @@ class User implements UserInterface
    * @ORM\GeneratedValue(strategy="AUTO")
    */
   private $id;
- 
+
   /**
    * @ORM\Column(name="username", type="string", length=255, unique=true)
    */

@@ -6,6 +6,15 @@
 
 {% block bodyadmin %}
 
+	<br/>
+	<div class="liste_choix2">
+		<ul>
+			<li><a href="{{ path('pweb_util_add') }}">Ajouter un utilisateur admnistrateur</a></li>
+			<li><a href="{{ path('pweb_util_remove') }}">Supprimer un utilisateur</a></li>
+			<li><a href="{{ path('pweb_admin_util') }}">Voir tous les utilisateurs</a></li>
+	</div>
+	<br/>
+
 	<table style="margin:15px 15px">
 		<tr>
 			<th style="padding:10px">Identifiant</th>
