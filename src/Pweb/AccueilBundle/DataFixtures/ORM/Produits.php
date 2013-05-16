@@ -19,7 +19,7 @@ class Produits extends AbstractFixture implements OrderedFixtureInterface{
       $prod->setDescription("Une des dernières trouvailles de samsungs");
       $prod->setPrix(300);
       $prod->setPoids(132);
-      $prod->setImage("/Pweb/images/samsung-galaxy-s3.jpg");
+      $prod->setImage("/Pweb/images/samsung-galaxy-s3.png");
       
       $cat = $manager->getRepository("PwebAccueilBundle:Categorie")->findOneBy(array('libelleCat' => "smartphone"));
       $marque = $manager->getRepository("PwebAccueilBundle:Marque")->findOneBy(array('libelleMar' => "Samsung"));
@@ -34,7 +34,7 @@ class Produits extends AbstractFixture implements OrderedFixtureInterface{
       $prod->setDescription("Une des dernières trouvailles de sony");
       $prod->setPrix(150);
       $prod->setPoids(104);
-      $prod->setImage("/Pweb/images/sony-ericsson-w995.jpg");
+      $prod->setImage("/Pweb/images/sony-ericsson-w995-black.png");
       
       $cat = $manager->getRepository("PwebAccueilBundle:Categorie")->findOneBy(array('libelleCat' => "portable"));
       $marque = $manager->getRepository("PwebAccueilBundle:Marque")->findOneBy(array('libelleMar' => "Sony Ericsson"));
@@ -49,7 +49,7 @@ class Produits extends AbstractFixture implements OrderedFixtureInterface{
       $prod->setDescription("Une des dernières trouvailles de microsoft");
       $prod->setPrix(250);
       $prod->setPoids(185);
-      $prod->setImage("/Pweb/images/nokia-lumia-920-yellow.jpg");
+      $prod->setImage("/Pweb/images/nokia-lumia-920-yellow.png");
       
       $cat = $manager->getRepository("PwebAccueilBundle:Categorie")->findOneBy(array('libelleCat' => "smartphone"));
       $marque = $manager->getRepository("PwebAccueilBundle:Marque")->findOneBy(array('libelleMar' => "Nokia"));
@@ -64,8 +64,8 @@ class Produits extends AbstractFixture implements OrderedFixtureInterface{
       $prod->setDescription("Une des dernières trouvailles d'Apple");
       $prod->setPrix(500);
       $prod->setPoids(500);
-      $prod->setImage("/Pweb/images/ipad-5.jpg");
-      
+      $prod->setImage("/Pweb/images/ipad-5.png");
+
       $cat = $manager->getRepository("PwebAccueilBundle:Categorie")->findOneBy(array('libelleCat' => "tablette"));
       $marque = $manager->getRepository("PwebAccueilBundle:Marque")->findOneBy(array('libelleMar' => "Apple"));
 

@@ -1,14 +1,27 @@
 $(document).ready(function(){
   
-  $('.img_prod').click(function(){
-      window.open(this.src, this.alt, config='height=400, width=400');
+  $('.col_img > img').click(function(){
+      window.open(this.src, this.alt);
   })
-  /*
-  $('.img_prod').elevateZoom();
-  */
+
+//  $('.col_img > img').elevateZoom();   
+  
   $('.btn_voir_prod').click(function(){
-    var source = $('.img_prod').src;
-    window.open(source, " ", config='height=400, width=400');
+    var path = $(this).attr("data-path");
+    window.open(path);
+  })
+
+  $('.btn_ajout_prod').click(function(){
+    alert('fonctionnalité en cours de construction');
+  })
+
+  $('select').change(function () {
+    //var str = "";
+    $("select option:selected").each(function () {
+      $("#test").text($(this).val());
+      //str += $(this).val() + " ";
+      //str += $(this).text() + " ";
+    });
   })
   
 })

@@ -115,8 +115,8 @@ p {
 .texte {
 	margin:0;
 	padding:10px 15px 5px;
-	width:100%;
-        height:150%;
+	width:95%;
+    height:50em;
 }
 
 .texte .spec a {
@@ -127,11 +127,12 @@ p {
 }
 
 .texte img {
-	position: relative;
-	width: 100px;
-	height:100px;
+	position: relative;	
+	/* 450*859*/
+	width: 95px; 
+	height:180px;
 	float: left;
-        display: block;
+    display: block;
 }
 
 .texte form {
@@ -208,6 +209,28 @@ p {
 /*********************************************/
 /*********************************************/
 
+div#col_gauche {
+	float: left;
+	padding-left: 0.7%;
+    width: 10%;
+    background: #DCDCDC ;
+}
+
+div#col_prod {
+	float:right;
+	width: 88%;
+}
+
+div.col_img {
+	float: left;
+	width: 15%;
+}
+
+div.col_desc {
+	float: right;
+	width: 80%;
+}
+
 #lean_overlay {
     position: fixed;
     z-index:100;
@@ -219,11 +242,16 @@ p {
     display: none;
 }
 
+.liste_prod {
+    border: 1px solid black;
+}
+
 li, ol {
         display: block;
         float: left;
         margin: 0;
         padding: 0;
+        width:18%;
 }
 
 ol li {
@@ -231,22 +259,34 @@ ol li {
 	margin: 0em 0em 0em 0em;
 	line-height: 1.5em;
 	margin-top: 20px;
-        /* Bordures arrondies dans les coins */
 }
 
 ol li ol {
 	width: 100%;
-	/*height: 7em;*/
 	font-size: 0.8em;
 	border: none;
 	margin: 0;
 }
 
-input.btn_voir_prod input.btn_ajout_prod {
+ol li ol p {
+	font-weight: bold;
+	font-size:15px;
+	width:100em;
+	float:center;
+}
+
+.col_img > img {
+	width:190px;
+	height:400px;
+}
+
+button.btn_voir_prod , button.btn_ajout_prod {
 	display: block;
 	padding: 0em 0em 0em 1em;
 	font-size: 1.1em;
 	font-weight: bold;
+	width: 32px;
+	height: 32px;
 }
 
 /*********************************************/

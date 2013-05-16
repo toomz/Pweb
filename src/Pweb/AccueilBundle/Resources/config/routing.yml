@@ -10,3 +10,7 @@ pweb_produits:
     pattern:  /Produits
     defaults: { _controller: PwebAccueilBundle:Produits:index }
 
+info_produits:
+    pattern: /Produits/info_produits/{idProd}
+    defaults: { _controller: PwebAccueilBundle:Produits:showInfo }
+

@@ -3,19 +3,62 @@
 {% block title %} Les produits {% endblock %}
 
 {% block body %}
-	
-	<h3>Vous êtes dans la section des produits</h3>
-  <h4>C'est ici que vos petits yeux vont briller de mille feux</h4>
   
-  {% for p in prod %}
-  <ol>
-    <li>
-      <ol><img src="{{ p.image }}" alt="{{ p.libelleProd }}" class="img_prod"/> </ol>
-      <ol><input type="button" value="Voir" class="btn_voir_prod"/></ol>
-      <ol><input type="button" value="Ajouter au panier" class="btn_ajout_prod"/></ol>
-    </li> 
-  </ol>  
-  {% endfor %}
+  <div id="col_gauche">
+    <div id="tri">
+      <h4>Trier par :</h4>
+      <select name="tri">
+        <option value="1">Prix croissant</option>
+        <option value="2">Prix decroissant</option>
+      </select>  
+      <div id="test"></div>    
+    </div>
+    <div id="marques">
+      <h4>Marques</h4>
+      {% for m in marque %}
+          <ul class="choose_marq"> {{ m.libelleMar }}</ul>
+      {% endfor %}      
+    </div>
+    <div id="categories">
+      <h4>Catégories</h4>
+      {% for c in cat %}
+          <ul class="choose_cat"> {{ c.libelleCat }}</ul>
+      {% endfor %}      
+    </div>
+
+  </div>
+
+  <div id="col_prod">
+	
+  	<h3>Vous êtes dans la section des produits</h3>
+    <h4>C'est ici que vos petits yeux vont briller de mille feux</h4>
+    
+    <div class="liste_prod">
+
+      {% for p in prod %}
+      <ol id="{{ p.id }}">
+        <li>
+          <ol>
+            <img src="{{ p.image }}" alt="{{ p.libelleProd }}" class="img_prod"/>
+          </ol>
+          <ol>
+            <p>{{ p.libelleProd }}</p>
+          </ol>
+          <ol>
+            <button type="button" class="btn_voir_prod" style="background:url({{ asset('icons/loupe-icone-4171-32.png') }})" 
+                data-path="{{ path('info_produits', {'idProd': p.id}) }}"/>
+          </ol>
+          <ol>
+            <button type="button" class="btn_ajout_prod" style="background:url({{ asset('icons/Shopping_basket_add_Icon_32.png') }})"
+                {#data-path="{{ path('ajout_produit', {'idProd': p.id}) }}"#}/>
+          </ol>
+        </li> 
+      </ol>   
+      {% endfor %}
+
+    </div>
+
+  </div>
 
 {% endblock %}
 

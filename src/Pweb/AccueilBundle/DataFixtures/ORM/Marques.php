@@ -15,6 +15,10 @@ class Marques extends AbstractFixture implements OrderedFixtureInterface{
       $marque = new Marque();
       $marque->setLibelleMar("Samsung");
       $manager->persist($marque);
+
+      $marque = new Marque();
+      $marque->setLibelleMar("");
+      $manager->persist($marque);
       
       $marque = new Marque();
       $marque->setLibelleMar("HTC");
