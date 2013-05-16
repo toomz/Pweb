@@ -61,4 +61,9 @@ class Marque
     {
         return $this->libelleMar;
     }
+
+    public function __toString()
+    {
+      return $this->getLibelleMar();
+    }
 }

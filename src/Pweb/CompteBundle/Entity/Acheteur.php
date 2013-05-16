@@ -3,6 +3,7 @@
 namespace Pweb\CompteBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Pweb\UserBundle\Entity\User;
 
 /**
  * Acheteur
@@ -20,6 +21,12 @@ class Acheteur
      * @ORM\GeneratedValue(strategy="AUTO")
      */
     private $id;
+
+    /**
+     * @ORM\Column(type="string", length=255, unique=true)
+     * @ORM\OneToOne(targetEntity="Pweb\UserBundle\Entity\User", cascade={"persist"})
+     */
+    private $username;
 
     /**
      * @var string
@@ -240,5 +247,28 @@ class Acheteur
     public function getTelephone()
     {
         return $this->telephone;
+    }
+
+    /**
+     * Set username
+     *
+     * @param string $username
+     * @return Acheteur
+     */
+    public function setUsername($username)
+    {
+        $this->username = $username;
+    
+        return $this;
+    }
+
+    /**
+     * Get username
+     *
+     * @return string 
+     */
+    public function getUsername()
+    {
+        return $this->username;
     }
 }

@@ -7,7 +7,6 @@ use Doctrine\Common\DataFixtures\OrderedFixtureInterface;
 use Doctrine\Common\DataFixtures\FixtureInterface;
 use Doctrine\Common\Persistence\ObjectManager;
 use Pweb\AccueilBundle\Entity\Produit; 
-use Pweb\AccueilBundle\Entity\Image; 
 use Pweb\AccueilBundle\Entity\Categorie; 
 
 class Produits extends AbstractFixture implements OrderedFixtureInterface{
@@ -66,10 +65,6 @@ class Produits extends AbstractFixture implements OrderedFixtureInterface{
       $prod->setPrix(500);
       $prod->setPoids(500);
       $prod->setImage("/Pweb/images/ipad-5.png");
-      
-      $cat = $manager->getRepository("PwebAccueilBundle:Categorie")->findOneBy(array('libelleCat' => "tablette"));
-      $marque = $manager->getRepository("PwebAccueilBundle:Marque")->findOneBy(array('libelleMar' => "Apple"));
-      
 
       $cat = $manager->getRepository("PwebAccueilBundle:Categorie")->findOneBy(array('libelleCat' => "tablette"));
       $marque = $manager->getRepository("PwebAccueilBundle:Marque")->findOneBy(array('libelleMar' => "Apple"));
@@ -84,7 +79,7 @@ class Produits extends AbstractFixture implements OrderedFixtureInterface{
       $prod->setDescription("Une des dernières trouvailles d'HTC");
       $prod->setPrix(300);
       $prod->setPoids(143);
-      $prod->setImage("/Pweb/images/htc-one.png");
+      $prod->setImage("/Pweb/images/htc-one.jpg");
 
       $cat = $manager->getRepository("PwebAccueilBundle:Categorie")->findOneBy(array('libelleCat' => "smartphone"));
       $marque = $manager->getRepository("PwebAccueilBundle:Marque")->findOneBy(array('libelleMar' => "HTC"));

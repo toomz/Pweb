@@ -10,18 +10,54 @@ pweb_admin_util:
     pattern: /admin/utilisateur
     defaults: { _controller: PwebCompteBundle:Util:index }
 
+pweb_util_add:
+    pattern: /admin/utilisateur/ajout
+    defaults: { _controller: PwebCompteBundle:Util:add }
+
+pweb_util_remove:
+    pattern: /admin/utilisateur/suppression
+    defaults: { _controller: PwebCompteBundle:Util:remove }
+
 pweb_admin_cmd:
     pattern: /admin/commande
     defaults: { _controller: PwebCompteBundle:Cmd:index }
+
+pweb_cmd_modif:
+    pattern: /admin/commande/modification
+    defaults: { _controller: PwebCompteBundle:Cmd:modif }
 
 pweb_admin_prod:
     pattern: /admin/produit
     defaults: { _controller: PwebCompteBundle:Prod:index }
 
 pweb_prod_add:
-    pattern: /admin/produit/add
+    pattern: /admin/produit/ajout
     defaults: { _controller: PwebCompteBundle:Prod:add }
 
 pweb_prod_remove:
-    pattern: /admin/produit/remove
+    pattern: /admin/produit/suppression
     defaults: { _controller: PwebCompteBundle:Prod:remove }
+
+pweb_admin_cat:
+    pattern: /admin/categorie
+    defaults: { _controller: PwebCompteBundle:Cat:index }
+
+pweb_cat_add:
+    pattern: /admin/categorie/ajout
+    defaults: { _controller: PwebCompteBundle:Cat:add }
+
+pweb_cat_remove:
+    pattern: /admin/categorie/suppression
+    defaults: { _controller: PwebCompteBundle:Cat:remove }
+
+pweb_admin_mar:
+    pattern: /admin/marque
+    defaults: { _controller: PwebCompteBundle:Mar:index }
+
+pweb_mar_add:
+    pattern: /admin/marque/ajout
+    defaults: { _controller: PwebCompteBundle:Mar:add }
+
+pweb_mar_remove:
+    pattern: /admin/marque/suppression
+    defaults: { _controller: PwebCompteBundle:Mar:remove }
