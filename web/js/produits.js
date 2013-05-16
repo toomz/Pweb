@@ -4,11 +4,11 @@ $(document).ready(function(){
       window.open(this.src, this.alt);
   })
 
-//  $('.col_img > img').elevateZoom();   
+  $('.col_img > img').elevateZoom();   
   
   $('.btn_voir_prod').click(function(){
     var path = $(this).attr("data-path");
-    window.open(path);
+    window.open(path, "prod", "width=650, height=450");
   })
 
   $('.btn_ajout_prod').click(function(){
@@ -16,11 +16,8 @@ $(document).ready(function(){
   })
 
   $('select').change(function () {
-    //var str = "";
     $("select option:selected").each(function () {
-      $("#test").text($(this).val());
-      //str += $(this).val() + " ";
-      //str += $(this).text() + " ";
+      window.location.href = ($(this).val()); 
     });
   })
   
