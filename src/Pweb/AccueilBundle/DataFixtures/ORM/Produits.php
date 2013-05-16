@@ -21,6 +21,7 @@ class Produits extends AbstractFixture implements OrderedFixtureInterface{
       $prod->setPoids(132);
       $prod->setImage("/Pweb/images/samsung-galaxy-s3.png");
       
+      
       $cat = $manager->getRepository("PwebAccueilBundle:Categorie")->findOneBy(array('libelleCat' => "smartphone"));
       $marque = $manager->getRepository("PwebAccueilBundle:Marque")->findOneBy(array('libelleMar' => "Samsung"));
       

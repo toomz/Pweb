@@ -70,8 +70,8 @@ class Produit
 
     /**
      * @var \DateTime
-     *
-     * @ORM\Column(name="dateSortie", type="dateTime")
+     * 
+     * @ORM\Column(name="dateSortie", type="datetime", nullable=TRUE)
      */
     private $dateSortie;
 
