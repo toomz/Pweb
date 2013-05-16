@@ -215,6 +215,7 @@ div#col_gauche {
 div#col_prod {
 	float:right;
 	width: 88%;
+	overflow: hidden;
 }
 
 div.col_img {

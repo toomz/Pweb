@@ -8,8 +8,8 @@
     <div id="tri">
       <h4>Trier par :</h4>
       <select name="tri">
-        <option value="1">Prix croissant</option>
-        <option value="2">Prix decroissant</option>
+        <option value="{{ path('pweb_produits', {'tri': 1}) }}">Prix croissant</option>
+        <option value="{{ path('pweb_produits', {'tri': 2}) }}">Prix decroissant</option>
       </select>  
       <div id="test"></div>    
     </div>
