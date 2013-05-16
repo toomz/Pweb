@@ -236,7 +236,7 @@ class Produit
      */
     public function setDateSortie($date)
     {
-        $this->dateSortie = $prix;
+        $this->dateSortie = $date;
     
         return $this;
     }
