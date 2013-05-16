@@ -69,6 +69,13 @@ class Produit
     private $image;
 
     /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="dateSortie", type="dateTime")
+     */
+    private $dateSortie;
+
+    /**
      * Get id
      *
      * @return integer 
@@ -220,4 +227,28 @@ class Produit
     {
         return $this->libelleProd;
     }
+
+    /**
+     * Set dateSortie
+     *
+     * @param DateTime $date
+     * @return Produit
+     */
+    public function setDateSortie($date)
+    {
+        $this->dateSortie = $prix;
+    
+        return $this;
+    }
+
+    /**
+     * Get dateSortie
+     *
+     * @return DateTime 
+     */
+    public function getDateSortie()
+    {
+        return $this->dateSortie;
+    }
+
 }
