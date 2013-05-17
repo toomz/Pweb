@@ -8,21 +8,22 @@
     <div id="tri">
       <h4>Trier par :</h4>
       <select name="tri">
-        <option value="1">Prix croissant</option>
-        <option value="2">Prix decroissant</option>
+        <option selected="default">Trier par prix</option>
+        <option value="{{ path('tri_prod', {'id': 'plop','type': 'cr'}) }}">Prix croissant</option>
+        <option value="{{ path('tri_prod', {'id': 'plop', 'type': 'de'}) }}">Prix decroissant</option>
       </select>  
       <div id="test"></div>    
     </div>
     <div id="marques">
       <h4>Marques</h4>
       {% for m in marque %}
-          <ul class="choose_marq"> {{ m.libelleMar }}</ul>
+          <ul class="choose_marq"><a href="{{ path('tri_prod', {'id': m.id, 'type': 'mar'}) }}"> {{ m.libelleMar }}</a></ul>
       {% endfor %}      
     </div>
     <div id="categories">
       <h4>Catégories</h4>
       {% for c in cat %}
-          <ul class="choose_cat"> {{ c.libelleCat }}</ul>
+          <ul class="choose_cat"><a href="{{ path('tri_prod', {'id': c.id, 'type': 'cat'}) }}"> {{ c.libelleCat }}</a></ul>
       {% endfor %}      
     </div>
 
@@ -51,6 +52,9 @@
           <ol>
             <button type="button" class="btn_ajout_prod" style="background:url({{ asset('icons/Shopping_basket_add_Icon_32.png') }})"
                 {#data-path="{{ path('ajout_produit', {'idProd': p.id}) }}"#}/>
+          </ol>
+          <ol>
+            <p> Prix : {{ p.prix }} €</p>
           </ol>
         </li> 
       </ol>   

@@ -9,6 +9,7 @@
 
 		{% if is_granted('IS_AUTHENTICATED_REMEMBERED') %}
 			{# Données de l'utilisateur #}
+			<p>Bienvenue 
 			<p class="spec"><a href="{{ path('logout') }}">Déconnexion</a></p>
 		{% else %}
 			<p class="spec"><a href="{{ path('login') }}">Connexion</a></p>

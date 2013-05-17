@@ -14,3 +14,6 @@ info_produits:
     pattern: /Produits/info_produits/{idProd}
     defaults: { _controller: PwebAccueilBundle:Produits:showInfo }
 
+tri_prod:
+    pattern: /Produits/tri/{id}/{type}
+    defaults: { _controller: PwebAccueilBundle:Produits:tri }

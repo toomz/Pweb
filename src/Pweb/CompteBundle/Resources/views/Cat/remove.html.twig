@@ -1,0 +1,35 @@
+{% extends 'PwebCompteBundle:Admin:index.html.twig' %}
+
+{% block title %}
+	Admin - Catégories - Supprimer
+{% endblock %}
+
+{% block bodyadmin %}
+
+	<br/>
+	<div class="liste_choix2">
+		<ul>
+			<li><a href="{{ path('pweb_cat_add') }}">Ajouter une catégorie</a></li>
+			<li><a href="{{ path('pweb_cat_remove') }}">Supprimer une catégorie</a></li>
+			<li><a href="{{ path('pweb_admin_cat') }}">Voir toutes les catégories</a></li>
+		</ul>
+	</div>
+	<br/><br/>
+
+	{% if error != '' %}
+		<p>{{ error }}</p>
+	{% endif %}
+
+	{% if success != '' %}
+		<p>{{ success }}</p>
+	{% endif %}
+
+	<div class="texte">
+		<form method="post" {{ form_enctype(form) }} class="form">
+	    	{{ form_errors(form) }}
+	    	{{ form_rest(form) }}
+	    	<input type="submit" value="Supprimer" />
+		</form>
+	</div>
+
+{% endblock %}
