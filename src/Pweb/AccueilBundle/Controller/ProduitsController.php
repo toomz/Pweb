@@ -10,9 +10,9 @@ class ProduitsController extends Controller
 	public function indexAction()
   	{
 	    $em = $this->getDoctrine()->getEntityManager();
-	    
+	    // Récupère tous les produits dans l'ordre croissant sur le libelle
 		$prod = $em->getRepository("PwebAccueilBundle:Produit")->findBy(array(), array('libelleProd'=>'asc'));
-
+		// Récupère toutes les marques et les catégories, triées par ordre croissasnt
 	    $marques = $em->getRepository('PwebAccueilBundle:Marque')->findBy(array(), array('libelleMar'=>'asc'));
 	    $cat = $em->getRepository("PwebAccueilBundle:Categorie")->findBy(array(), array('libelleCat'=>'asc'));
 
@@ -22,6 +22,7 @@ class ProduitsController extends Controller
 	public function showInfoAction($idProd)
 	{
 		$em = $this->getDoctrine()->getEntityManager();
+		// Récupère le produit dont on donne l'id
 		$prod = $em->getRepository("PwebAccueilBundle:Produit")->findOneBy(array('id' => $idProd));
 
 		return $this->render('PwebAccueilBundle:Produits:show.html.twig', array('prod' => $prod));

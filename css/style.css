@@ -128,9 +128,6 @@ p {
 
 .texte img {
 	position: relative;	
-	/* 450*859*/
-	width: 95px; 
-	height:180px;
 	float: left;
     display: block;
 }
@@ -237,12 +234,13 @@ div#col_prod {
     border: 1px solid black;
 }
 
+
 li, ol {
-        display: block;
-        float: left;
-        margin: 0;
-        padding: 0;
-        width:18%;
+	display: block;
+    float: left;
+    margin: 0;
+    padding: 0;
+    width:18%;
 }
 
 ol li {

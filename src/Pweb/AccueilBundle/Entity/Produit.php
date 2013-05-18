@@ -64,6 +64,13 @@ class Produit
     /**
      * @var string
      *
+     * @ORM\Column(name="imageMin", type="string", length=255)
+     */
+    private $imageMin;
+
+    /**
+     * @var string
+     *
      * @ORM\Column(name="image", type="string", length=255)
      */
     private $image;
@@ -171,6 +178,25 @@ class Produit
     public function getImage()
     {
       return $this->image;
+    }
+
+    /**
+    * @param string $url
+    * @return Produit
+    */
+    public function setImageMin($url)
+    {
+      $this->imageMin = $url;
+      
+      return $this;
+    }
+
+    /**
+    * @return string
+    */
+    public function getImageMin()
+    {
+      return $this->imageMin;
     }
     
     /**

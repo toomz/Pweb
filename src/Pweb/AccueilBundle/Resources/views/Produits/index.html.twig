@@ -38,9 +38,9 @@
 
       {% for p in prod %}
       <ol id="{{ p.id }}">
-        <li>
+        <li class="test">
           <ol>
-            <img src="{{ p.image }}" alt="{{ p.libelleProd }}" class="img_prod"/>
+            <img src="{{ p.imageMin }}" alt="{{ p.libelleProd }}" class="img_prod"/>
           </ol>
           <ol>
             <p>{{ p.libelleProd }}</p>
@@ -50,8 +50,7 @@
                 data-path="{{ path('info_produits', {'idProd': p.id}) }}"/>
           </ol>
           <ol>
-            <button type="button" class="btn_ajout_prod" style="background:url({{ asset('icons/Shopping_basket_add_Icon_32.png') }})"
-                {#data-path="{{ path('ajout_produit', {'idProd': p.id}) }}"#}/>
+            <button type="button" class="btn_ajout_prod" style="background:url({{ asset('icons/Shopping_basket_add_Icon_32.png') }})" {#data-path="{{ path('ajout_produit', {'idProd': p.id}) }}"#}/>
           </ol>
           <ol>
             <p> Prix : {{ p.prix }} €</p>
