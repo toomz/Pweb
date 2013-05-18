@@ -119,7 +119,7 @@ p {
 }
 
 .texte {
-	height:30em;
+	height:50em;
 	overflow-y:scroll;
 	overflow-x:hidden;
 	margin:0;
@@ -216,11 +216,12 @@ div#col_gauche {
 	padding-left: 0.7%;
     width: 11%;
     background: #DCDCDC ;
+    border: 1px solid black;
 }
 
 div#col_prod {
 	float:right;
-	width: 88%;
+	width: 85%;
 }
 
 #lean_overlay {
@@ -238,6 +239,9 @@ div#col_prod {
     border: 1px solid black;
 }
 
+.test {
+	height:25em;
+}
 
 .liste_prod li, ol {
 	display: block;
@@ -245,6 +249,7 @@ div#col_prod {
     margin: 0;
     padding: 0;
     width:18%;
+    padding-bottom: 7px;
 }
 
 .liste_prod ol li {

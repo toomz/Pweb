@@ -23,5 +23,14 @@ $(document).ready(function(){
   })
 
   //$('.col_img > img').imageLens();
+  $('.img_prod').click(function(){
+    
+  })
   
 })
+
+/* $('.img_prod').animate({
+      opacity : 0.4
+    },'slow','linear');
+    });
+    */
