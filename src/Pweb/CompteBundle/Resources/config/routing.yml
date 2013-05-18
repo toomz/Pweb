@@ -23,7 +23,7 @@ pweb_admin_cmd:
     defaults: { _controller: PwebCompteBundle:Cmd:index }
 
 pweb_cmd_modif:
-    pattern: /admin/commande/modification
+    pattern: /admin/commande/modification/{id}
     defaults: { _controller: PwebCompteBundle:Cmd:modif }
 
 pweb_admin_prod:

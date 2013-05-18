@@ -61,4 +61,9 @@ class StatutCom
     {
         return $this->libelleStat;
     }
+    
+    public function __toString()
+    {
+      return $this->getLibelleStat();
+    }
 }

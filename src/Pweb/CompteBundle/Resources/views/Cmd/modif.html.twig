@@ -9,12 +9,29 @@
 	<br/>
 	<div class="liste_choix2">
 		<ul>
-			<li><a href="{{ path('pweb_cmd_modif') }}">Modifier une commande</a></li>
 			<li><a href="{{ path('pweb_admin_cmd') }}">Voir les commandes</a></li>
 		</ul>
 	</div>
 	<br/><br/>
+	
+	{% if error != '' %}
+		<p>{{ error }}</p>
+	{% endif %}
 
-	modifier le statut d'une commande
+	{% if success != '' %}
+		<p>{{ success }}</p>
+	{% endif %}
+
+	<div class="texte">
+		<form method="post" {{ form_enctype(form) }}>
+			    {{ form_errors(form) }}
+
+			    {{ form_row(form.id) }}
+			    {{ form_row(form.statut) }}
+
+			    {{ form_rest(form) }}
+			    <input type="submit" value="Envoyer" />
+		</form>	
+	</div>
 	
 {% endblock %}
