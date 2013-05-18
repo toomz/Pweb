@@ -62,10 +62,25 @@ class Produit
     private $poids;
 
     /**
-     * @ORM\OneToOne(targetEntity="Pweb\AccueilBundle\Entity\Image", cascade={"persist"})
-     * @ORM\JoinColumn(nullable=false)
+     * @var string
+     *
+     * @ORM\Column(name="imageMin", type="string", length=255)
+     */
+    private $imageMin;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="image", type="string", length=255)
      */
     private $image;
+
+    /**
+     * @var \DateTime
+     * 
+     * @ORM\Column(name="dateSortie", type="datetime", nullable=TRUE)
+     */
+    private $dateSortie;
 
     /**
      * Get id
@@ -75,29 +90,6 @@ class Produit
     public function getId()
     {
         return $this->id;
-    }
-
-    /**
-     * Set libelle
-     *
-     * @param string $libelle
-     * @return Produit
-     */
-    public function setLibelle($libelle)
-    {
-        $this->libelle = $libelle;
-    
-        return $this;
-    }
-
-    /**
-     * Get libelle
-     *
-     * @return string 
-     */
-    public function getLibelle()
-    {
-        return $this->libelle;
     }
 
     /**
@@ -170,19 +162,41 @@ class Produit
     }
     
     /**
-    * @param \Pweb\AccueilBundle\Entity\Image $image
+    * @param string $url
+    * @return Produit
     */
-    public function setImage(\Pweb\AccueilBundle\Entity\Image $image)
+    public function setImage($url)
     {
-      $this->image = $image;
+      $this->image = $url;
+      
+      return $this;
     }
 
     /**
-    * @return \Pweb\AccueilBundle\Entity\Image
+    * @return string
     */
     public function getImage()
     {
       return $this->image;
+    }
+
+    /**
+    * @param string $url
+    * @return Produit
+    */
+    public function setImageMin($url)
+    {
+      $this->imageMin = $url;
+      
+      return $this;
+    }
+
+    /**
+    * @return string
+    */
+    public function getImageMin()
+    {
+      return $this->imageMin;
     }
     
     /**
@@ -216,4 +230,51 @@ class Produit
     {
       return $this->marque;
     }
+
+    /**
+     * Set libelleProd
+     *
+     * @param string $libelleProd
+     * @return Produit
+     */
+    public function setLibelleProd($libelleProd)
+    {
+        $this->libelleProd = $libelleProd;
+    
+        return $this;
+    }
+
+    /**
+     * Get libelleProd
+     *
+     * @return string 
+     */
+    public function getLibelleProd()
+    {
+        return $this->libelleProd;
+    }
+
+    /**
+     * Set dateSortie
+     *
+     * @param DateTime $date
+     * @return Produit
+     */
+    public function setDateSortie($date)
+    {
+        $this->dateSortie = $date;
+    
+        return $this;
+    }
+
+    /**
+     * Get dateSortie
+     *
+     * @return DateTime 
+     */
+    public function getDateSortie()
+    {
+        return $this->dateSortie;
+    }
+
 }
