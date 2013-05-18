@@ -33,14 +33,16 @@
 	
   	<h3>Vous êtes dans la section des produits</h3>
     <h4>C'est ici que vos petits yeux vont briller de mille feux</h4>
-    
+      
     <div class="liste_prod">
 
       {% for p in prod %}
       <ol id="{{ p.id }}">
         <li class="test">
           <ol>
-            <img src="{{ p.imageMin }}" alt="{{ p.libelleProd }}" class="img_prod"/>
+            <div class="popup">
+              <img src="{{ p.imageMin }}" alt="{{ p.libelleProd }}" class="img_prod"/>
+            </div>
           </ol>
           <ol>
             <p>{{ p.libelleProd }}</p>

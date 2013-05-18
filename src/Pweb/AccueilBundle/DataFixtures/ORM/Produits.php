@@ -115,14 +115,14 @@ class Produits extends AbstractFixture implements OrderedFixtureInterface{
       $prod->setMarque($marque);
       $manager->persist($prod);      
            
-     /**************************************************************/
+     /**************************************************************
       $prod = new Produit();
       $prod->setLibelleProd("iPhone 4S");
       $prod->setDescription("Une des trouvailles d'Apple");
       $prod->setPrix(450);
       $prod->setPoids(140);
-      $prod->setImageMin("/Pweb/images/iphone-4s-min.jpg");
-      $prod->setImage("/Pweb/images/iphone-4s.jpg");
+      $prod->setImageMin("/Pweb/images/iphone-4s-min.png");
+      $prod->setImage("/Pweb/images/iphone-4s.png");
       $prod->setDateSortie(new \DateTime('02-04-2012'));
 
       $cat = $manager->getRepository("PwebAccueilBundle:Categorie")->findOneBy(array('libelleCat' => "smartphone"));
@@ -138,8 +138,8 @@ class Produits extends AbstractFixture implements OrderedFixtureInterface{
       $prod->setDescription("Une des dernière trouvailles de Samsung");
       $prod->setPrix(650);
       $prod->setPoids(130);
-      $prod->setImageMin("/Pweb/images/samsung-galaxy-s4-min.jpg");
-      $prod->setImage("/Pweb/images/samsung-galaxy-s4.jpg");
+      $prod->setImageMin("/Pweb/images/samsung-galaxy-s4-min.png");
+      $prod->setImage("/Pweb/images/samsung-galaxy-s4.png");
       $prod->setDateSortie(new \DateTime('02-04-2012'));
 
       $cat = $manager->getRepository("PwebAccueilBundle:Categorie")->findOneBy(array('libelleCat' => "smartphone"));
@@ -155,8 +155,8 @@ class Produits extends AbstractFixture implements OrderedFixtureInterface{
       $prod->setDescription("Une des trouvailles de Samsung");
       $prod->setPrix(530);
       $prod->setPoids(177);
-      $prod->setImageMin("/Pweb/images/samsung-galaxy-note-2-min.jpg");
-      $prod->setImage("/Pweb/images/samsung-galaxy-note-2.jpg");
+      $prod->setImageMin("/Pweb/images/samsung-galaxy-note-2-min.png");
+      $prod->setImage("/Pweb/images/samsung-galaxy-note-2.png");
       $prod->setDateSortie(new \DateTime('02-04-2012'));
 
       $cat = $manager->getRepository("PwebAccueilBundle:Categorie")->findOneBy(array('libelleCat' => "smartphone"));
@@ -166,14 +166,14 @@ class Produits extends AbstractFixture implements OrderedFixtureInterface{
       $prod->setMarque($marque);
       $manager->persist($prod);      
        
-     /**************************************************************/
+     /**************************************************************
       $prod = new Produit();
       $prod->setLibelleProd("Samsung Galaxy S3 Mini");
       $prod->setDescription("Une des trouvailles de Samsung");
       $prod->setPrix(270);
       $prod->setPoids(120);
-      $prod->setImageMin("/Pweb/images/samsung-galaxy-s3-mini-min.jpg");
-      $prod->setImage("/Pweb/images/samsung-galaxy-s3-mini.jpg");
+      $prod->setImageMin("/Pweb/images/samsung-galaxy-s3-mini-min.png");
+      $prod->setImage("/Pweb/images/samsung-galaxy-s3-mini.png");
       $prod->setDateSortie(new \DateTime('02-04-2012'));
 
       $cat = $manager->getRepository("PwebAccueilBundle:Categorie")->findOneBy(array('libelleCat' => "smartphone"));
@@ -189,8 +189,8 @@ class Produits extends AbstractFixture implements OrderedFixtureInterface{
       $prod->setDescription("Une des trouvailles de Samsung");
       $prod->setPrix(170);
       $prod->setPoids(113);
-      $prod->setImageMin("/Pweb/images/samsung-galaxy-ace-min.jpg");
-      $prod->setImage("/Pweb/images/samsung-galaxy-ace.jpg");
+      $prod->setImageMin("/Pweb/images/samsung-galaxy-ace-min.png");
+      $prod->setImage("/Pweb/images/samsung-galaxy-ace.png");
       $prod->setDateSortie(new \DateTime('02-04-2012'));
 
       $cat = $manager->getRepository("PwebAccueilBundle:Categorie")->findOneBy(array('libelleCat' => "smartphone"));
@@ -206,8 +206,8 @@ class Produits extends AbstractFixture implements OrderedFixtureInterface{
       $prod->setDescription("Une des trouvailles de Samsung");
       $prod->setPrix(100);
       $prod->setPoids(99);
-      $prod->setImageMin("/Pweb/images/samsung-galaxy-y-min.jpg");
-      $prod->setImage("/Pweb/images/samsung-galaxy-y.jpg");
+      $prod->setImageMin("/Pweb/images/samsung-galaxy-y-min.png");
+      $prod->setImage("/Pweb/images/samsung-galaxy-y.png");
       $prod->setDateSortie(new \DateTime('02-04-2012'));
 
       $cat = $manager->getRepository("PwebAccueilBundle:Categorie")->findOneBy(array('libelleCat' => "smartphone"));
@@ -217,14 +217,14 @@ class Produits extends AbstractFixture implements OrderedFixtureInterface{
       $prod->setMarque($marque);
       $manager->persist($prod);      
        
-     /**************************************************************/
+     /**************************************************************
       $prod = new Produit();
       $prod->setLibelleProd("LG Optimus L9");
       $prod->setDescription("Une des trouvailles de LG");
       $prod->setPrix(260);
       $prod->setPoids(125);
-      $prod->setImageMin("/Pweb/images/lg-optimus-l9-min.jpg");
-      $prod->setImage("/Pweb/images/lg-optimus-l9.jpg");
+      $prod->setImageMin("/Pweb/images/lg-optimus-l9-min.png");
+      $prod->setImage("/Pweb/images/lg-optimus-l9.png");
       $prod->setDateSortie(new \DateTime('02-04-2012'));
 
       $cat = $manager->getRepository("PwebAccueilBundle:Categorie")->findOneBy(array('libelleCat' => "smartphone"));
@@ -234,14 +234,14 @@ class Produits extends AbstractFixture implements OrderedFixtureInterface{
       $prod->setMarque($marque);
       $manager->persist($prod);    
 
-      /**************************************************************/
+      /**************************************************************
       $prod = new Produit();
       $prod->setLibelleProd("LG Optimus L5 2");
       $prod->setDescription("Une des trouvailles de LG");
       $prod->setPrix(170);
       $prod->setPoids(110);
-      $prod->setImageMin("/Pweb/images/lg-optimus-l5-2-min.jpg");
-      $prod->setImage("/Pweb/images/lg-optimus-l5-2.jpg");
+      $prod->setImageMin("/Pweb/images/lg-optimus-l5-2-min.png");
+      $prod->setImage("/Pweb/images/lg-optimus-l5-2.png");
       $prod->setDateSortie(new \DateTime('02-04-2012'));
 
       $cat = $manager->getRepository("PwebAccueilBundle:Categorie")->findOneBy(array('libelleCat' => "smartphone"));
@@ -257,8 +257,8 @@ class Produits extends AbstractFixture implements OrderedFixtureInterface{
       $prod->setDescription("Une des trouvailles de Nokia");
       $prod->setPrix(200);
       $prod->setPoids(127);
-      $prod->setImageMin("/Pweb/images/nokia-lumia-620-min.jpg");
-      $prod->setImage("/Pweb/images/nokia-lumia-620.jpg");
+      $prod->setImageMin("/Pweb/images/nokia-lumia-620-min.png");
+      $prod->setImage("/Pweb/images/nokia-lumia-620.png");
       $prod->setDateSortie(new \DateTime('02-04-2012'));
 
       $cat = $manager->getRepository("PwebAccueilBundle:Categorie")->findOneBy(array('libelleCat' => "smartphone"));
@@ -274,8 +274,8 @@ class Produits extends AbstractFixture implements OrderedFixtureInterface{
       $prod->setDescription("Une des trouvailles de Sony");
       $prod->setPrix(170);
       $prod->setPoids(110);
-      $prod->setImageMin("/Pweb/images/sony-xperia-u-min.jpg");
-      $prod->setImage("/Pweb/images/sony-xperia-u.jpg");
+      $prod->setImageMin("/Pweb/images/sony-xperia-u-min.png");
+      $prod->setImage("/Pweb/images/sony-xperia-u.png");
       $prod->setDateSortie(new \DateTime('02-04-2012'));
 
       $cat = $manager->getRepository("PwebAccueilBundle:Categorie")->findOneBy(array('libelleCat' => "smartphone"));
@@ -285,14 +285,14 @@ class Produits extends AbstractFixture implements OrderedFixtureInterface{
       $prod->setMarque($marque);
       $manager->persist($prod);    
                                           
-      /**************************************************************/
+      /**************************************************************
       $prod = new Produit();
       $prod->setLibelleProd("Blackberry Curve 9320");
       $prod->setDescription("Une des trouvailles de Blackberry");
       $prod->setPrix(170);
       $prod->setPoids(103);
-      $prod->setImageMin("/Pweb/images/blackberry-curve-9320-min.jpg");
-      $prod->setImage("/Pweb/images/blackberry-curve-9320.jpg");
+      $prod->setImageMin("/Pweb/images/blackberry-curve-9320-min.png");
+      $prod->setImage("/Pweb/images/blackberry-curve-9320.png");
       $prod->setDateSortie(new \DateTime('02-04-2012'));
 
       $cat = $manager->getRepository("PwebAccueilBundle:Categorie")->findOneBy(array('libelleCat' => "smartphone"));
@@ -308,8 +308,8 @@ class Produits extends AbstractFixture implements OrderedFixtureInterface{
       $prod->setDescription("Une des trouvailles de Alcatel");
       $prod->setPrix(220);
       $prod->setPoids(143);
-      $prod->setImageMin("/Pweb/images/alcatel-one-touch-997-d-min.jpg");
-      $prod->setImage("/Pweb/images/alcatel-one-touch-997-d.jpg");
+      $prod->setImageMin("/Pweb/images/alcatel-one-touch-997-d-min.png");
+      $prod->setImage("/Pweb/images/alcatel-one-touch-997-d.png");
       $prod->setDateSortie(new \DateTime('02-04-2012'));
 
       $cat = $manager->getRepository("PwebAccueilBundle:Categorie")->findOneBy(array('libelleCat' => "smartphone"));
@@ -325,8 +325,8 @@ class Produits extends AbstractFixture implements OrderedFixtureInterface{
       $prod->setDescription("Une des trouvailles de Sony");
       $prod->setPrix(350);
       $prod->setPoids(144);
-      $prod->setImageMin("/Pweb/images/sony-xperia-s-min.jpg");
-      $prod->setImage("/Pweb/images/sony-xperia-s.jpg");
+      $prod->setImageMin("/Pweb/images/sony-xperia-s-min.png");
+      $prod->setImage("/Pweb/images/sony-xperia-s.png");
       $prod->setDateSortie(new \DateTime('02-04-2012'));
 
       $cat = $manager->getRepository("PwebAccueilBundle:Categorie")->findOneBy(array('libelleCat' => "smartphone"));
@@ -342,8 +342,8 @@ class Produits extends AbstractFixture implements OrderedFixtureInterface{
       $prod->setDescription("Une des trouvailles d'Apple");
       $prod->setPrix(650);
       $prod->setPoids(112);
-      $prod->setImageMin("/Pweb/images/iphone-5-min.jpeg");
-      $prod->setImage("/Pweb/images/iphone-5.jpeg");
+      $prod->setImageMin("/Pweb/images/iphone-5-min.png");
+      $prod->setImage("/Pweb/images/iphone-5.png");
       $prod->setDateSortie(new \DateTime('02-04-2012'));
 
       $cat = $manager->getRepository("PwebAccueilBundle:Categorie")->findOneBy(array('libelleCat' => "smartphone"));
@@ -359,8 +359,8 @@ class Produits extends AbstractFixture implements OrderedFixtureInterface{
       $prod->setDescription("Une des trouvailles de Sony");
       $prod->setPrix(350);
       $prod->setPoids(139);
-      $prod->setImageMin("/Pweb/images/sony-xperia-t-min.jpg");
-      $prod->setImage("/Pweb/images/sony-xperia-t.jpg");
+      $prod->setImageMin("/Pweb/images/sony-xperia-t-min.png");
+      $prod->setImage("/Pweb/images/sony-xperia-t.png");
       $prod->setDateSortie(new \DateTime('02-04-2012'));
 
       $cat = $manager->getRepository("PwebAccueilBundle:Categorie")->findOneBy(array('libelleCat' => "smartphone"));
@@ -376,8 +376,8 @@ class Produits extends AbstractFixture implements OrderedFixtureInterface{
       $prod->setDescription("Une des trouvailles de Sony");
       $prod->setPrix(270);
       $prod->setPoids(120);
-      $prod->setImageMin("/Pweb/images/sony-xperia-p-min.jpg");
-      $prod->setImage("/Pweb/images/sony-xperia-p.jpg");
+      $prod->setImageMin("/Pweb/images/sony-xperia-p-min.png");
+      $prod->setImage("/Pweb/images/sony-xperia-p.png");
       $prod->setDateSortie(new \DateTime('02-04-2012'));
 
       $cat = $manager->getRepository("PwebAccueilBundle:Categorie")->findOneBy(array('libelleCat' => "smartphone"));
@@ -393,8 +393,8 @@ class Produits extends AbstractFixture implements OrderedFixtureInterface{
       $prod->setDescription("Une des trouvailles de LG");
       $prod->setPrix(210);
       $prod->setPoids(120);
-      $prod->setImageMin("/Pweb/images/lg-optimus-l7-min.jpg");
-      $prod->setImage("/Pweb/images/lg-optimus-l7.jpg");
+      $prod->setImageMin("/Pweb/images/lg-optimus-l7-min.png");
+      $prod->setImage("/Pweb/images/lg-optimus-l7.png");
       $prod->setDateSortie(new \DateTime('02-04-2012'));
 
       $cat = $manager->getRepository("PwebAccueilBundle:Categorie")->findOneBy(array('libelleCat' => "smartphone"));
@@ -410,8 +410,8 @@ class Produits extends AbstractFixture implements OrderedFixtureInterface{
       $prod->setDescription("résiste aux conditions les plus extrêmes");
       $prod->setPrix(350);
       $prod->setPoids(201);
-      $prod->setImageMin("/Pweb/images/caterpillar-cat-b10-min.jpg");
-      $prod->setImage("/Pweb/images/caterpillar-cat-b10.jpg");
+      $prod->setImageMin("/Pweb/images/caterpillar-cat-b10-min.png");
+      $prod->setImage("/Pweb/images/caterpillar-cat-b10.png");
       $prod->setDateSortie(new \DateTime('02-04-2012'));
 
       $cat = $manager->getRepository("PwebAccueilBundle:Categorie")->findOneBy(array('libelleCat' => "smartphone"));
@@ -427,8 +427,8 @@ class Produits extends AbstractFixture implements OrderedFixtureInterface{
       $prod->setDescription("Une des trouvailles de Huawei");
       $prod->setPrix(390);
       $prod->setPoids(198);
-      $prod->setImageMin("/Pweb/images/huawei-ascend-mate-min.jpg");
-      $prod->setImage("/Pweb/images/huawei-ascend-mate.jpg");
+      $prod->setImageMin("/Pweb/images/huawei-ascend-mate-min.png");
+      $prod->setImage("/Pweb/images/huawei-ascend-mate.png");
       $prod->setDateSortie(new \DateTime('02-04-2012'));
 
       $cat = $manager->getRepository("PwebAccueilBundle:Categorie")->findOneBy(array('libelleCat' => "smartphone"));
@@ -438,14 +438,14 @@ class Produits extends AbstractFixture implements OrderedFixtureInterface{
       $prod->setMarque($marque);
       $manager->persist($prod);    
                                           
-      /**************************************************************/
+      /**************************************************************
       $prod = new Produit();
       $prod->setLibelleProd("Acer Liquid E1");
       $prod->setDescription("Une des trouvailles d'Acer");
       $prod->setPrix(160);
       $prod->setPoids(130);
-      $prod->setImageMin("/Pweb/images/acer-liquid-e1-min.jpg");
-      $prod->setImage("/Pweb/images/acer-liquid-e1.jpg");
+      $prod->setImageMin("/Pweb/images/acer-liquid-e1-min.png");
+      $prod->setImage("/Pweb/images/acer-liquid-e1.png");
       $prod->setDateSortie(new \DateTime('02-04-2012'));
 
       $cat = $manager->getRepository("PwebAccueilBundle:Categorie")->findOneBy(array('libelleCat' => "smartphone"));
@@ -455,14 +455,14 @@ class Produits extends AbstractFixture implements OrderedFixtureInterface{
       $prod->setMarque($marque);
       $manager->persist($prod);    
                                           
-      /**************************************************************/
+      /**************************************************************
       $prod = new Produit();
       $prod->setLibelleProd("Alcatel One Touch Tab T20");
       $prod->setDescription("Une des trouvailles de Alcatel");
       $prod->setPrix(180);
       $prod->setPoids(739);
-      $prod->setImageMin("/Pweb/images/alcatel-one-touch-tab-t20-min.jpg");
-      $prod->setImage("/Pweb/images/alcatel-one-touch-tab-t20.jpg");
+      $prod->setImageMin("/Pweb/images/alcatel-one-touch-tab-t20-min.png");
+      $prod->setImage("/Pweb/images/alcatel-one-touch-tab-t20.png");
       $prod->setDateSortie(new \DateTime('02-04-2012'));
 
       $cat = $manager->getRepository("PwebAccueilBundle:Categorie")->findOneBy(array('libelleCat' => "tablette"));
@@ -472,14 +472,14 @@ class Produits extends AbstractFixture implements OrderedFixtureInterface{
       $prod->setMarque($marque);
       $manager->persist($prod);    
       
-      /**************************************************************/
+      /**************************************************************
       $prod = new Produit();
       $prod->setLibelleProd("Archos 80 Cobalt");
       $prod->setDescription("Une des trouvailles d'Arcos");
       $prod->setPrix(150);
       $prod->setPoids(470);
-      $prod->setImageMin("/Pweb/images/archos-80-cobalt-min.jpg");
-      $prod->setImage("/Pweb/images/archos-80-cobalt.jpg");
+      $prod->setImageMin("/Pweb/images/archos-80-cobalt-min.png");
+      $prod->setImage("/Pweb/images/archos-80-cobalt.png");
       $prod->setDateSortie(new \DateTime('02-04-2012'));
 
       $cat = $manager->getRepository("PwebAccueilBundle:Categorie")->findOneBy(array('libelleCat' => "tablette"));
@@ -489,7 +489,7 @@ class Produits extends AbstractFixture implements OrderedFixtureInterface{
       $prod->setMarque($marque);
       $manager->persist($prod);    
       
-      /**************************************************************/
+      /**************************************************************
       $prod = new Produit();
       $prod->setLibelleProd("HP Envy X2");
       $prod->setDescription("Une des trouvailles d'HP");
@@ -529,8 +529,8 @@ class Produits extends AbstractFixture implements OrderedFixtureInterface{
       $prod->setDescription("Une des trouvailles de Samsung");
       $prod->setPrix(350);
       $prod->setPoids(588);
-      $prod->setImageMin("/Pweb/images/samsung-galaxy-tab-2-10-1-min.jpg");
-      $prod->setImage("/Pweb/images/samsung-galaxy-tab-2-10-1.jpg");
+      $prod->setImageMin("/Pweb/images/samsung-galaxy-tab-2-10-1-min.png");
+      $prod->setImage("/Pweb/images/samsung-galaxy-tab-2-10-1.png");
       $prod->setDateSortie(new \DateTime('02-04-2012'));
 
       $cat = $manager->getRepository("PwebAccueilBundle:Categorie")->findOneBy(array('libelleCat' => "tablette"));
@@ -540,14 +540,14 @@ class Produits extends AbstractFixture implements OrderedFixtureInterface{
       $prod->setMarque($marque);
       $manager->persist($prod);    
       
-      /**************************************************************/
+      /*************************************************************
       $prod = new Produit();
       $prod->setLibelleProd("Acer Iconia W510");
       $prod->setDescription("Une des trouvailles d'Acer");
       $prod->setPrix(500);
       $prod->setPoids(580);
-      $prod->setImageMin("/Pweb/images/acer-iconia-w510-min.jpg");
-      $prod->setImage("/Pweb/images/acer-iconia-w510.jpg");
+      $prod->setImageMin("/Pweb/images/acer-iconia-w510-min.png");
+      $prod->setImage("/Pweb/images/acer-iconia-w510.png");
       $prod->setDateSortie(new \DateTime('02-04-2012'));
 
       $cat = $manager->getRepository("PwebAccueilBundle:Categorie")->findOneBy(array('libelleCat' => "tablette"));
@@ -557,14 +557,14 @@ class Produits extends AbstractFixture implements OrderedFixtureInterface{
       $prod->setMarque($marque);
       $manager->persist($prod);    
       
-      /**************************************************************/
+      /**************************************************************
       $prod = new Produit();
       $prod->setLibelleProd("Huawei MediaPad 10");
       $prod->setDescription("Une des trouvailles de Huawei");
       $prod->setPrix(450);
       $prod->setPoids(580);
-      $prod->setImageMin("/Pweb/images/huawei-mediapad-10-min.jpg");
-      $prod->setImage("/Pweb/images/huawei-mediapad-10.jpg");
+      $prod->setImageMin("/Pweb/images/huawei-mediapad-10-min.png");
+      $prod->setImage("/Pweb/images/huawei-mediapad-10.png");
       $prod->setDateSortie(new \DateTime('02-04-2012'));
 
       $cat = $manager->getRepository("PwebAccueilBundle:Categorie")->findOneBy(array('libelleCat' => "tablette"));
@@ -574,14 +574,14 @@ class Produits extends AbstractFixture implements OrderedFixtureInterface{
       $prod->setMarque($marque);
       $manager->persist($prod);    
       
-      /**************************************************************/
+      /**************************************************************
       $prod = new Produit();
       $prod->setLibelleProd("Asus Transformer Book");
       $prod->setDescription("Une des trouvailles d'Asus");
       $prod->setPrix(500);
       $prod->setPoids(580);
-      $prod->setImageMin("/Pweb/images/asus-transformer-book-min.jpeg");
-      $prod->setImage("/Pweb/images/asus-transformer-book.jpeg");
+      $prod->setImageMin("/Pweb/images/asus-transformer-book-min.png");
+      $prod->setImage("/Pweb/images/asus-transformer-book.png");
       $prod->setDateSortie(new \DateTime('02-04-2012'));
 
       $cat = $manager->getRepository("PwebAccueilBundle:Categorie")->findOneBy(array('libelleCat' => "tablette"));
@@ -591,14 +591,14 @@ class Produits extends AbstractFixture implements OrderedFixtureInterface{
       $prod->setMarque($marque);
       $manager->persist($prod);    
     
-      /**************************************************************/
+      /**************************************************************
       $prod = new Produit();
       $prod->setLibelleProd("HP Slate 7");
       $prod->setDescription("Une des trouvailles d'HP");
       $prod->setPrix(150);
       $prod->setPoids(370);
-      $prod->setImageMin("/Pweb/images/hp-slate-7-min.jpg");
-      $prod->setImage("/Pweb/images/hp-slate-7.jpg");
+      $prod->setImageMin("/Pweb/images/hp-slate-7-min.png");
+      $prod->setImage("/Pweb/images/hp-slate-7.png");
       $prod->setDateSortie(new \DateTime('02-04-2012'));
 
       $cat = $manager->getRepository("PwebAccueilBundle:Categorie")->findOneBy(array('libelleCat' => "tablette"));
@@ -614,8 +614,8 @@ class Produits extends AbstractFixture implements OrderedFixtureInterface{
       $prod->setDescription("Une des trouvailles d'Apple");
       $prod->setPrix(340);
       $prod->setPoids(308);
-      $prod->setImageMin("/Pweb/images/ipad-mini-min.jpg");
-      $prod->setImage("/Pweb/images/ipad-mini.jpg");
+      $prod->setImageMin("/Pweb/images/ipad-mini-min.png");
+      $prod->setImage("/Pweb/images/ipad-mini.png");
       $prod->setDateSortie(new \DateTime('02-04-2012'));
 
       $cat = $manager->getRepository("PwebAccueilBundle:Categorie")->findOneBy(array('libelleCat' => "tablette"));
@@ -625,14 +625,14 @@ class Produits extends AbstractFixture implements OrderedFixtureInterface{
       $prod->setMarque($marque);
       $manager->persist($prod);    
       
-      /**************************************************************/
+      /**************************************************************
       $prod = new Produit();
       $prod->setLibelleProd("Samsung Nexus 10");
       $prod->setDescription("Une des trouvailles de Samsung");
       $prod->setPrix(400);
       $prod->setPoids(603);
-      $prod->setImageMin("/Pweb/images/samsung-nexus-10-min.jpg");
-      $prod->setImage("/Pweb/images/samsung-nexus-10.jpg");
+      $prod->setImageMin("/Pweb/images/samsung-nexus-10-min.png");
+      $prod->setImage("/Pweb/images/samsung-nexus-10.png");
       $prod->setDateSortie(new \DateTime('02-04-2012'));
 
       $cat = $manager->getRepository("PwebAccueilBundle:Categorie")->findOneBy(array('libelleCat' => "tablette"));
@@ -642,14 +642,14 @@ class Produits extends AbstractFixture implements OrderedFixtureInterface{
       $prod->setMarque($marque);
       $manager->persist($prod);    
       
-      /**************************************************************/
+      /**************************************************************
       $prod = new Produit();
       $prod->setLibelleProd("Sony Xperia Tablet S");
       $prod->setDescription("Une des trouvailles de Sony");
       $prod->setPrix(400);
       $prod->setPoids(585);
-      $prod->setImageMin("/Pweb/images/sony-xperia-tablet-s-min.jpg");
-      $prod->setImage("/Pweb/images/sony-xperia-tablet-s.jpg");
+      $prod->setImageMin("/Pweb/images/sony-xperia-tablet-s-min.png");
+      $prod->setImage("/Pweb/images/sony-xperia-tablet-s.png");
       $prod->setDateSortie(new \DateTime('02-04-2012'));
 
       $cat = $manager->getRepository("PwebAccueilBundle:Categorie")->findOneBy(array('libelleCat' => "tablette"));
@@ -665,8 +665,8 @@ class Produits extends AbstractFixture implements OrderedFixtureInterface{
       $prod->setDescription("Une des trouvailles de Dell");
       $prod->setPrix(490);
       $prod->setPoids(635);
-      $prod->setImageMin("/Pweb/images/dell-xps-10-min.jpg");
-      $prod->setImage("/Pweb/images/dell-xps-10.jpg");
+      $prod->setImageMin("/Pweb/images/dell-xps-10-min.png");
+      $prod->setImage("/Pweb/images/dell-xps-10.png");
       $prod->setDateSortie(new \DateTime('02-04-2012'));
 
       $cat = $manager->getRepository("PwebAccueilBundle:Categorie")->findOneBy(array('libelleCat' => "tablette"));
@@ -682,8 +682,8 @@ class Produits extends AbstractFixture implements OrderedFixtureInterface{
       $prod->setDescription("Une des trouvailles d'Amazon");
       $prod->setPrix(280);
       $prod->setPoids(567);
-      $prod->setImageMin("/Pweb/images/kindle-fire-8-9-min.jpg");
-      $prod->setImage("/Pweb/images/kindle-fire-8-9.jpg");
+      $prod->setImageMin("/Pweb/images/kindle-fire-8-9-min.png");
+      $prod->setImage("/Pweb/images/kindle-fire-8-9.png");
       $prod->setDateSortie(new \DateTime('02-04-2012'));
 
       $cat = $manager->getRepository("PwebAccueilBundle:Categorie")->findOneBy(array('libelleCat' => "tablette"));
