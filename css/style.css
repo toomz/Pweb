@@ -223,23 +223,6 @@ div#col_prod {
 	float:right;
 	width: 85%;
 }
-/*
-div.popup {
-   height: 100px;
-   width: 100px;
-   }
-
-div.popup > img {
-   height: 100%;
-   width: 100%;
- }
-
-div.popup > img:active {
-   height: auto;
-   width: auto;
-   position: relative;
-}
-*/
 
 #lean_overlay {
     position: fixed;
@@ -256,6 +239,9 @@ div.popup > img:active {
     border: 1px solid black;
 }
 
+.test {
+	height:25em;
+}
 
 .liste_prod li, ol {
 	display: block;
@@ -263,6 +249,7 @@ div.popup > img:active {
     margin: 0;
     padding: 0;
     width:18%;
+    padding-bottom: 7px;
 }
 
 .liste_prod ol li {
