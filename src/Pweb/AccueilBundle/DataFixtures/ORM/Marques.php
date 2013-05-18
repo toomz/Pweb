@@ -17,7 +17,7 @@ class Marques extends AbstractFixture implements OrderedFixtureInterface{
       $manager->persist($marque);
 
       $marque = new Marque();
-      $marque->setLibelleMar("");
+      $marque->setLibelleMar("Sony");
       $manager->persist($marque);
       
       $marque = new Marque();
@@ -34,6 +34,50 @@ class Marques extends AbstractFixture implements OrderedFixtureInterface{
       
       $marque = new Marque();
       $marque->setLibelleMar("Sony Ericsson");
+      $manager->persist($marque);
+      
+      $marque = new Marque();
+      $marque->setLibelleMar("LG");
+      $manager->persist($marque);
+            
+      $marque = new Marque();
+      $marque->setLibelleMar("Caterpillar");
+      $manager->persist($marque);
+
+      $marque = new Marque();
+      $marque->setLibelleMar("Acer");
+      $manager->persist($marque);
+
+      $marque = new Marque();
+      $marque->setLibelleMar("Huawei");
+      $manager->persist($marque);
+
+      $marque = new Marque();
+      $marque->setLibelleMar("Alcatel");
+      $manager->persist($marque);
+      
+      $marque = new Marque();
+      $marque->setLibelleMar("Dell");
+      $manager->persist($marque);
+      
+      $marque = new Marque();
+      $marque->setLibelleMar("HP");
+      $manager->persist($marque);
+                    
+      $marque = new Marque();
+      $marque->setLibelleMar("Asus");
+      $manager->persist($marque);
+  
+      $marque = new Marque();
+      $marque->setLibelleMar("Amazon");
+      $manager->persist($marque);
+
+      $marque = new Marque();
+      $marque->setLibelleMar("Blackberry");
+      $manager->persist($marque);
+      
+      $marque = new Marque();
+      $marque->setLibelleMar("Archos");
       $manager->persist($marque);
       
       $manager->flush();
