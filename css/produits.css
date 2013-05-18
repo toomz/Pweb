@@ -2,12 +2,12 @@ div.col_img {
 	float: left;
 	width: 40%;
 }
-
+/*
 div.col_img img {
 	width:180px;
 	height: 360px;
 }
-
+*/
 div.col_desc {
 	float: right;
 	width: 58%;
