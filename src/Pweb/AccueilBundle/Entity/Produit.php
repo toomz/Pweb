@@ -64,14 +64,14 @@ class Produit
     /**
      * @var string
      *
-     * @ORM\Column(name="imageMin", type="string", length=255)
+     * @ORM\Column(name="imageMin", type="string", length=255, nullable=TRUE)
      */
     private $imageMin;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="image", type="string", length=255)
+     * @ORM\Column(name="image", type="string", length=255, nullable=TRUE)
      */
     private $image;
 

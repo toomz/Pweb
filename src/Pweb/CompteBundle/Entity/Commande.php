@@ -55,6 +55,19 @@ class Commande
     {
         return $this->id;
     }
+    
+    /**
+     * Set id
+     *
+     * @param integer $id
+     * @return Commande
+     */    
+    public function setId($id)
+    {
+        $this->id = $id;
+
+        return $this;
+    }
 
     /**
      * Set date
