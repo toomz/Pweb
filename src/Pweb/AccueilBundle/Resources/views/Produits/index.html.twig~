@@ -1,0 +1,32 @@
+{% extends '::base.html.twig' %}
+
+{% block title %} Les produits {% endblock %}
+
+{% block body %}
+	
+	<h3>Vous êtes dans la section des produits</h3>
+  <h4>C'est ici que vos petits yeux vont briller de mille feux</h4>
+
+  <div style="display:block;position:relative;">
+    <a><img onClick="images()" src="{{ prod.image.url }}" alt="{{ prod.image.alt }}"/img></a>
+  </div>
+  
+  {#
+  <div style="display:block;position:relative;">
+  <ul>
+  {% for p in prod %}
+
+        <a>
+          <img src="{{ p.image.url }}" alt="{{ p.image.alt }}" onClick="images()"/img>
+        </a>
+    
+  {% endfor %}
+  </ul>
+  </div>
+  #}
+{% endblock %}
+
+{% block javascripts %}
+	<script type="text/javascript" src="{{ asset('js/javascript.js') }}"></script>
+{% endblock %}
+
