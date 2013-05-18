@@ -83,7 +83,7 @@ class SecurityController extends Controller{
       
             return $this->render('PwebUserBundle:Security:inscription.html.twig',array(
               'form'=>$form->createView(),
-              'success'=>'Acheteur "'.$acheteur->getUsername().'" a été ajouté.',
+              'success'=>'Acheteur "'.$acheteur->getUsername().'" a été ajouté. Votre mot de passe vous a été envoyé par mail',
               'error'=>''
             ));       
           } 
