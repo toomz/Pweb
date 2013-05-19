@@ -30,7 +30,7 @@ class CommandeProds extends AbstractFixture implements OrderedFixtureInterface{
     
       $comProd->setCommande($com);
       $comProd->setProduit($prod);
-      $comProd->setQuantite(2);
+      $comProd->setQuantite(1);
       
       $manager->persist($comProd);
 
@@ -40,7 +40,7 @@ class CommandeProds extends AbstractFixture implements OrderedFixtureInterface{
     
       $comProd->setCommande($com);
       $comProd->setProduit($prod);
-      $comProd->setQuantite(2);
+      $comProd->setQuantite(3);
       
       $manager->persist($comProd);
 
@@ -60,7 +60,7 @@ class CommandeProds extends AbstractFixture implements OrderedFixtureInterface{
     
       $comProd->setCommande($com);
       $comProd->setProduit($prod);
-      $comProd->setQuantite(2);
+      $comProd->setQuantite(1);
       
       $manager->persist($comProd);
 
@@ -70,7 +70,7 @@ class CommandeProds extends AbstractFixture implements OrderedFixtureInterface{
     
       $comProd->setCommande($com);
       $comProd->setProduit($prod);
-      $comProd->setQuantite(2);
+      $comProd->setQuantite(1);
       
       $manager->persist($comProd);
 
