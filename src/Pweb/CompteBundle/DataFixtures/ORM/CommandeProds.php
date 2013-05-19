@@ -36,10 +36,40 @@ class CommandeProds extends AbstractFixture implements OrderedFixtureInterface{
 
       /** Ajout prod 2 **/
       $comProd = new CommandeProd();
-      $prod2 = $manager->getRepository("PwebAccueilBundle:Produit")->findOneBy(array('libelleProd' => "Ipad 5"));
+      $prod = $manager->getRepository("PwebAccueilBundle:Produit")->findOneBy(array('libelleProd' => "Ipad 5"));
     
       $comProd->setCommande($com);
-      $comProd->setProduit($prod2);
+      $comProd->setProduit($prod);
+      $comProd->setQuantite(2);
+      
+      $manager->persist($comProd);
+
+      /** Ajout prod 3 **/
+      $comProd = new CommandeProd();
+      $prod = $manager->getRepository("PwebAccueilBundle:Produit")->findOneBy(array('libelleProd' => "Acer Liquid E1"));
+    
+      $comProd->setCommande($com);
+      $comProd->setProduit($prod);
+      $comProd->setQuantite(2);
+      
+      $manager->persist($comProd);
+
+      /** Ajout prod 4 **/
+      $comProd = new CommandeProd();
+      $prod = $manager->getRepository("PwebAccueilBundle:Produit")->findOneBy(array('libelleProd' => "HP Slate 7"));
+    
+      $comProd->setCommande($com);
+      $comProd->setProduit($prod);
+      $comProd->setQuantite(2);
+      
+      $manager->persist($comProd);
+
+      /** Ajout prod 5 **/
+      $comProd = new CommandeProd();
+      $prod = $manager->getRepository("PwebAccueilBundle:Produit")->findOneBy(array('libelleProd' => "Samsung Galaxy Ace"));
+    
+      $comProd->setCommande($com);
+      $comProd->setProduit($prod);
       $comProd->setQuantite(2);
       
       $manager->persist($comProd);
@@ -67,10 +97,10 @@ class CommandeProds extends AbstractFixture implements OrderedFixtureInterface{
 
       /** Ajout prod 2 **/
       $comProd = new CommandeProd();
-      $prod2 = $manager->getRepository("PwebAccueilBundle:Produit")->findOneBy(array('libelleProd' => "Nokia Lumia 920"));
+      $prod = $manager->getRepository("PwebAccueilBundle:Produit")->findOneBy(array('libelleProd' => "Nokia Lumia 920"));
     
       $comProd->setCommande($com);
-      $comProd->setProduit($prod2);
+      $comProd->setProduit($prod);
       $comProd->setQuantite(2);
       
       $manager->persist($comProd);
