@@ -266,6 +266,7 @@ div#col_prod {
 .liste_prod img {
 	display: block;
     margin:0 auto;
+    padding-bottom:1em;
     float:none;
     max-height:125px;
 }
