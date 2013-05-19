@@ -115,7 +115,7 @@ class Produits extends AbstractFixture implements OrderedFixtureInterface{
       $prod->setMarque($marque);
       $manager->persist($prod);      
            
-     /**************************************************************
+     /**************************************************************/
       $prod = new Produit();
       $prod->setLibelleProd("iPhone 4S");
       $prod->setDescription("Une des trouvailles d'Apple");
@@ -166,7 +166,7 @@ class Produits extends AbstractFixture implements OrderedFixtureInterface{
       $prod->setMarque($marque);
       $manager->persist($prod);      
        
-     /**************************************************************
+     /**************************************************************/
       $prod = new Produit();
       $prod->setLibelleProd("Samsung Galaxy S3 Mini");
       $prod->setDescription("Une des trouvailles de Samsung");
@@ -217,7 +217,7 @@ class Produits extends AbstractFixture implements OrderedFixtureInterface{
       $prod->setMarque($marque);
       $manager->persist($prod);      
        
-     /**************************************************************
+     /**************************************************************/
       $prod = new Produit();
       $prod->setLibelleProd("LG Optimus L9");
       $prod->setDescription("Une des trouvailles de LG");
@@ -234,7 +234,7 @@ class Produits extends AbstractFixture implements OrderedFixtureInterface{
       $prod->setMarque($marque);
       $manager->persist($prod);    
 
-      /**************************************************************
+      /**************************************************************/
       $prod = new Produit();
       $prod->setLibelleProd("LG Optimus L5 2");
       $prod->setDescription("Une des trouvailles de LG");
@@ -285,7 +285,7 @@ class Produits extends AbstractFixture implements OrderedFixtureInterface{
       $prod->setMarque($marque);
       $manager->persist($prod);    
                                           
-      /**************************************************************
+      /**************************************************************/
       $prod = new Produit();
       $prod->setLibelleProd("Blackberry Curve 9320");
       $prod->setDescription("Une des trouvailles de Blackberry");
@@ -438,7 +438,7 @@ class Produits extends AbstractFixture implements OrderedFixtureInterface{
       $prod->setMarque($marque);
       $manager->persist($prod);    
                                           
-      /**************************************************************
+      /**************************************************************/
       $prod = new Produit();
       $prod->setLibelleProd("Acer Liquid E1");
       $prod->setDescription("Une des trouvailles d'Acer");
@@ -455,7 +455,7 @@ class Produits extends AbstractFixture implements OrderedFixtureInterface{
       $prod->setMarque($marque);
       $manager->persist($prod);    
                                           
-      /**************************************************************
+      /**************************************************************/
       $prod = new Produit();
       $prod->setLibelleProd("Alcatel One Touch Tab T20");
       $prod->setDescription("Une des trouvailles de Alcatel");
@@ -472,7 +472,7 @@ class Produits extends AbstractFixture implements OrderedFixtureInterface{
       $prod->setMarque($marque);
       $manager->persist($prod);    
       
-      /**************************************************************
+      /**************************************************************/
       $prod = new Produit();
       $prod->setLibelleProd("Archos 80 Cobalt");
       $prod->setDescription("Une des trouvailles d'Arcos");
@@ -489,7 +489,7 @@ class Produits extends AbstractFixture implements OrderedFixtureInterface{
       $prod->setMarque($marque);
       $manager->persist($prod);    
       
-      /**************************************************************
+      /**************************************************************/
       $prod = new Produit();
       $prod->setLibelleProd("HP Envy X2");
       $prod->setDescription("Une des trouvailles d'HP");
@@ -540,7 +540,7 @@ class Produits extends AbstractFixture implements OrderedFixtureInterface{
       $prod->setMarque($marque);
       $manager->persist($prod);    
       
-      /*************************************************************
+      /*************************************************************/
       $prod = new Produit();
       $prod->setLibelleProd("Acer Iconia W510");
       $prod->setDescription("Une des trouvailles d'Acer");
@@ -557,7 +557,7 @@ class Produits extends AbstractFixture implements OrderedFixtureInterface{
       $prod->setMarque($marque);
       $manager->persist($prod);    
       
-      /**************************************************************
+      /**************************************************************/
       $prod = new Produit();
       $prod->setLibelleProd("Huawei MediaPad 10");
       $prod->setDescription("Une des trouvailles de Huawei");
@@ -574,7 +574,7 @@ class Produits extends AbstractFixture implements OrderedFixtureInterface{
       $prod->setMarque($marque);
       $manager->persist($prod);    
       
-      /**************************************************************
+      /**************************************************************/
       $prod = new Produit();
       $prod->setLibelleProd("Asus Transformer Book");
       $prod->setDescription("Une des trouvailles d'Asus");
@@ -591,7 +591,7 @@ class Produits extends AbstractFixture implements OrderedFixtureInterface{
       $prod->setMarque($marque);
       $manager->persist($prod);    
     
-      /**************************************************************
+      /**************************************************************/
       $prod = new Produit();
       $prod->setLibelleProd("HP Slate 7");
       $prod->setDescription("Une des trouvailles d'HP");
@@ -625,7 +625,7 @@ class Produits extends AbstractFixture implements OrderedFixtureInterface{
       $prod->setMarque($marque);
       $manager->persist($prod);    
       
-      /**************************************************************
+      /**************************************************************/
       $prod = new Produit();
       $prod->setLibelleProd("Samsung Nexus 10");
       $prod->setDescription("Une des trouvailles de Samsung");
@@ -642,7 +642,7 @@ class Produits extends AbstractFixture implements OrderedFixtureInterface{
       $prod->setMarque($marque);
       $manager->persist($prod);    
       
-      /**************************************************************
+      /**************************************************************/
       $prod = new Produit();
       $prod->setLibelleProd("Sony Xperia Tablet S");
       $prod->setDescription("Une des trouvailles de Sony");
