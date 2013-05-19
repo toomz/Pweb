@@ -14,7 +14,7 @@ class Commandes extends AbstractFixture implements OrderedFixtureInterface{
 
     public function load(ObjectManager $manager){
  
-      /**************************************************************/
+      /**************************************************************
       $com = new Commande();
       $com->setDate(new \DateTime);
       
@@ -23,7 +23,7 @@ class Commandes extends AbstractFixture implements OrderedFixtureInterface{
       
       $manager->persist($com);
       
-      /**************************************************************/
+      /**************************************************************
       $com = new Commande();
       $com->setDate(new \DateTime);
       
@@ -32,7 +32,7 @@ class Commandes extends AbstractFixture implements OrderedFixtureInterface{
     
       $manager->persist($com);
       
-      /**************************************************************/
+      /**************************************************************
       $com = new Commande();
       $com->setDate(new \DateTime);
       
@@ -42,7 +42,7 @@ class Commandes extends AbstractFixture implements OrderedFixtureInterface{
       $manager->persist($com);
       
       
-      $manager->flush();
+      $manager->flush();*/
 
   }
 

@@ -15,49 +15,65 @@ class CommandeProds extends AbstractFixture implements OrderedFixtureInterface{
     public function load(ObjectManager $manager){
  
       /**************************************************************/
-      /*
-      $comprod = new CommandeProd();
-
-      $prod = $manager->getRepository("PwebAccueilBundle:Produit")->findOneBy(array('libelleProd' => "Samsung Galaxy S3"));
-      $quantite->setQuantite('1');
-      $comprod->setProduit($prod);
-
-      $prod2 = $manager->getRepository("PwebAccueilBundle:Produit")->findOneBy(array('libelleProd' => "Sony Ericsson w995"));
-      $quantite2->setQuantite('2');
-      $comprod->setProduit($prod2);
-      
-      $com = $manager->getRepository("PwebCompteBundle:Commande")->findOneBy(array(''));
-      $comprod->setCommande($com);
-
-      $manager->persist($comprod);
-      */
       /**************************************************************/
       $com = new Commande();
       $com->setDate(new \DateTime);
       
       $stat = $manager->getRepository("PwebCompteBundle:StatutCom")->findOneBy(array('libelleStat' => "en cours"));
       $com->setStatut($stat);
+      $manager->persist($com);
+      $manager->flush();
       
+      /** Ajout prod 1 **/
+      $comProd = new CommandeProd();
       $prod = $manager->getRepository("PwebAccueilBundle:Produit")->findOneBy(array('libelleProd' => "HTC One"));
+    
+      $comProd->setCommande($com);
+      $comProd->setProduit($prod);
+      $comProd->setQuantite(2);
+      
+      $manager->persist($comProd);
+
+      /** Ajout prod 2 **/
+      $comProd = new CommandeProd();
       $prod2 = $manager->getRepository("PwebAccueilBundle:Produit")->findOneBy(array('libelleProd' => "Ipad 5"));
-      $com->addProduits($prod);
-      $com->addProduits($prod2);
+    
+      $comProd->setCommande($com);
+      $comProd->setProduit($prod2);
+      $comProd->setQuantite(2);
       
-      $manager->persist($com);
+      $manager->persist($comProd);
+
       
+      /**************************************************************/
       /**************************************************************/
       $com = new Commande();
       $com->setDate(new \DateTime);
       
       $stat = $manager->getRepository("PwebCompteBundle:StatutCom")->findOneBy(array('libelleStat' => "en cours"));
       $com->setStatut($stat);
-      
-      $prod = $manager->getRepository("PwebAccueilBundle:Produit")->findOneBy(array('libelleProd' => "Nokia Lumia 920"));
-      $prod2 = $manager->getRepository("PwebAccueilBundle:Produit")->findOneBy(array('libelleProd' => "Sony Ericsson w995"));
-      $com->addProduits($prod);
-      $com->addProduits($prod2);
-      
       $manager->persist($com);
+      $manager->flush();
+
+      /** Ajout prod 1 **/
+      $comProd = new CommandeProd();
+      $prod = $manager->getRepository("PwebAccueilBundle:Produit")->findOneBy(array('libelleProd' => "Sony Ericsson w995"));
+    
+      $comProd->setCommande($com);
+      $comProd->setProduit($prod);
+      $comProd->setQuantite(2);
+      
+      $manager->persist($comProd);
+
+      /** Ajout prod 2 **/
+      $comProd = new CommandeProd();
+      $prod2 = $manager->getRepository("PwebAccueilBundle:Produit")->findOneBy(array('libelleProd' => "Nokia Lumia 920"));
+    
+      $comProd->setCommande($com);
+      $comProd->setProduit($prod2);
+      $comProd->setQuantite(2);
+      
+      $manager->persist($comProd);
       
       
       $manager->flush();
@@ -65,7 +81,7 @@ class CommandeProds extends AbstractFixture implements OrderedFixtureInterface{
   }
 
   public function getOrder(){
-    return 3; // the order in which fixtures will be loaded
+    return 4; // the order in which fixtures will be loaded
   }
 
 }
