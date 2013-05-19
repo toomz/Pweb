@@ -13,8 +13,8 @@ class MarController extends Controller{
 
 	public function indexAction(){	
 
-    //$logger = $this->get('my_logger');
-    //$logger->info('Entrée dans Mar:indexAction()');
+    $logger = $this->get('my_logger');
+    $logger->info('Entrée dans Mar:indexAction()');
 		
     $em = $this->getDoctrine()->getEntityManager();
     $marque_list = $em->getRepository("PwebAccueilBundle:Marque")->findAll();
@@ -24,8 +24,8 @@ class MarController extends Controller{
 
 	public function addAction(){
 
-    //$logger = $this->get('my_logger');
-    //$logger->info('Entrée dans Mar:addAction()');
+    $logger = $this->get('my_logger');
+    $logger->info('Entrée dans Mar:addAction()');
 
 		$marque = new Marque();
 
@@ -37,23 +37,29 @@ class MarController extends Controller{
 
   	$form = $formBuilder->getForm();
   	$request = $this->get('request');
+    $logger->info('création formulaire ajout marque');
   
   	if ($request->getMethod() == 'POST'){
   
   		$form->bind($request);
 
   		if ($form->isValid()){
+          $logger->info('formulaire valide');
       		$em = $this->getDoctrine()->getManager();
       
-      		if($em->getRepository("PwebAccueilBundle:Marque")->findOneBy(array('libelleMar' => $marque->getLibelleMar()))!=NULL)
+      		if($em->getRepository("PwebAccueilBundle:Marque")->findOneBy(array('libelleMar' => $marque->getLibelleMar()))!=NULL){
+            $logger->info('ajout d une marque déjà existante');
         		return $this->render('PwebCompteBundle:Mar:add.html.twig',array(
             		'form'=>$form->createView(),
             		'error'=>'La marque "'.$marque->getLibelleMar().'" n\'a pas été ajoutée  : Le nom existe déjà',
             		'success'=>''
           		));
+          }
       
       		$em->persist($marque);
       		$em->flush();
+
+          $logger->info('ajout de la marque');
     
       		return $this->render('PwebCompteBundle:Mar:add.html.twig',array(
         		'form'=>$form->createView(),
@@ -61,6 +67,7 @@ class MarController extends Controller{
         		'error'=>''
       		));       
   		}
+      $logger->info('formulaire non valide');
 
   	}
 
@@ -74,8 +81,8 @@ class MarController extends Controller{
 
 	public function removeAction(){
 
-    //$logger = $this->get('my_logger');
-    //$logger->info('Entrée dans Mar:removeAction()');
+    $logger = $this->get('my_logger');
+    $logger->info('Entrée dans Mar:removeAction()');
 
     $em = $this->getDoctrine()->getEntityManager();
     $marque_list = $em->getRepository("PwebAccueilBundle:Marque")->findAll();
@@ -94,6 +101,7 @@ class MarController extends Controller{
 
     $form = $formBuilder->getForm();
     $request = $this->get('request');
+    $logger->info('création formulaire suppression marque');
     
     if ($request->getMethod() == 'POST'){
       
@@ -101,6 +109,7 @@ class MarController extends Controller{
 
       if ($form->isValid()){
 
+        $logger->info('formulaire valide -> suppression marque');
         unset($stack[$marque->getLibelleMar()]);
 
         $marque = $em->getRepository("PwebAccueilBundle:Marque")->findOneBy(array('libelleMar'=>$marque->getLibelleMar()));
@@ -123,6 +132,7 @@ class MarController extends Controller{
 
       }
 
+      $logger->info('formulaire non valide');
       return $this->render('PwebCompteBundle:Mar:remove.html.twig',array(
         'form'=>$form->createView(),
         'success'=>'',

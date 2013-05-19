@@ -15,8 +15,8 @@ class CmdController extends Controller{
 
 	public function indexAction(){	
 
-		//$logger = $this->get('my_logger');
-		//$logger->info('Entrée dans Cmd:indexAction()');
+		$logger = $this->get('my_logger');
+		$logger->info('Entrée dans Cmd:indexAction()');
 		
 		$em = $this->getDoctrine()->getEntityManager();
     	$query = $em->createQuery('SELECT c FROM PwebCompteBundle:Commande c LEFT JOIN c.produits p LEFT JOIN c.statut s');
@@ -29,8 +29,8 @@ class CmdController extends Controller{
 
 	public function modifAction($id) {
 
-		//$logger = $this->get('my_logger');
-		//$logger->info('Entrée dans Cmd:modifAction()');
+		$logger = $this->get('my_logger');
+		$logger->info('Entrée dans Cmd:modifAction()');
 
 		$entityManager = $this->getDoctrine()->getManager();
 		$commande = $entityManager->getRepository('PwebCompteBundle:Commande')->find($id);
@@ -42,12 +42,14 @@ class CmdController extends Controller{
 	      	->add('statut','choice',array('choice_list'=> $statuts));
 		$form = $formBuilder->getForm();
 	    $request = $this->get('request');
+	    $logger->info('création formulaire modification statut commande');
 	    
 		if ($request->getMethod() == 'POST'){
   
   			$form->bind($request);
 
   			if ($form->isValid()){
+  				$logger->info('formulaire valide -> statut modifié');
       			$em = $this->getDoctrine()->getManager();
 	      
 	      		$em->persist($commande);
@@ -59,6 +61,7 @@ class CmdController extends Controller{
 	        		'error'=>''
 	      		));       
   			}
+  			$logger->info('formulaire non valide');
 
   		}
 

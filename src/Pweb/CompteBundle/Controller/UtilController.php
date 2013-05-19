@@ -12,6 +12,9 @@ use Symfony\Component\Security\Core\SecurityContext;
 class UtilController extends Controller{
 
 	public function indexAction(){
+
+		$logger = $this->get('my_logger');
+    	$logger->info('Entrée dans Util:indexAction()');
 		
 		$em = $this->getDoctrine()->getEntityManager();
     	$user_list = $em->getRepository("PwebUserBundle:User")->findAll();
@@ -21,6 +24,9 @@ class UtilController extends Controller{
 	}
 
 	public function addAction(){
+
+		$logger = $this->get('my_logger');
+    	$logger->info('Entrée dans Util:addAction()');
 		
 		$user = new User();
 
@@ -40,33 +46,39 @@ class UtilController extends Controller{
 
 	  	$form = $formBuilder->getForm();
 	  	$request = $this->get('request');
+	  	$logger->info('création formulaire ajout user');
 	  
 	  	if ($request->getMethod() == 'POST'){
 	  
 	  		$form->bind($request);
 
 	  		if ($form->isValid()){
+	  			$logger->info('formulaire valide');
 	      		$em = $this->getDoctrine()->getManager();
 	      		
       			$user->setSalt('');
       			$user->setRoles(array('ROLE_ADMIN'));
 
-	      		if($em->getRepository("PwebUserBundle:User")->findOneBy(array('username' => $user->getUsername()))!=NULL)
+	      		if($em->getRepository("PwebUserBundle:User")->findOneBy(array('username' => $user->getUsername()))!=NULL){
+	      			$logger->info('ajout d un user deja existant');
 	        		return $this->render('PwebCompteBundle:Util:add.html.twig',array(
 	            		'form'=>$form->createView(),
 	            		'error'=>'Utilisateur "'.$user->getUsername().'" n\'a pas été ajouté  : Le nom existe déjà',
 	            		'success'=>''
 	          		));
+	        	}
 	      
 	      		$em->persist($user);
 	      		$em->flush();
-	    
+	    		$logger->info('ajout du user');
+
 	      		return $this->render('PwebCompteBundle:Util:add.html.twig',array(
 	        		'form'=>$form->createView(),
 	        		'success'=>'Utilisateur "'.$user->getUsername().'" a été ajouté.',
 	        		'error'=>''
 	      		));       
 	  		}
+	  		$logger->info('formulaire non valide');
 
 	  	}
 
@@ -79,6 +91,9 @@ class UtilController extends Controller{
 	}
 
 	public function removeAction(){
+
+		$logger = $this->get('my_logger');
+    	$logger->info('Entrée dans Util:removeAction()');
 		
 	    $em = $this->getDoctrine()->getEntityManager();
 	    $user_list = $em->getRepository("PwebUserBundle:User")->findAll();
@@ -98,12 +113,14 @@ class UtilController extends Controller{
 
 	    $form = $formBuilder->getForm();
 	    $request = $this->get('request');
+	    $logger->info('création formulaire suppression user');
 	    
 	    if ($request->getMethod() == 'POST'){
 	      
 	      	$form->bind($request);
 
 	      	if ($form->isValid()){
+	      		$logger->info('formulaire valide -> suppression user');
 	      		$acheteur = $em->getRepository("PwebCompteBundle:Acheteur")->findOneBy(array('username' => $user->getUsername()));
 		        unset($stack[$user->getUsername()]);
 
@@ -127,6 +144,8 @@ class UtilController extends Controller{
 		        ));
 
 	      	}
+
+	      	$logger->info('formulaire non valide');
 
 		    return $this->render('PwebCompteBundle:Util:remove.html.twig',array(
 		    	'form'=>$form->createView(),

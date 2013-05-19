@@ -17,14 +17,3 @@ monolog:
             type:  stream
             path:  "%kernel.logs_dir%/%kernel.environment%.log"
             level: debug
-
-#services:
- #   my_logger:
-  #      class: Monolog\Logger
-   #     arguments: [my_info]
-    #    calls:
-            #- [pushHandler, [@my_log_handler]]
-
-    #my_log_handler:
-     #   class: Monolog\Handler\StreamHandler
-      #  arguments: [%kernel.root_dir%/logs/my_info.log, 100]
