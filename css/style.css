@@ -215,8 +215,9 @@ div#col_gauche {
 	float: left;
 	padding-left: 0.7%;
     width: 11%;
-    background: #DCDCDC ;
-    border: 1px solid black;
+    background: #34757B ;
+    /*border: 1px solid black;*/
+    color: white
 }
 
 div#col_prod {
@@ -241,11 +242,6 @@ div#col_prod {
 
 .popup {
 	height:19em;
-}
-
-.test {
-	border-left: 1px solid black;
-	border-bottom: 1px solid black;
 }
 
 .liste_prod li, ol {
