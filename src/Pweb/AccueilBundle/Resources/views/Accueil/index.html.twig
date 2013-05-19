@@ -1,9 +1,45 @@
 {% extends '::base.html.twig' %}
 
-{% block body %}
-	
-	<h2>Bienvenue sur notre site de vente en ligne</h2>
-  <h4>Vous allez bientôt pouvoir acheter votre nouvel équipement mobile dernier cri pour seulement 1 mois de salaire !!!</h4>
-  <h4>Ce site est en cours de construction, merci de réfréner vos pulsions acheteuses pour le moment</h4>
 
+{% block body %}
+<link rel="stylesheet" media="screen" href="/Pweb/css/accueil.css" />
+	
+<h2 id="titreAccueil">Votre boutique de mobiles et smartphones <br />
+<span class="soustitre">Parce que si t'as pas de portable, t'as pas de shampooing</span></h2>
+
+
+
+<h3 class="contenuTitre">Mobiles à la Une</h3>    
+<div class="contenu">
+                                  
+    {% for p in prod|slice(0, 4) %}
+    <div class="mobileUne">
+        <a href="{{ path('info_produits', {'idProd': p.id}) }}"><h4>{{p.libelleProd}}</h4></a>
+        <a href="{{ path('info_produits', {'idProd': p.id}) }}"><img src="{{ p.imageMin }}" alt="{{ p.libelleProd }}" /></a>
+        <span>{{ p.prix }} €</span>
+    </div>
+    {% endfor %}
+
+</div>
+
+<h3 class="contenuTitre"> Vos avantages AllôQuoi</h3> 
+    <div class="contenu">
+        <p><strong>Livraison rapide</strong><br />
+             Recevez votre mobile sous 48h directement chez vous, et tracez votre colis.
+        </p>
+        <p><strong>Paiement sécurisé</strong><br />
+             Choisissez votre moyen de paiement parmi Paypal, virement bancaire sécurisé, ou chèque.        
+        </p>
+        <p><strong>Des cheveux soyeux</strong><br />
+             Achetez un mobile, recevez un shampooing de la gamme Schwarzkopf.       
+        </p>
+    </div>
+ 
+
+{% endblock %}
+
+{% block javascripts %}
+<script type="text/javascript" src="{{ asset('js/jquery-1.9.1.js') }}"></script>
+<script type="text/javascript" src="{{ asset('js/produits.js') }}" ></script>
+<script type="text/javascript" src="{{ asset('js/jquery.elevateZoom-2.5.5.min.js') }}" ></script>
 {% endblock %}

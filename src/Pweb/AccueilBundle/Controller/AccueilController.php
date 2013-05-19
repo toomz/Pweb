@@ -8,8 +8,11 @@ class AccueilController extends Controller
 {
 
 	public function indexAction()
-  {
-		return $this->render('PwebAccueilBundle:Accueil:index.html.twig');
+	{
+		$em = $this->getDoctrine()->getEntityManager();
+		$prod = $em->getRepository("PwebAccueilBundle:Produit")->findBy(array(), array('dateSortie'=>'desc'));
+		$marques = $em->getRepository('PwebAccueilBundle:Marque')->findBy(array(), array('libelleMar'=>'asc'));
+		return $this->render('PwebAccueilBundle:Accueil:index.html.twig',array('prod' => $prod, 'marque' => $marques));
 	}
 
 }
