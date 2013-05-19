@@ -9,7 +9,6 @@
 	<br/>
 	<div class="liste_choix2">
 		<ul>
-			<li><a href="{{ path('pweb_cmd_modif') }}">Modifier une commande</a></li>
 			<li><a href="{{ path('pweb_admin_cmd') }}">Voir les commandes</a></li>
 		</ul>
 	</div>
@@ -27,6 +26,7 @@
 			<td style="padding:7px">{{ commande.date|date('d/m/Y') }}</td>
 			<td style="padding:7px">{% for produit in commande.produits %}{{ produit.libelleProd }} | {% endfor %}</td>
 			<td style="padding:7px">{{ commande.statut.libelleStat }}</td>
+			<td style="padding:7px"><a href="{{ path('pweb_cmd_modif',{"id":commande.id}) }}"><button>Modifier le statut</button></a></td>
 		<tr>
 		
 	{% else %}

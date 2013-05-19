@@ -1,33 +1,36 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="UTF-8" />
-    <title>{{ prod.libelleProd }}</title>
-    <link rel="stylesheet" media="screen" href="/Pweb/css/produits.css" />
-  </head>
+{% extends '::base.html.twig' %}
 
-  <body>
+{% block title %} Les produits {% endblock %}
 
-    <div class="col_img">
-      <img src="{{ prod.image }}"/>
-    </div>
+{% block css %} <link rel="stylesheet" media="screen" href="/Pweb/css/produits.css" /> {% endblock %}
 
-    <div class="col_desc">
-      <ul><h3> {{ prod.libelleProd }} </h3></ul>
-      <ul><h4>Description</h4><p> {{ prod.description }} </p></ul>
-      <ul><p> Prix : {{ prod.prix }} € </p></ul>
-      <ul><p> Poids : {{ prod.poids }} gr.</p></ul>
-      <ul><p> Date de sortie : {{ prod.dateSortie|date('d/m/Y') }} </p></ul>
-      <ul>
+{% block body %}
+
+
+  <a href="javascript:history.go(-1)">Retour</a>
+
+  <div class="col_img">
+    <img src="{{ prod.image }}"/>
+  </div>
+
+  <div class="col_desc">
+    <ul><h3> {{ prod.libelleProd }} </h3></ul>
+    <ul><h4>Description</h4><p> {{ prod.description }} </p></ul>
+    <ul><p> Prix : {{ prod.prix }} € </p></ul>
+    <ul><p> Poids : {{ prod.poids }} gr.</p></ul>
+    <ul><p> Date de sortie : {{ prod.dateSortie|date('d/m/Y') }} </p></ul>
+    <ul>
       <button type="button" class="btn_ajout_prod" style="background:url({{ asset('icons/Shopping_basket_add_Icon_32.png') }})" 
-          data-path="{{ path('info_produits', {'idProd': prod.id}) }}"/>
-      </ul>
-    </div>
+      data-path="{{ path('info_produits', {'idProd': prod.id}) }}"/>
+    </ul>
+  </div>
 
-  </body>
 
+
+{% endblock %}
+
+{% block javascripts %}
   <script type="text/javascript" src="{{ asset('js/jquery-1.9.1.js') }}"></script>
   <script type="text/javascript" src="{{ asset('js/produits.js') }}" ></script>
-  <script type="text/javascript" src="{{ asset('js/jquery.imageLens.js') }}" ></script>
   <script type="text/javascript" src="{{ asset('js/jquery.elevateZoom-2.5.5.min.js') }}" ></script>
-</html>
+{% endblock %}

@@ -4,6 +4,7 @@
         <meta charset="UTF-8" />
         <title>{% block title %}AllôQuoi!{% endblock %}</title>
         <link rel="stylesheet" media="screen" href="/Pweb/css/style.css" />
+        {% block css %}{% endblock %}
         <!--<script type="text/javascript" src="public/js/produits.js"></script>-->
     </head>
     <body>
@@ -19,9 +20,12 @@
 						<ul>
 				    		<li class="active"><a href="{{ path('pweb_accueil') }}">Accueil</a></li>
 				    		<li><a href={{ path('pweb_produits') }}>Produits</a></li>
-				    		<li><a href="{{ path('pweb_compte') }}">Mon compte</a></li>
 				    		{% if is_granted('ROLE_ADMIN') %}
 				    			<li><a href="{{ path('pweb_admin') }}">Paramètres</a></li>
+				    		{% elseif is_granted('ROLE_CLIENT') %}
+				    			<li><a href="{{ path('pweb_compte') }}">Mon compte</a></li>
+				    		{% else %}
+				    			<li><a href="{{ path('login') }}">Connexion</a></li>
 				    		{% endif %}
 						</ul>
 			    	</div>
@@ -29,6 +33,10 @@
 			    	<div class="texte">
 	           			{% block body %}{% endblock %}
 			    	</div>
+			    	{% if is_granted('IS_AUTHENTICATED_REMEMBERED') %}
+			    		<br/>
+			    		<p class="spec"><a href="{{ path('logout') }}">Déconnexion</a></p>
+			    	{% endif %}
 				</div>
             </div>
         </div>
