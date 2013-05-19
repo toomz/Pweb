@@ -32,6 +32,10 @@
 			    	<div class="texte">
 	           			{% block body %}{% endblock %}
 			    	</div>
+			    	{% if is_granted('IS_AUTHENTICATED_REMEMBERED') %}
+			    		<br/>
+			    		<p class="spec"><a href="{{ path('logout') }}">Déconnexion</a></p>
+			    	{% endif %}
 				</div>
             </div>
         </div>

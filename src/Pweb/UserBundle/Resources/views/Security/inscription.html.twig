@@ -13,23 +13,21 @@
 	{% if success != '' %}
 		<p>{{ success }}</p>
 	{% endif %}
-	
-	<div class="texte">
-		<br/>
-		<form method="post" {{ form_enctype(form) }}>
-			    {{ form_errors(form) }}
 
-			    {{ form_row(form.nom) }}
-			    {{ form_row(form.prenom) }}
-			    {{ form_row(form.adresse) }}
-			    {{ form_row(form.CP) }}
-			    {{ form_row(form.ville) }}
-			    {{ form_row(form.email) }}
-			    {{ form_row(form.telephone) }}
+	<br/>
+	<form method="post" {{ form_enctype(form) }}>
+		    {{ form_errors(form) }}
 
-			    {{ form_rest(form) }}
-			    <input type="submit" value="Envoyer" />
-		</form>	
-	</div>
+		    {{ form_row(form.nom) }}
+		    {{ form_row(form.prenom) }}
+		    {{ form_row(form.adresse) }}
+		    {{ form_row(form.CP) }}
+		    {{ form_row(form.ville) }}
+		    {{ form_row(form.email) }}
+		    {{ form_row(form.telephone) }}
+
+		    {{ form_rest(form) }}
+		    <input type="submit" value="Envoyer" />
+	</form>
 
 {% endblock %}

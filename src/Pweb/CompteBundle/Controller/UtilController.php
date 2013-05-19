@@ -6,6 +6,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpKernel\Exception\AccessDeniedHttpException;
 use JMS\SecurityExtraBundle\Annotation\Secure;
 use Pweb\UserBundle\Entity\User;
+use Pweb\CompteBundle\Entity\Acheteur;
 use Symfony\Component\Security\Core\SecurityContext;
 
 class UtilController extends Controller{
@@ -81,6 +82,7 @@ class UtilController extends Controller{
 		
 	    $em = $this->getDoctrine()->getEntityManager();
 	    $user_list = $em->getRepository("PwebUserBundle:User")->findAll();
+	    /**/
 	    $stack = array();
 	      
 	    foreach($user_list as $user)
@@ -102,7 +104,7 @@ class UtilController extends Controller{
 	      	$form->bind($request);
 
 	      	if ($form->isValid()){
-
+	      		$acheteur = $em->getRepository("PwebCompteBundle:Acheteur")->findOneBy(array('username' => $user->getUsername()));
 		        unset($stack[$user->getUsername()]);
 
 		        $user = $em->getRepository("PwebUserBundle:User")->findOneBy(array('username'=>$user->getUsername()));
@@ -115,6 +117,7 @@ class UtilController extends Controller{
 		        
 		        $form = $formBuilder->getForm();
 		        $em->remove($user);
+		        $em->remove($acheteur);
 		        $em->flush();
 
 		        return $this->render('PwebCompteBundle:Util:remove.html.twig',array(
