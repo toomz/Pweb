@@ -15,8 +15,8 @@ class CmdController extends Controller{
 
 	public function indexAction(){	
 
-		$logger = $this->get('my_logger');
-		$logger->info('Entrée dans Cmd:indexAction()');
+		//$logger = $this->get('my_logger');
+		//$logger->info('Entrée dans Cmd:indexAction()');
 		
 		$em = $this->getDoctrine()->getEntityManager();
     	$query = $em->createQuery('SELECT c FROM PwebCompteBundle:Commande c LEFT JOIN c.produits p LEFT JOIN c.statut s');
@@ -29,8 +29,8 @@ class CmdController extends Controller{
 
 	public function modifAction($id) {
 
-		$logger = $this->get('my_logger');
-		$logger->info('Entrée dans Cmd:modifAction()');
+		//$logger = $this->get('my_logger');
+		//$logger->info('Entrée dans Cmd:modifAction()');
 
 		$entityManager = $this->getDoctrine()->getManager();
 		$commande = $entityManager->getRepository('PwebCompteBundle:Commande')->find($id);
