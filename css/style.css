@@ -220,6 +220,11 @@ div#col_gauche {
     color: white
 }
 
+.choose_marq , .choose_cat {
+	color:white;
+	text-decoration: none;
+}
+
 div#col_prod {
 	float:right;
 	width: 85%;
@@ -242,6 +247,10 @@ div#col_prod {
 
 .popup {
 	height:19em;
+}
+
+.popup > span {
+	display: inline;
 }
 
 .liste_prod li, ol {
@@ -280,7 +289,7 @@ div#col_prod {
 }
 
 button.btn_voir_prod , button.btn_ajout_prod {
-	display: block;
+	display: inline;
 	padding: 0em 0em 0em 1em;
 	font-size: 1.1em;
 	font-weight: bold;
