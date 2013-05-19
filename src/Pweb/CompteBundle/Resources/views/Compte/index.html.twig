@@ -1,22 +1,25 @@
 {% extends '::base.html.twig' %}
 
 {% block body %}
-	
-	<div class="text">
 		
-		<h2><b>Compte</b></h2>
+		<h2><b>Bienvenue {{ app.user.username }}</b></h2>
+		<br/>
+		
+		<div class="liste_choix2">
+			<ul>
+				<li><a href="{{ path('pweb_compte_modif') }}">Modifier vos informations personnelles</a></li>
+				<li><a href="{{ path('pweb_compte_commande') }}">Consulter vos commandes</a></li>
+				<li><a href="{{ path('pweb_compte_panier') }}">Voir votre panier</a></li>
+			</ul>
+		</div>
 		<br/><br/>
 
-		{% if is_granted('IS_AUTHENTICATED_REMEMBERED') %}
-			{# Données de l'utilisateur #}
-			<p>Bienvenue 
-			<p class="spec"><a href="{{ path('logout') }}">Déconnexion</a></p>
-		{% else %}
-			<p class="spec"><a href="{{ path('login') }}">Connexion</a></p>
-		{% endif %}
+		{% block compte %}
 
-	</div>
+			<p>Bienvenue sur votre compte {{ acheteur.prenom }} {{ acheteur.nom }}. Vous pouvez ici, consulter vos commandes passées, modifier vos données personnelles ou encore visionner votre panier en cours.</p> 
 
-	<br/>
+		{% endblock %}
 
 {% endblock %}
+
+

@@ -2,6 +2,18 @@ pweb_compte:
     pattern:  /compte
     defaults: { _controller: PwebCompteBundle:Compte:index }
 
+pweb_compte_modif:
+    pattern: /compte/modification
+    defaults: { _controller: PwebCompteBundle:Compte:modif }
+
+pweb_compte_commande:
+    pattern: /compte/commande
+    defaults: { _controller: PwebCompteBundle:Compte:commande }
+
+pweb_compte_panier:
+    pattern: /compte/panier
+    defaults: { _controller: PwebCompteBundle:Compte:panier }
+
 pweb_admin:
     pattern: /admin
     defaults: { _controller: PwebCompteBundle:Admin:index }

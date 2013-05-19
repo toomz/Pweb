@@ -6,51 +6,46 @@
 
  
 {% block body %}
- 
-  <div class="texte">
 
 {# Le formulaire, avec URL de soumission vers la route « login_check » comme on l'a vu #}
-    
-    {# S'il y a une erreur, on l'affiche dans un joli cadre #}        
-    {% if error %}
-      <p style="color:red; font-weight:bold; font-size:14px; text-align:center">{{ error.message }}</p>
-    {% endif %}
-    
-    <table style="border:solid #c80203; padding:5px" align="center">
+  
+  {# S'il y a une erreur, on l'affiche dans un joli cadre #}        
+  {% if error %}
+    <p style="color:red; font-weight:bold; font-size:14px; text-align:center">{{ error.message }}</p>
+  {% endif %}
+  
+  <table style="border:solid #c80203; padding:5px" align="center">
 
-      <tr>
-        <td><h3>Nouveau client ?</h3></td>      
-        <td></td>
-        <td><h3>Identifiez-vous</h3></td>
-      </tr>
+    <tr>
+      <td><h3>Nouveau client ?</h3></td>      
+      <td></td>
+      <td><h3>Identifiez-vous</h3></td>
+    </tr>
 
-      <tr>
-        <td>
-          <p>Inscrivez-vous dès aujourd'hui pour pouvoir :</p><br/>
-            <p>-> Consulter nos offres et tous nos produits</p>
-            <p>-> Accéder à vos données personnelles</p>
-            <p>-> Passer une commande</p>
-            <p>-> Suivre vos commandes</p>        
-        </td>
-        <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
-        <td>
-          <form action="{{ path('login_check') }}" method="POST">
-            <label for="username">Identifiant</label><br/>
-            <input type="text" id="username" name="_username" value="{{ last_username }}" /><br/><br/>
-            <label for="password">Mot de passe</label><br/>
-            <input type="password" id="password" name="_password" /><br/><br/>
-            <input type="submit" value="Connexion"></input>
-          </form>  
-        </td>
-      </tr>
+    <tr>
+      <td>
+        <p>Inscrivez-vous dès aujourd'hui pour pouvoir :</p><br/>
+          <p>-> Consulter nos offres et tous nos produits</p>
+          <p>-> Accéder à vos données personnelles</p>
+          <p>-> Passer une commande</p>
+          <p>-> Suivre vos commandes</p>        
+      </td>
+      <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+      <td>
+        <form action="{{ path('login_check') }}" method="POST">
+          <label for="username">Identifiant</label><br/>
+          <input type="text" id="username" name="_username" value="{{ last_username }}" /><br/><br/>
+          <label for="password">Mot de passe</label><br/>
+          <input type="password" id="password" name="_password" /><br/><br/>
+          <input type="submit" value="Connexion"></input>
+        </form>  
+      </td>
+    </tr>
 
-      <tr>
-        <td align="center"><a href="{{ path('inscription') }}">Inscrivez-vous</a></td>
-      </tr>
+    <tr>
+      <td align="center"><a href="{{ path('inscription') }}">Inscrivez-vous</a></td>
+    </tr>
 
-    </table>
-
-  </div>
-
+  </table>
 
 {% endblock %}
