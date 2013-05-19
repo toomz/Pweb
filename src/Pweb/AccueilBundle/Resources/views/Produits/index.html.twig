@@ -44,8 +44,11 @@
 
         {% for p in prod %}
         <li id="{{ p.id }}" class="popup">
+	  <span> <strong>{{ p.libelleProd }}</strong></span>
+	  <span>- {{ p.prix }} € - </span>	  
           <img src="{{ p.imageMin }}" alt="{{ p.libelleProd }}" class="img_prod"/>
-          <span> {{ p.libelleProd }} </span>
+          
+
           <button type="button" class="btn_voir_prod" style="background:url({{ asset('icons/loupe-icone-4171-32.png') }})" 
                   onclick="window.open('{{ path('info_produits', {'idProd': p.id}) }}')"/>
           <button type="button" class="btn_ajout_prod" style="background:url({{ asset('icons/Shopping_basket_add_Icon_32.png') }})" {#onclick="window.open('{{ path('ajout_produit', {'idProd': p.id}) }}')"#}/>

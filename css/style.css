@@ -266,6 +266,7 @@ div#col_prod {
 .liste_prod img {
 	display: block;
     margin:0 auto;
+    padding-bottom:1em;
     float:none;
     max-height:125px;
 }
@@ -275,8 +276,14 @@ div#col_prod {
     float: left;
     text-align:center;
     margin: 2em;
-    padding : 0 0 0 0.5em;
+    padding : 1em 0.5em 0 0.5em;
     width:18%;
+	-webkit-border-radius: 10px;
+	-moz-border-radius: 10px;
+	border-radius: 10px;
+}
+.liste_prod li:hover{
+	background:#eee
 }
 /*
 .liste_prod ol li {

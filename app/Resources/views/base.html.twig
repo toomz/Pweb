@@ -18,14 +18,39 @@
 		    	<div class="haut">
 			    	<div class="menu">
 						<ul>
-				    		<li class="active"><a href="{{ path('pweb_accueil') }}">Accueil</a></li>
-				    		<li><a href={{ path('pweb_produits') }}>Produits</a></li>
+						    
+						{% if app.request.get('_route') == 'pweb_accueil' %}
+						<li class="active"><a href="{{ path('pweb_accueil') }}">Accueil</a></li>
+						{% else %}
+						<li><a href="{{ path('pweb_accueil') }}">Accueil</a></li>
+					    {% endif %}
+						{% if app.request.get('_route') == 'pweb_produits' %}
+						<li class="active"><a href="{{ path('pweb_produits') }}">Produit</a></li>
+						{% else %}
+						<li><a href="{{ path('pweb_produits') }}">Produit</a></li>
+					        {% endif %}					    
+						
+
 				    		{% if is_granted('ROLE_ADMIN') %}
-				    			<li><a href="{{ path('pweb_admin') }}">Paramètres</a></li>
+						    {% if app.request.get('_route') == 'pweb_admin' %}
+						    <li class="active"><a href="{{ path('pweb_admin') }}">Paramètres</a></li>
+						    {% else %}
+						    <li><a href="{{ path('pweb_admin') }}">Paramètres</a></li>
+						{% endif %}
+						
 				    		{% elseif is_granted('ROLE_CLIENT') %}
-				    			<li><a href="{{ path('pweb_compte') }}">Mon compte</a></li>
+						    {% if app.request.get('_route') == 'pweb_compte' %}
+						    <li class="active"><a href="{{path('pweb_compte') }}">Mon compte</a></li>
+						    {% else %}
+						    <li><a href="{{ path('pweb_compte') }}">Mon Compte</a></li>
+						    {% endif %}						
+
 				    		{% else %}
-				    			<li><a href="{{ path('login') }}">Connexion</a></li>
+						    {% if app.request.get('_route') == 'login' %}
+						    <li class="active"><a href="{{path('login') }}">Connexion</a></li>
+						    {% else %}
+						    <li><a href="{{ path('login') }}">Connexion</a></li>
+						    {% endif %}	
 				    		{% endif %}
 						</ul>
 			    	</div>
