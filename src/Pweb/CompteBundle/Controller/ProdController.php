@@ -14,6 +14,9 @@ use Pweb\AccueilBundle\Entity\Marque;
 class ProdController extends Controller{
 
 	public function indexAction(){	
+
+    $logger = $this->get('my_logger');
+    $logger->info('Entrée dans Prod:indexAction()');
 		
     $em = $this->getDoctrine()->getEntityManager();
     $query = $em->createQuery('SELECT p.libelleProd, p.description, c.libelleCat, m.libelleMar, p.prix, p.poids FROM PwebAccueilBundle:Produit p LEFT JOIN p.categorie c LEFT JOIN p.marque m');
@@ -23,6 +26,9 @@ class ProdController extends Controller{
 	}
 
 	public function addAction(){
+
+    $logger = $this->get('my_logger');
+    $logger->info('Entrée dans Prod:addAction()');
 
 		$produit = new Produit();
 
@@ -79,6 +85,9 @@ class ProdController extends Controller{
 	}
 
 	public function removeAction(){
+
+    $logger = $this->get('my_logger');
+    $logger->info('Entrée dans Prod:removeAction()');
 
     $em = $this->getDoctrine()->getEntityManager();
     $produit_list = $em->getRepository("PwebAccueilBundle:Produit")->findAll();

@@ -64,14 +64,22 @@ class Produit
     /**
      * @var string
      *
+<<<<<<< HEAD
+     * @ORM\Column(name="imageMin", type="string", length=255, nullable=TRUE)
+=======
      * @ORM\Column(name="imageMin", type="string", length=255)
+>>>>>>> fa68d5cafadbca710c4cae552fa1c448b2636338
      */
     private $imageMin;
 
     /**
      * @var string
      *
+<<<<<<< HEAD
+     * @ORM\Column(name="image", type="string", length=255, nullable=TRUE)
+=======
      * @ORM\Column(name="image", type="string", length=255)
+>>>>>>> fa68d5cafadbca710c4cae552fa1c448b2636338
      */
     private $image;
 
@@ -277,4 +285,8 @@ class Produit
         return $this->dateSortie;
     }
 
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> fa68d5cafadbca710c4cae552fa1c448b2636338

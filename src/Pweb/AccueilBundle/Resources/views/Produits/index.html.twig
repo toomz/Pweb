@@ -16,15 +16,20 @@
     </div>
     <div id="marques">
       <h4>Marques</h4>
-      {% for m in marque %}
-          <ul><a href="{{ path('tri_prod', {'id': m.id, 'type': 'mar'}) }}" class="choose_marq"> {{ m.libelleMar }}</a></ul>
-      {% endfor %}      
+      <ul>
+	  {% for m in marque %}
+          <li><a href="{{ path('tri_prod', {'id': m.id, 'type': 'mar'}) }}" class="choose_marq"> {{ m.libelleMar }}</a></li>
+	  {% endfor %}
+      </ul>
+      
     </div>
     <div id="categories">
       <h4>Catégories</h4>
+      <ul>
       {% for c in cat %}
-          <ul><a href="{{ path('tri_prod', {'id': c.id, 'type': 'cat'}) }}" class="choose_cat"> {{ c.libelleCat }}</a></ul>
-      {% endfor %}      
+          <li><a href="{{ path('tri_prod', {'id': c.id, 'type': 'cat'}) }}" class="choose_cat"> {{ c.libelleCat }}</a></li>
+      {% endfor %}
+      </ul>
     </div>
 
   </div>
@@ -43,34 +48,10 @@
           <span> {{ p.libelleProd }} </span>
           <button type="button" class="btn_voir_prod" style="background:url({{ asset('icons/loupe-icone-4171-32.png') }})" 
                   onclick="window.open('{{ path('info_produits', {'idProd': p.id}) }}')"/>
-          <button type="button" class="btn_ajout_prod" style="background:url({{ asset('icons/Shopping_basket_add_Icon_32.png') }})" {#data-path="{{ path('ajout_produit', {'idProd': p.id}) }}"#}/>
+          <button type="button" class="btn_ajout_prod" style="background:url({{ asset('icons/Shopping_basket_add_Icon_32.png') }})" {#onclick="window.open('{{ path('ajout_produit', {'idProd': p.id}) }}')"#}/>
         </li>
         {% endfor %}
-      {#
-      {% for p in prod %}
-      <ol id="{{ p.id }}" class="">
-        <li class="test">
-          <ol>
-            <div class="popup">
-              <img src="{{ p.imageMin }}" alt="{{ p.libelleProd }}" class="img_prod"/>
-            </div>
-          </ol>
-          <ol>
-            <p>{{ p.libelleProd }}</p>
-          </ol>
-          <ol>
-            <button type="button" class="btn_voir_prod" style="background:url({{ asset('icons/loupe-icone-4171-32.png') }})" 
-                onclick="window.open('{{ path('info_produits', {'idProd': p.id}) }}')"/>
-          </ol>
-          <ol>
-            <button type="button" class="btn_ajout_prod" style="background:url({{ asset('icons/Shopping_basket_add_Icon_32.png') }})" {#data-path="{{ path('ajout_produit', {'idProd': p.id}) }}"#}{#/>
-          </ol>
-          <ol>
-            <p> Prix : {{ p.prix }} €</p>
-          </ol>
-        </li> 
-      </ol>   
-      {% endfor %}#}
+      
       </ul>
     </div>
 

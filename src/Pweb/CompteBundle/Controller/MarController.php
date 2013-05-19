@@ -12,6 +12,9 @@ use Pweb\AccueilBundle\Entity\Marque;
 class MarController extends Controller{
 
 	public function indexAction(){	
+
+    $logger = $this->get('my_logger');
+    $logger->info('Entrée dans Mar:indexAction()');
 		
     $em = $this->getDoctrine()->getEntityManager();
     $marque_list = $em->getRepository("PwebAccueilBundle:Marque")->findAll();
@@ -20,6 +23,9 @@ class MarController extends Controller{
 	}
 
 	public function addAction(){
+
+    $logger = $this->get('my_logger');
+    $logger->info('Entrée dans Mar:addAction()');
 
 		$marque = new Marque();
 
@@ -67,6 +73,9 @@ class MarController extends Controller{
 	}
 
 	public function removeAction(){
+
+    $logger = $this->get('my_logger');
+    $logger->info('Entrée dans Mar:removeAction()');
 
     $em = $this->getDoctrine()->getEntityManager();
     $marque_list = $em->getRepository("PwebAccueilBundle:Marque")->findAll();
