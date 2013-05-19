@@ -16,15 +16,20 @@
     </div>
     <div id="marques">
       <h4>Marques</h4>
-      {% for m in marque %}
-          <ul><a href="{{ path('tri_prod', {'id': m.id, 'type': 'mar'}) }}" class="choose_marq"> {{ m.libelleMar }}</a></ul>
-      {% endfor %}      
+      <ul>
+	  {% for m in marque %}
+          <li><a href="{{ path('tri_prod', {'id': m.id, 'type': 'mar'}) }}" class="choose_marq"> {{ m.libelleMar }}</a></li>
+	  {% endfor %}
+      </ul>
+      
     </div>
     <div id="categories">
       <h4>Catégories</h4>
+      <ul>
       {% for c in cat %}
-          <ul><a href="{{ path('tri_prod', {'id': c.id, 'type': 'cat'}) }}" class="choose_cat"> {{ c.libelleCat }}</a></ul>
-      {% endfor %}      
+          <li><a href="{{ path('tri_prod', {'id': c.id, 'type': 'cat'}) }}" class="choose_cat"> {{ c.libelleCat }}</a></li>
+      {% endfor %}
+      </ul>
     </div>
 
   </div>
