@@ -13,8 +13,8 @@ class CatController extends Controller{
 
 	public function indexAction(){	
 		
-    $logger = $this->get('my_logger');
-    $logger->info('Entrée dans Cat:indexAction()');
+    //$logger = $this->get('my_logger');
+    //$logger->info('Entrée dans Cat:indexAction()');
 
     $em = $this->getDoctrine()->getEntityManager();
     $categorie_list = $em->getRepository("PwebAccueilBundle:Categorie")->findAll();
@@ -24,8 +24,8 @@ class CatController extends Controller{
 
 	public function addAction(){
 
-    $logger = $this->get('my_logger');
-    $logger->info('Entrée dans Cat:addAction()');
+    //$logger = $this->get('my_logger');
+    //$logger->info('Entrée dans Cat:addAction()');
 
 		$categorie = new Categorie();
 
@@ -74,8 +74,8 @@ class CatController extends Controller{
 
 	public function removeAction(){
 
-    $logger = $this->get('my_logger');
-    $logger->info('Entrée dans Cat:removeAction()');
+   // $logger = $this->get('my_logger');
+   // $logger->info('Entrée dans Cat:removeAction()');
 
     $em = $this->getDoctrine()->getEntityManager();
     $categorie_list = $em->getRepository("PwebAccueilBundle:Categorie")->findAll();
