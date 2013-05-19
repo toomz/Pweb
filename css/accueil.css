@@ -23,7 +23,7 @@
 }
 
 .contenu{
-    margin : 1em auto 5em auto;
+    margin : 1em auto 4em auto;
     border: solid 0 1px gray;
 }
 
@@ -46,6 +46,14 @@
     display:table-cell;
     width:25%;
     text-align:center;
+    padding-bottom: 2em;
+}
+
+.mobileUne:hover{
+    background: #eee;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;    
 }
 
 .mobileUne img {
