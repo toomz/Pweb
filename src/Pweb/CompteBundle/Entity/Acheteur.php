@@ -89,6 +89,19 @@ class Acheteur
     }
 
     /**
+     * Set id
+     *
+     * @param integer $id
+     * @return Acheteur
+     */    
+    public function setId($id)
+    {
+        $this->id = $id;
+
+        return $this;
+    }
+
+    /**
      * Set nom
      *
      * @param string $nom

@@ -279,7 +279,7 @@ div#col_prod {
     padding : 0 0 0 0.5em;
     width:18%;
 }
-
+/*
 .liste_prod ol li {
 	width: 15%;
 	margin: 0em 0em 0em 0em;
@@ -300,7 +300,7 @@ div#col_prod {
 	width:100em;
 	float:center;
 }
-
+*/
 .col_img > img {
 	max-width:190px;
 	max-height:400px;

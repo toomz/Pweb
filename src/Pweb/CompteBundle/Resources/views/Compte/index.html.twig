@@ -2,23 +2,22 @@
 
 {% block body %}
 		
-		<h2><b>Bienvenue {{ app.user.username }}</b></h2>
-		<br/>
+	<h2><b>Bienvenue {{ app.user.username }}</b></h2>
+	<br/>
 		
-		<div class="liste_choix2">
-			<ul>
-				<li><a href="{{ path('pweb_compte_modif') }}">Modifier vos informations personnelles</a></li>
-				<li><a href="{{ path('pweb_compte_commande') }}">Consulter vos commandes</a></li>
-				<li><a href="{{ path('pweb_compte_panier') }}">Voir votre panier</a></li>
-			</ul>
-		</div>
-		<br/><br/>
+	<div class="liste_choix2">
+		<ul>
+			<li><a href="{{ path('pweb_compte_modif',{"id":acheteur.id}) }}">Modifier vos informations personnelles</a></li>
+			<li><a href="{{ path('pweb_compte_commande') }}">Consulter vos commandes</a></li>
+			<li><a href="{{ path('pweb_compte_panier') }}">Voir votre panier</a></li>
+		</ul>
+	</div>
+	<br/><br/>
 
-		{% block compte %}
-
-			<p>Bienvenue sur votre compte {{ acheteur.prenom }} {{ acheteur.nom }}. Vous pouvez ici, consulter vos commandes passées, modifier vos données personnelles ou encore visionner votre panier en cours.</p> 
-
-		{% endblock %}
+	{% block compte %}
+		<p>Bienvenue sur votre compte {{ acheteur.prenom }} {{ acheteur.nom }}. Vous pouvez ici, consulter vos commandes passées, modifier vos données personnelles ou encore visionner votre panier en cours.</p> 
+		
+	{% endblock %}
 
 {% endblock %}
 

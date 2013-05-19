@@ -9,12 +9,17 @@ class ProduitsController extends Controller
 
 	public function indexAction()
   	{
+  		$logger = $this->get('logger');
+
 	    $em = $this->getDoctrine()->getEntityManager();
-	    // Récupère tous les produits dans l'ordre croissant sur le libelle
 		$prod = $em->getRepository("PwebAccueilBundle:Produit")->findBy(array(), array('libelleProd'=>'asc'));
-		// Récupère toutes les marques et les catégories, triées par ordre croissasnt
+		$logger->info('On récupère tous les produits');
+		$logger->err('Problème lors de la récupération des produits');
+
 	    $marques = $em->getRepository('PwebAccueilBundle:Marque')->findBy(array(), array('libelleMar'=>'asc'));
 	    $cat = $em->getRepository("PwebAccueilBundle:Categorie")->findBy(array(), array('libelleCat'=>'asc'));
+	    $logger->info('On récupère toutes les marques et catégories');
+		$logger->err('Problème lors de la récupération des marques/catégories');
 
 	    return $this->render('PwebAccueilBundle:Produits:index.html.twig', array('prod' => $prod, 'marque' => $marques, 'cat' => $cat));
 	}

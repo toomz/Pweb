@@ -3,7 +3,7 @@ pweb_compte:
     defaults: { _controller: PwebCompteBundle:Compte:index }
 
 pweb_compte_modif:
-    pattern: /compte/modification
+    pattern: /compte/modification/{id}
     defaults: { _controller: PwebCompteBundle:Compte:modif }
 
 pweb_compte_commande:

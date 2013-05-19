@@ -22,16 +22,14 @@
 		<p>{{ success }}</p>
 	{% endif %}
 
-	<div class="texte">
-		<form method="post" {{ form_enctype(form) }}>
-			    {{ form_errors(form) }}
+	<form method="post" {{ form_enctype(form) }}>
+		    {{ form_errors(form) }}
 
-			    {{ form_row(form.id) }}
-			    {{ form_row(form.statut) }}
+		    {{ form_row(form.id) }}
+		    {{ form_row(form.statut) }}
 
-			    {{ form_rest(form) }}
-			    <input type="submit" value="Envoyer" />
-		</form>	
-	</div>
+		    {{ form_rest(form) }}
+		    <input type="submit" value="Envoyer" />
+	</form>	
 	
 {% endblock %}
