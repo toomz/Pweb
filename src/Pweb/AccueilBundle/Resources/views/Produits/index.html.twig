@@ -51,34 +51,10 @@
 
           <button type="button" class="btn_voir_prod" style="background:url({{ asset('icons/loupe-icone-4171-32.png') }})" 
                   onclick="window.open('{{ path('info_produits', {'idProd': p.id}) }}')"/>
-          <button type="button" class="btn_ajout_prod" style="background:url({{ asset('icons/Shopping_basket_add_Icon_32.png') }})" {#data-path="{{ path('ajout_produit', {'idProd': p.id}) }}"#}/>
+          <button type="button" class="btn_ajout_prod" style="background:url({{ asset('icons/Shopping_basket_add_Icon_32.png') }})" {#onclick="window.open('{{ path('ajout_produit', {'idProd': p.id}) }}')"#}/>
         </li>
         {% endfor %}
-      {#
-      {% for p in prod %}
-      <ol id="{{ p.id }}" class="">
-        <li class="test">
-          <ol>
-            <div class="popup">
-              <img src="{{ p.imageMin }}" alt="{{ p.libelleProd }}" class="img_prod"/>
-            </div>
-          </ol>
-          <ol>
-            <p>{{ p.libelleProd }}</p>
-          </ol>
-          <ol>
-            <button type="button" class="btn_voir_prod" style="background:url({{ asset('icons/loupe-icone-4171-32.png') }})" 
-                onclick="window.open('{{ path('info_produits', {'idProd': p.id}) }}')"/>
-          </ol>
-          <ol>
-            <button type="button" class="btn_ajout_prod" style="background:url({{ asset('icons/Shopping_basket_add_Icon_32.png') }})" {#data-path="{{ path('ajout_produit', {'idProd': p.id}) }}"#}{#/>
-          </ol>
-          <ol>
-            <p> Prix : {{ p.prix }} €</p>
-          </ol>
-        </li> 
-      </ol>   
-      {% endfor %}#}
+      
       </ul>
     </div>
 

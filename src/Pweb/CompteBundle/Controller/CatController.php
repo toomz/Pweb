@@ -13,6 +13,9 @@ class CatController extends Controller{
 
 	public function indexAction(){	
 		
+    $logger = $this->get('my_logger');
+    $logger->info('Entrée dans Cat:indexAction()');
+
     $em = $this->getDoctrine()->getEntityManager();
     $categorie_list = $em->getRepository("PwebAccueilBundle:Categorie")->findAll();
 		return $this->render('PwebCompteBundle:Cat:index.html.twig', array('categorie_list' => $categorie_list));
@@ -20,6 +23,9 @@ class CatController extends Controller{
 	}
 
 	public function addAction(){
+
+    $logger = $this->get('my_logger');
+    $logger->info('Entrée dans Cat:addAction()');
 
 		$categorie = new Categorie();
 
@@ -67,6 +73,9 @@ class CatController extends Controller{
 	}
 
 	public function removeAction(){
+
+    $logger = $this->get('my_logger');
+    $logger->info('Entrée dans Cat:removeAction()');
 
     $em = $this->getDoctrine()->getEntityManager();
     $categorie_list = $em->getRepository("PwebAccueilBundle:Categorie")->findAll();

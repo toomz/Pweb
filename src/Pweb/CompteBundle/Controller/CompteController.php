@@ -13,6 +13,9 @@ class CompteController extends Controller{
 
 	public function indexAction(){
 
+		$logger = $this->get('my_logger');
+		$logger->info('Entrée dans Compte:indexAction()');
+
 		$em = $this->getDoctrine()->getEntityManager();
 		
 		$user = $this->container->get('security.context')->getToken()->getUser();
@@ -23,6 +26,9 @@ class CompteController extends Controller{
 	}
 
 	public function modifAction($id){
+
+		$logger = $this->get('my_logger');
+		$logger->info('Entrée dans Compte:modifAction()');
 
 		$entityManager = $this->getDoctrine()->getEntityManager();
 		$user = $this->container->get('security.context')->getToken()->getUser();
