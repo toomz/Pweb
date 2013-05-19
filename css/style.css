@@ -239,8 +239,13 @@ div#col_prod {
     border: 1px solid black;
 }
 
+.popup {
+	height:19em;
+}
+
 .test {
-	height:25em;
+	border-left: 1px solid black;
+	border-bottom: 1px solid black;
 }
 
 .liste_prod li, ol {
