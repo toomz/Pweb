@@ -38,7 +38,8 @@
 	
   	<h3>Vous êtes dans la section des produits</h3>
     <h4>C'est ici que vos petits yeux vont briller de mille feux</h4>
-      
+    <br/>
+
     <div class="liste_prod">
       <ul>
 
@@ -47,12 +48,11 @@
 	  <span> <strong>{{ p.libelleProd }}</strong></span>
 	  <span>- {{ p.prix }} € - </span>	  
           <img src="{{ p.imageMin }}" alt="{{ p.libelleProd }}" class="img_prod"/>
-          
-
-          <button type="button" class="btn_voir_prod" style="background:url({{ asset('icons/loupe-icone-4171-32.png') }})" 
-                  onclick="window.open('{{ path('info_produits', {'idProd': p.id}) }}')"/>
-          <button type="button" class="btn_ajout_prod" style="background:url({{ asset('icons/Shopping_basket_add_Icon_32.png') }})" {#onclick="window.open('{{ path('ajout_produit', {'idProd': p.id}) }}')"#}/>
+          <span> {{ p.libelleProd }} </span>
+          <button type="button" class="btn_voir_prod" style="background:url({{ asset('icons/search_b.png') }})" onclick="window.open('{{ path('info_produits', {'idProd': p.id}) }}')"/>
+          <button type="button" class="btn_ajout_prod" style="background:url({{ asset('icons/add.png') }})" onclick="window.open('{{ path('pweb_compte_ajout', {"id": p.id}) }}')"/>
         </li>
+
         {% endfor %}
       
       </ul>

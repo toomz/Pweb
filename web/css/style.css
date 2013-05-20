@@ -128,16 +128,6 @@ p {
 	overflow: hidden;
 }
 
-.texte table tbody th{
-    background: #34757B;
-    color: white;
-    text-shadow: 0px 1px 1px #000;
-}
-
-.texte table tbody tr{
-    background: #fafafa;
-}
-
 #col_gauche h4{
 	text-shadow: 0px 1px 1px #333;
 }
@@ -189,24 +179,20 @@ p {
 }
 
 .liste_choix ul li {
-	display:inline-block;
-	background:#aaa;
-	padding:0.5em;
-}
-.liste_choix ul li:hover{
-	background:#A5B14E;
+	float:left;
 }
 
 .liste_choix a{
 	margin: 0 10px;
 	font-size:16px;
-
+	font-weight: bold;
 	text-decoration:none;
-	color: #fff;	
+	color: #000;	
 }
 
 .liste_choix a:hover{
 	font-size:16px;
+	color: #c80203;
 }
 
 .liste_choix2 ul{
@@ -224,7 +210,7 @@ p {
 }
 
 .liste_choix2 a:hover{
-	color: #95b14e;
+	font-weight: bold;
 }
 
 /*********************************************/
@@ -297,9 +283,30 @@ div#col_prod {
 	border-radius: 10px;
 }
 .liste_prod li:hover{
-	background:#eee;
+	background:#eee
+}
+/*
+.liste_prod ol li {
+	width: 15%;
+	margin: 0em 0em 0em 0em;
+	line-height: 1.5em;
+	margin-top: 20px;
 }
 
+.liste_prod ol li ol {
+	width: 100%;
+	font-size: 0.8em;
+	border: none;
+	margin: 0;
+}
+
+.liste_prod ol li ol p {
+	font-weight: bold;
+	font-size:15px;
+	width:100em;
+	float:center;
+}
+*/
 .col_img > img {
 	max-width:190px;
 	max-height:400px;
@@ -307,15 +314,12 @@ div#col_prod {
 
 button.btn_voir_prod , button.btn_ajout_prod {
 	display: inline;
-	/*padding: 0em 0em 0em 1em;*/
+	padding: 0em 0em 0em 1em;
 	font-size: 1.1em;
 	font-weight: bold;
 	width: 32px;
 	height: 32px;
 }
-
-.btn_voir_prod {margin-right: 0.5em;}
-.btn_ajout_prod {margin-left: 0.5em;}
 
 /*********************************************/
 /*********************************************/

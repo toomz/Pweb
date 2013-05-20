@@ -3,11 +3,5 @@
 {% block title %}Compte - Votre panier{% endblock %}
 
 {% block compte %}
-
-{% for id in panier %}
-	<tr>
-		<td>{{ id }}</td>
-	</tr>
-{% endfor %}
-
+{{ panier }}
 {% endblock %}

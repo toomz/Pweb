@@ -7,6 +7,7 @@ use Symfony\Component\HttpKernel\Exception\AccessDeniedHttpException;
 use JMS\SecurityExtraBundle\Annotation\Secure;
 use Symfony\Bridge\Doctrine\Form\ChoiceList\EntityChoiceList;
 use Pweb\CompteBundle\Entity\Commande;
+use Pweb\CompteBundle\Entity\CommandeProd;
 use Pweb\CompteBundle\Entity\StatutCom;
 use Pweb\AccueilBundle\Entity\Produit;
 use Symfony\Component\Security\Core\SecurityContext;
@@ -19,7 +20,7 @@ class CmdController extends Controller{
 		$logger->info('Entrée dans Cmd:indexAction()');
 		
 		$em = $this->getDoctrine()->getEntityManager();
-    	$query = $em->createQuery('SELECT c FROM PwebCompteBundle:Commande c LEFT JOIN c.produits p LEFT JOIN c.statut s');
+    	$query = $em->createQuery('SELECT c FROM PwebCompteBundle:CommandeProd c LEFT JOIN c.commande co LEFT JOIN c.produit p LEFT JOIN co.statut s');
 		$commande_list = $query->getResult();
 
 		$statut_list = $em->getRepository("PwebCompteBundle:StatutCom")->findAll();
@@ -42,12 +43,14 @@ class CmdController extends Controller{
 	      	->add('statut','choice',array('choice_list'=> $statuts));
 		$form = $formBuilder->getForm();
 	    $request = $this->get('request');
+	    $logger->info('création formulaire modification statut commande');
 	    
 		if ($request->getMethod() == 'POST'){
   
   			$form->bind($request);
 
   			if ($form->isValid()){
+  				$logger->info('formulaire valide -> statut modifié');
       			$em = $this->getDoctrine()->getManager();
 	      
 	      		$em->persist($commande);
@@ -59,6 +62,7 @@ class CmdController extends Controller{
 	        		'error'=>''
 	      		));       
   			}
+  			$logger->info('formulaire non valide');
 
   		}
 

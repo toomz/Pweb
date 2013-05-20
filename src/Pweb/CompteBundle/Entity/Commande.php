@@ -33,7 +33,13 @@ class Commande
      * @ORM\JoinColumn(nullable=false)
      */
     private $statut;
-    
+
+    /**
+     * @ORM\ManyToOne(targetEntity="Pweb\CompteBundle\Entity\Acheteur", cascade={"persist"})
+     * @ORM\JoinColumn(nullable=false)
+     */
+    private $acheteur;
+
     /**
      * Get id
      *
@@ -100,4 +106,27 @@ class Commande
        return $this->statut;
      }
      
+
+    /**
+     * Set acheteur
+     *
+     * @param \Pweb\CompteBundle\Entity\Acheteur $acheteur
+     * @return Commande
+     */
+    public function setAcheteur(\Pweb\CompteBundle\Entity\Acheteur $acheteur)
+    {
+        $this->acheteur = $acheteur;
+    
+        return $this;
+    }
+
+    /**
+     * Get acheteur
+     *
+     * @return \Pweb\CompteBundle\Entity\Acheteur 
+     */
+    public function getAcheteur()
+    {
+        return $this->acheteur;
+    }
 }

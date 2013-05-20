@@ -18,6 +18,7 @@ class CatController extends Controller{
 
     $em = $this->getDoctrine()->getEntityManager();
     $categorie_list = $em->getRepository("PwebAccueilBundle:Categorie")->findAll();
+    $logger->info('récupération des catégories');
 		return $this->render('PwebCompteBundle:Cat:index.html.twig', array('categorie_list' => $categorie_list));
 
 	}
@@ -37,30 +38,36 @@ class CatController extends Controller{
 
   	$form = $formBuilder->getForm();
   	$request = $this->get('request');
+    $logger->info('création formulaire ajout catégorie');
   
   	if ($request->getMethod() == 'POST'){
   
   		$form->bind($request);
 
   		if ($form->isValid()){
+          $logger->info('formulaire valide');
       		$em = $this->getDoctrine()->getManager();
       
-      		if($em->getRepository("PwebAccueilBundle:Categorie")->findOneBy(array('libelleCat' => $categorie->getLibelleCat()))!=NULL)
+      		if($em->getRepository("PwebAccueilBundle:Categorie")->findOneBy(array('libelleCat' => $categorie->getLibelleCat()))!=NULL){
+            $logger->info('ajout d une catégorie déjà existante');
         		return $this->render('PwebCompteBundle:Cat:add.html.twig',array(
             		'form'=>$form->createView(),
             		'error'=>'La catégorie "'.$categorie->getLibelleCat().'" n\'a pas été ajoutée  : Le nom existe déjà',
             		'success'=>''
           		));
+          }
       
       		$em->persist($categorie);
       		$em->flush();
-    
+          
+          $logger->info('ajout de la catégorie');
       		return $this->render('PwebCompteBundle:Cat:add.html.twig',array(
         		'form'=>$form->createView(),
         		'success'=>'La catégorie "'.$categorie->getLibelleCat().'" a été ajoutée.',
         		'error'=>''
       		));       
   		}
+      $logger->info('formulaire non valide');
 
   	}
 
@@ -94,6 +101,8 @@ class CatController extends Controller{
 
     $form = $formBuilder->getForm();
     $request = $this->get('request');
+
+    $logger->info('création formulaire suppression catégorie');
     
     if ($request->getMethod() == 'POST'){
       
@@ -101,6 +110,7 @@ class CatController extends Controller{
 
       if ($form->isValid()){
 
+        $logger->info('formulaire valide -> suppression catégorie');
         unset($stack[$categorie->getLibelleCat()]);
 
         $categorie = $em->getRepository("PwebAccueilBundle:Categorie")->findOneBy(array('libelleCat'=>$categorie->getLibelleCat()));
@@ -123,6 +133,7 @@ class CatController extends Controller{
 
       }
 
+      $logger->info('formulaire non valide');
       return $this->render('PwebCompteBundle:Cat:remove.html.twig',array(
         'form'=>$form->createView(),
         'success'=>'',

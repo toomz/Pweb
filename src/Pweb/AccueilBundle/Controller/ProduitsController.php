@@ -22,6 +22,7 @@ class ProduitsController extends Controller
 
 	    return $this->render('PwebAccueilBundle:Produits:index.html.twig', array('prod' => $prod, 'marque' => $marques, 'cat' => $cat));
 	}
+  		
 
 	public function showInfoAction($idProd)
 	{
