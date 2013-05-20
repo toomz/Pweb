@@ -159,6 +159,16 @@ p {
 	font-size: 14px;
 	font-weight: bold;
 }
+
+.texte form > div {
+	display : table;
+	min-width: 45%;
+}
+
+.texte form > div > label, form > div > input  {
+	display : table-cell;
+	min-width:25%;
+}
 /*
 .texte form label {
 	margin-left:5%;
