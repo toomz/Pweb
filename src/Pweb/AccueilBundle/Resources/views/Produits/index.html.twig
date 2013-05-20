@@ -50,7 +50,11 @@
           <img src="{{ p.imageMin }}" alt="{{ p.libelleProd }}" class="img_prod"/>
           <span> {{ p.libelleProd }} </span>
           <button type="button" class="btn_voir_prod" style="background:url({{ asset('icons/search_b.png') }})" onclick="window.open('{{ path('info_produits', {'idProd': p.id}) }}')"/>
+          {% if is_granted('ROLE_CLIENT') %}
           <button type="button" class="btn_ajout_prod" style="background:url({{ asset('icons/add.png') }})" onclick="window.open('{{ path('pweb_compte_ajout', {"id": p.id}) }}')"/>
+          {% else %}
+          <button type="button" class="btn_ajout_prod" style="background:url({{ asset('icons/add.png') }})" onclick="window.open('{{ path('login') }}')"/>
+          {% endif %}
         </li>
 
         {% endfor %}

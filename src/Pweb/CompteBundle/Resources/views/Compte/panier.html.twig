@@ -8,20 +8,24 @@
 {% if success != '' %}
 	<p>{{ success }}</p>
 {% else %}
-		<tr>
-			<th>Libellé</th>
-			<th>Prix</th>
-		</tr>
+	<tr>
+		<th>Libellé</th>
+		<th>Prix</th>
+	</tr>
 	{% for produit in panier %}	
 		<tr>
 			<td>{{ produit.libelleProd }}</td>
 			<td>{{ produit.prix }}</td>
 		</tr>
 	{% endfor %}
-<tr>
-	<td><a href="{{ path('pweb_compte_valider') }}"><button>Valider le panier</button></a></td>
-	<td><a href="{{ path('pweb_compte_vider') }}"><button>Vider le panier</button></a></td>
-</tr>
+	<tr>
+		<td>Total</td>
+		<td></td>
+	</tr>
+	<tr>
+		<td><a href="{{ path('pweb_compte_valider') }}"><button>Valider le panier</button></a></td>
+		<td><a href="{{ path('pweb_compte_vider') }}"><button>Vider le panier</button></a></td>
+	</tr>
 {% endif %}
 
 <table>
