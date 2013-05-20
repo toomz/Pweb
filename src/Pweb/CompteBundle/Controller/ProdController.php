@@ -14,6 +14,9 @@ use Pweb\AccueilBundle\Entity\Marque;
 class ProdController extends Controller{
 
 	public function indexAction(){	
+
+    $logger = $this->get('my_logger');
+    $logger->info('Entrée dans Prod:indexAction()');
 		
     $em = $this->getDoctrine()->getEntityManager();
     $query = $em->createQuery('SELECT p.libelleProd, p.description, c.libelleCat, m.libelleMar, p.prix, p.poids FROM PwebAccueilBundle:Produit p LEFT JOIN p.categorie c LEFT JOIN p.marque m');
@@ -23,6 +26,9 @@ class ProdController extends Controller{
 	}
 
 	public function addAction(){
+
+    $logger = $this->get('my_logger');
+    $logger->info('Entrée dans Prod:addAction()');
 
 		$produit = new Produit();
 
@@ -43,30 +49,36 @@ class ProdController extends Controller{
 
   	$form = $formBuilder->getForm();
   	$request = $this->get('request');
+    $logger->info('création formulaire ajout produit');
   
   	if ($request->getMethod() == 'POST'){
   
   		$form->bind($request);
 
   		if ($form->isValid()){
+          $logger->info('formulaire valide');
       		$em = $this->getDoctrine()->getManager();
       
-      		if($em->getRepository("PwebAccueilBundle:Produit")->findOneBy(array('libelleProd' => $produit->getLibelleProd()))!=NULL)
+      		if($em->getRepository("PwebAccueilBundle:Produit")->findOneBy(array('libelleProd' => $produit->getLibelleProd()))!=NULL){
+            $logger->info('ajout d un produit déjà existant');
         		return $this->render('PwebCompteBundle:Prod:add.html.twig',array(
             		'form'=>$form->createView(),
             		'error'=>'Le produit "'.$produit->getLibelleProd().'" n\'a pas été ajouté  : Le nom existe déjà',
             		'success'=>''
           		));
+          }
       
       		$em->persist($produit);
       		$em->flush();
-    
+          
+          $logger->info('ajout du produit');
       		return $this->render('PwebCompteBundle:Prod:add.html.twig',array(
         		'form'=>$form->createView(),
         		'success'=>'Le produit "'.$produit->getLibelleProd().'" a été ajouté.',
         		'error'=>''
       		));       
   		}
+      $logger->info('formulaire non valide');
 
   	}
 
@@ -79,6 +91,9 @@ class ProdController extends Controller{
 	}
 
 	public function removeAction(){
+
+    $logger = $this->get('my_logger');
+    $logger->info('Entrée dans Prod:removeAction()');
 
     $em = $this->getDoctrine()->getEntityManager();
     $produit_list = $em->getRepository("PwebAccueilBundle:Produit")->findAll();
@@ -97,6 +112,7 @@ class ProdController extends Controller{
 
     $form = $formBuilder->getForm();
     $request = $this->get('request');
+    $logger->info('création formulaire suppression produit');
     
     if ($request->getMethod() == 'POST'){
       
@@ -104,6 +120,7 @@ class ProdController extends Controller{
 
       if ($form->isValid()){
 
+        $logger->info('formulaire valide -> suppression produit');
         unset($stack[$produit->getLibelleProd()]);
 
         $produit = $em->getRepository("PwebAccueilBundle:Produit")->findOneBy(array('libelleProd'=>$produit->getLibelleProd()));
@@ -126,6 +143,7 @@ class ProdController extends Controller{
 
       }
 
+      $logger->info('formulaire non valide');
       return $this->render('PwebCompteBundle:Prod:remove.html.twig',array(
         'form'=>$form->createView(),
         'success'=>'',

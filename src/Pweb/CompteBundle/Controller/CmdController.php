@@ -15,6 +15,9 @@ use Symfony\Component\Security\Core\SecurityContext;
 class CmdController extends Controller{
 
 	public function indexAction(){	
+
+		$logger = $this->get('my_logger');
+		$logger->info('Entrée dans Cmd:indexAction()');
 		
 		$em = $this->getDoctrine()->getEntityManager();
     	$query = $em->createQuery('SELECT c FROM PwebCompteBundle:CommandeProd c LEFT JOIN c.commande co LEFT JOIN c.produit p LEFT JOIN co.statut s');
@@ -27,6 +30,9 @@ class CmdController extends Controller{
 
 	public function modifAction($id) {
 
+		$logger = $this->get('my_logger');
+		$logger->info('Entrée dans Cmd:modifAction()');
+
 		$entityManager = $this->getDoctrine()->getManager();
 		$commande = $entityManager->getRepository('PwebCompteBundle:Commande')->find($id);
 	    $statuts = new EntityChoiceList($entityManager,'Pweb\CompteBundle\Entity\StatutCom');
@@ -37,12 +43,14 @@ class CmdController extends Controller{
 	      	->add('statut','choice',array('choice_list'=> $statuts));
 		$form = $formBuilder->getForm();
 	    $request = $this->get('request');
+	    $logger->info('création formulaire modification statut commande');
 	    
 		if ($request->getMethod() == 'POST'){
   
   			$form->bind($request);
 
   			if ($form->isValid()){
+  				$logger->info('formulaire valide -> statut modifié');
       			$em = $this->getDoctrine()->getManager();
 	      
 	      		$em->persist($commande);
@@ -54,6 +62,7 @@ class CmdController extends Controller{
 	        		'error'=>''
 	      		));       
   			}
+  			$logger->info('formulaire non valide');
 
   		}
 

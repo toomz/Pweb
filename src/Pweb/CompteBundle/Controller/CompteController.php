@@ -13,6 +13,9 @@ class CompteController extends Controller{
 
 	public function indexAction(){
 
+		$logger = $this->get('my_logger');
+		$logger->info('Entrée dans Compte:indexAction()');
+
 		$em = $this->getDoctrine()->getEntityManager();
 		
 		$user = $this->container->get('security.context')->getToken()->getUser();
@@ -23,6 +26,9 @@ class CompteController extends Controller{
 	}
 
 	public function modifAction($id){
+
+		$logger = $this->get('my_logger');
+		$logger->info('Entrée dans Compte:modifAction()');
 
 		$entityManager = $this->getDoctrine()->getEntityManager();
 		$user = $this->container->get('security.context')->getToken()->getUser();
@@ -42,12 +48,14 @@ class CompteController extends Controller{
 	      	->add('telephone', 'text', array('label' => 'Téléphone (0+)'));
 		$form = $formBuilder->getForm();
 	    $request = $this->get('request');
+	    $logger->info('création formulaire modification compte');
 	    
 		if ($request->getMethod() == 'POST'){
   
   			$form->bind($request);
 
   			if ($form->isValid()){
+  				$logger->info('formulaire valide -> compte modifié');
       			$entityManager = $this->getDoctrine()->getManager();
 	      
 	      		$entityManager->persist($acheteur);
@@ -60,6 +68,7 @@ class CompteController extends Controller{
 	        		'acheteur' => $acheteur
 	      		));       
   			}
+  			$logger->info('formulaire non valide');
 
   		}
 

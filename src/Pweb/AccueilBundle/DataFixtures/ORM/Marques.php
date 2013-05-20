@@ -80,6 +80,10 @@ class Marques extends AbstractFixture implements OrderedFixtureInterface{
       $marque->setLibelleMar("Archos");
       $manager->persist($marque);
       
+      $marque = new Marque();
+      $marque->setLibelleMar("Autre");
+      $manager->persist($marque);
+            
       $manager->flush();
 
   }
