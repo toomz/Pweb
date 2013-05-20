@@ -7,6 +7,10 @@ use Symfony\Component\HttpKernel\Exception\AccessDeniedHttpException;
 use JMS\SecurityExtraBundle\Annotation\Secure;
 use Symfony\Component\Security\Core\SecurityContext;
 use Pweb\CompteBundle\Entity\Acheteur;
+use Pweb\AccueilBundle\Entity\Produit;
+use Pweb\CompteBundle\Entity\StatutCom;
+use Pweb\CompteBundle\Entity\Commande;
+use Pweb\CompteBundle\Entity\CommandeProd;
 use Pweb\UserBundle\Entity\User;
 
 class CompteController extends Controller{
@@ -86,9 +90,10 @@ class CompteController extends Controller{
 		$entityManager = $this->getDoctrine()->getEntityManager();
 		$user = $this->container->get('security.context')->getToken()->getUser();
 		$acheteur = $entityManager->getRepository("PwebCompteBundle:Acheteur")->findOneBy(array('username' => $user));
-
 		
-		return $this->render('PwebCompteBundle:Compte:commande.html.twig', array('acheteur' => $acheteur));
+		$commande_list = $entityManager->getRepository("PwebCompteBundle:Commande")->findBy(array('acheteur' => $acheteur));
+
+		return $this->render('PwebCompteBundle:Compte:commande.html.twig', array('commande_list' => $commande_list, 'acheteur' => $acheteur));
 
 	}
 
@@ -113,13 +118,13 @@ class CompteController extends Controller{
 				$liste_panier[$id] = $entityManager->getRepository('PwebAccueilBundle:Produit')->find($id);
 			}
 
-			return $this->render('PwebCompteBundle:Compte:panier.html.twig',array('panier' => $panier, 'acheteur' => $acheteur));
+			return $this->render('PwebCompteBundle:Compte:panier.html.twig',array('panier' => $panier, 'acheteur' => $acheteur, 'success' => ''));
 
 		}
 
 		else{
       		return $this->render('PwebCompteBundle:Compte:panier.html.twig',array(
-      			'panier'=>'Aucun produit dans votre panier',
+      			'success'=>'Aucun produit dans votre panier',
       			'acheteur' => $acheteur
       		)); 
 		}
@@ -138,39 +143,84 @@ class CompteController extends Controller{
 		$panier = $session->get('panier');
 
 		//Utilisé pour ajouter un produit au panier
-		if($panier == null){
-			$panier[] = $id;
-			$session->set('panier', $panier);
-			return $this->render('PwebCompteBundle:Compte:ajoutpanier.html.twig', array('panier' => 'votre produit n\'a pas été ajouté', 'acheteur' => $acheteur));
+		//$panier[] = $id;
+		if($panier == NULL){
+			$panier = array();
 		}
+		
+		$panier[] = $produit;
+		$session->set('panier', $panier);
+		
 
-		else{
-			//Si le produit est déjà dans le panier, on ne l'ajoute plus
-			if(!in_array($id, $panier)){
-				$panier[] = $id;
-				$session->set('panier', $panier);
-				return $this->render('PwebCompteBundle:Compte:ajoutpanier.html.twig', array('panier' => 'votre produit n\'a pas été ajouté', 'acheteur' => $acheteur));
-			}
-		}
-
-		return $this->render('PwebCompteBundle:Compte:ajoutpanier.html.twig', array('panier' => 'votre produit a été ajouté', 'acheteur' => $acheteur));
+		return $this->render('PwebCompteBundle:Compte:panier.html.twig', array('panier' => $panier, 'acheteur' => $acheteur, 'success' => ''));
 
 	}
 
-	public function supelepanierAction(){
+	/*public function supelepanierAction(){
 
 		//Pour supprimer un élément du panier
 		$panier = $session->get('panier');
 		unset($panier[array_search($idProduit, $panier)]);
 		$session->set('panier', $panier);
 
-	}
+	}*/
 
-	public function suppanier(){
+	public function suppanierAction(){
+
+		$entityManager = $this->getDoctrine()->getEntityManager();
+		$user = $this->container->get('security.context')->getToken()->getUser();
+		$acheteur = $entityManager->getRepository("PwebCompteBundle:Acheteur")->findOneBy(array('username' => $user));
+
+		//On chope la session et le tableau panier
+		$session = $this->getRequest()->getSession();
+		$panier = $session->get('panier');
 
 		//Pour vider le panier
 		$session->remove('panier');			
-		return $this->render('PwebCompteBundle:Compte:panier.html.twig');
+		return $this->render('PwebCompteBundle:Compte:panier.html.twig', array('success' => 'Votre panier a été vidé', 'acheteur' => $acheteur));
+
+	}
+
+	public function validepanierAction(){
+
+		$entityManager = $this->getDoctrine()->getEntityManager();
+		$user = $this->container->get('security.context')->getToken()->getUser();
+		$acheteur = $entityManager->getRepository("PwebCompteBundle:Acheteur")->findOneBy(array('username' => $user));
+
+		//On chope la session et le tableau panier
+		$session = $this->getRequest()->getSession();
+		$panier = $session->get('panier');
+
+		//Transforme le panier en commande
+		$commande = new Commande();
+		$commande->setDate(new \DateTime);
+		$stat = $entityManager->getRepository("PwebCompteBundle:StatutCom")->findOneBy(array('libelleStat' => "en cours"));
+		$commande->setStatut($stat);
+		$commande->setAcheteur($acheteur);
+
+      	$entityManager->persist($commande);
+      	$entityManager->flush();
+
+      	foreach($panier as $id){
+			$prod = $entityManager->getRepository('PwebAccueilBundle:Produit')->findOneBy(array('id' => $id));
+			if(($comProdBis = $entityManager->getRepository('PwebCompteBundle:CommandeProd')->findOneBy(array('commande' => $commande, 'produit' => $prod)))!=NULL){
+				$comProdBis->setQuantite($comProdBis->getQuantite() + 1);
+				$entityManager->persist($comProdBis);
+      		}else{
+				$comProd = new CommandeProd();
+      			$comProd->setCommande($commande);
+      			$comProd->setQuantite(1);
+				$liste_panier[$id] = $entityManager->getRepository('PwebAccueilBundle:Produit')->find($id);
+			
+				$comProd->setProduit($prod);	
+				$entityManager->persist($comProd);
+				$entityManager->flush();
+			}
+
+		}
+
+		$session->remove('panier');
+		return $this->render('PwebCompteBundle:Compte:panier.html.twig', array('success' => 'Votre commande a été validée', 'acheteur' => $acheteur));
 
 	}
 

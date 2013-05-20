@@ -3,5 +3,28 @@
 {% block title %}Compte - Vos commandes{% endblock %}
 
 {% block compte %}
-Commandes
+
+	<table style="margin:15px 15px">
+		<tr>
+			<th style="padding:10px">Date</th>
+			<th style="padding:10px">Statut</th>
+		</tr>
+	
+	{% for commande in commande_list %}		
+		<tr>
+			<td style="padding:7px">{{ commande.date|date('d/m/Y') }}</td>
+			<td style="padding:7px">{{ commande.statut.libelleStat }}</td>
+		<tr>
+		
+	{% else %}
+		<tr>
+			<td style="padding:7px">NULL</td>
+			<td style="padding:7px">NULL</td>
+		<tr>
+		
+		<br/><br/><p>Aucune commande enregistrée</p>
+	{% endfor %}
+
+	</table>
+
 {% endblock %}

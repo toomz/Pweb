@@ -16,17 +16,17 @@
 
 	<table style="margin:15px 15px">
 		<tr>
+			<th style="padding:10px">Acheteur</th>
 			<th style="padding:10px">Date</th>
-			<th style="padding:10px">Produits</th>
 			<th style="padding:10px">Statut</th>
 		</tr>
 	
 	{% for commande in commande_list %}		
 		<tr>
-			<td style="padding:7px">{{ commande.commande.date|date('d/m/Y') }}</td>
-			<td style="padding:7px">{% for produit in commande.produit %}{{ produit.libelleProd }} | {% endfor %}</td>
-			<td style="padding:7px">{{ commande.commande.statut.libelleStat }}</td>
-			<td style="padding:7px"><a href="{{ path('pweb_cmd_modif',{"id":commande.commande.id}) }}"><button>Modifier le statut</button></a></td>
+			<td style="padding:7px">{{ commande.acheteur.nom }} {{ commande.acheteur.prenom }}</td>
+			<td style="padding:7px">{{ commande.date|date('d/m/Y') }}</td>
+			<td style="padding:7px">{{ commande.statut.libelleStat }}</td>
+			<td style="padding:7px"><a href="{{ path('pweb_cmd_modif',{"id":commande.id}) }}"><button>Modifier le statut</button></a></td>
 		<tr>
 		
 	{% else %}

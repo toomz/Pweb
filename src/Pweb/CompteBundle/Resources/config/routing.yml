@@ -18,6 +18,14 @@ pweb_compte_ajout:
     pattern: /produits/ajout/{id}
     defaults: { _controller: PwebCompteBundle:Compte:ajoutpanier }
 
+pweb_compte_valider:
+    pattern: /compte/panier/validation
+    defaults: { _controller: PwebCompteBundle:Compte:validepanier }
+
+pweb_compte_vider:
+    pattern: /compte/panier/vider
+    defaults: { _controller: PwebCompteBundle:Compte:suppanier }
+
 pweb_admin:
     pattern: /admin
     defaults: { _controller: PwebCompteBundle:Admin:index }

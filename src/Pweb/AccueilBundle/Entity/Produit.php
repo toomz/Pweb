@@ -19,68 +19,68 @@ class Produit
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="AUTO")
      */
-    private $id;
+    protected $id;
 
     /**
      * @var string
      *
      * @ORM\Column(name="libelle", type="string", length=255)
      */
-    private $libelleProd;
+    protected $libelleProd;
 
     /**
      * @var string
      *
      * @ORM\Column(name="description", type="text")
      */
-    private $description;
+    protected $description;
     
     /**
      * @ORM\ManyToOne(targetEntity="Pweb\AccueilBundle\Entity\Categorie", cascade={"persist"})
      * @ORM\JoinColumn(nullable=false)
      */
-    private $categorie;
+    protected $categorie;
     
     /**
      * @ORM\ManyToOne(targetEntity="Pweb\AccueilBundle\Entity\Marque", cascade={"persist"})
      * @ORM\JoinColumn(nullable=false)
      */
-    private $marque;
+    protected $marque;
   
     /**
      * @var float
      *
      * @ORM\Column(name="prix", type="float")
      */
-    private $prix;
+    protected $prix;
 
     /**
      * @var float
      *
      * @ORM\Column(name="poids", type="float")
      */
-    private $poids;
+    protected $poids;
 
     /**
      * @var string
      *
      * @ORM\Column(name="imageMin", type="string", length=255, nullable=TRUE)
      */
-    private $imageMin;
+    protected $imageMin;
 
     /**
      * @var string
      *
      * @ORM\Column(name="image", type="string", length=255, nullable=TRUE)
      */
-    private $image;
+    protected $image;
 
     /**
      * @var \DateTime
      * 
      * @ORM\Column(name="dateSortie", type="datetime", nullable=TRUE)
      */
-    private $dateSortie;
+    protected $dateSortie;
 
     /**
      * Get id

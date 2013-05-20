@@ -19,14 +19,14 @@ class Categorie
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="AUTO")
      */
-    private $id;
+    protected $id;
 
     /**
      * @var string
      *
      * @ORM\Column(name="libelle", type="string", length=255)
      */
-    private $libelleCat;
+    protected $libelleCat;
 
 
     /**

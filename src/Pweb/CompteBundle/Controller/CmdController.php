@@ -20,11 +20,12 @@ class CmdController extends Controller{
 		$logger->info('Entrée dans Cmd:indexAction()');
 		
 		$em = $this->getDoctrine()->getEntityManager();
-    	$query = $em->createQuery('SELECT c FROM PwebCompteBundle:CommandeProd c LEFT JOIN c.commande co LEFT JOIN c.produit p LEFT JOIN co.statut s');
-		$commande_list = $query->getResult();
-
+    	//$query = $em->createQuery('SELECT c FROM PwebCompteBundle:CommandeProd c LEFT JOIN c.commande co LEFT JOIN c.produit p LEFT JOIN co.statut s');
+		$commande_list = $em->getRepository("PwebCompteBundle:Commande")->findAll();
 		$statut_list = $em->getRepository("PwebCompteBundle:StatutCom")->findAll();
-		return $this->render('PwebCompteBundle:Cmd:index.html.twig', array('commande_list' => $commande_list, 'statut_list' => $statut_list));
+		$acheteur_list = $em->getRepository("PwebCompteBundle:Acheteur")->findAll();
+
+		return $this->render('PwebCompteBundle:Cmd:index.html.twig', array('acheteur_list' => $acheteur_list, 'commande_list' => $commande_list, 'statut_list' => $statut_list));
 
 	}
 
