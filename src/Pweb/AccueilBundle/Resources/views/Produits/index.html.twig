@@ -38,7 +38,8 @@
 	
   	<h3>Vous êtes dans la section des produits</h3>
     <h4>C'est ici que vos petits yeux vont briller de mille feux</h4>
-      
+    <br/>
+
     <div class="liste_prod">
       <ul>
 
@@ -46,10 +47,11 @@
         <li id="{{ p.id }}" class="popup">
           <img src="{{ p.imageMin }}" alt="{{ p.libelleProd }}" class="img_prod"/>
           <span> {{ p.libelleProd }} </span>
-          <button type="button" class="btn_voir_prod" style="background:url({{ asset('icons/loupe-icone-4171-32.png') }})" 
-                  onclick="window.open('{{ path('info_produits', {'idProd': p.id}) }}')"/>
-          <button type="button" class="btn_ajout_prod" style="background:url({{ asset('icons/Shopping_basket_add_Icon_32.png') }})" {#data-path="{{ path('ajout_produit', {'idProd': p.id}) }}"#}/>
+          <button type="button" class="btn_voir_prod" style="background:url({{ asset('icons/loupe-icone-4171-32.png') }})" onclick="window.open('{{ path('info_produits', {'idProd': p.id}) }}')"/>
+          {#<a href="{{ path('pweb_compte_ajout') }}"><button type="button" class="btn_ajout_prod" style="background:url({{ asset('icons/Shopping_basket_add_Icon_32.png') }})" /></a>#}
+          <a href="{{ path('pweb_compte_ajout', {"id": p.id}) }}">Ajouter produit</a>
         </li>
+
         {% endfor %}
       {#
       {% for p in prod %}

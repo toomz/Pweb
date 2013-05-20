@@ -12,9 +12,9 @@ $(document).ready(function(){
     window.open(path, "prod", "width=500, height=500");
   })
   */
-  $('.btn_ajout_prod').click(function(){
+  /*$('.btn_ajout_prod').click(function(){
     alert('fonctionnalité en cours de construction');
-  })
+  })*/
 
   $('select').change(function () {
     $("select option:selected").each(function () {

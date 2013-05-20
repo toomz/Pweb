@@ -7,6 +7,7 @@ use Doctrine\Common\DataFixtures\OrderedFixtureInterface;
 use Doctrine\Common\DataFixtures\FixtureInterface;
 use Doctrine\Common\Persistence\ObjectManager;
 use Pweb\AccueilBundle\Entity\Produit; 
+use Pweb\CompteBundle\Entity\Acheteur; 
 use Pweb\CompteBundle\Entity\Commande;
 use Pweb\CompteBundle\Entity\CommandeProd; 
 
@@ -21,6 +22,10 @@ class CommandeProds extends AbstractFixture implements OrderedFixtureInterface{
       
       $stat = $manager->getRepository("PwebCompteBundle:StatutCom")->findOneBy(array('libelleStat' => "en cours"));
       $com->setStatut($stat);
+      $user = $manager->getRepository("PwebUserBundle:User")->findOneBy(array('username' => "THEUILElsa67"));
+      $acheteur = $manager->getRepository("PwebCompteBundle:Acheteur")->findOneBy(array('username' => $user));
+      $com->setAcheteur($acheteur);
+
       $manager->persist($com);
       $manager->flush();
       
@@ -43,7 +48,6 @@ class CommandeProds extends AbstractFixture implements OrderedFixtureInterface{
       $comProd->setQuantite(2);
       
       $manager->persist($comProd);
-
       
       /**************************************************************/
       /**************************************************************/
@@ -52,6 +56,10 @@ class CommandeProds extends AbstractFixture implements OrderedFixtureInterface{
       
       $stat = $manager->getRepository("PwebCompteBundle:StatutCom")->findOneBy(array('libelleStat' => "en cours"));
       $com->setStatut($stat);
+      $user = $manager->getRepository("PwebUserBundle:User")->findOneBy(array('username' => "PIRRIEleonore67"));
+      $acheteur = $manager->getRepository("PwebCompteBundle:Acheteur")->findOneBy(array('username' => $user));
+      $com->setAcheteur($acheteur);
+
       $manager->persist($com);
       $manager->flush();
 
@@ -74,7 +82,7 @@ class CommandeProds extends AbstractFixture implements OrderedFixtureInterface{
       $comProd->setQuantite(2);
       
       $manager->persist($comProd);
-      
+
       
       $manager->flush();
 

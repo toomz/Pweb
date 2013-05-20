@@ -23,7 +23,6 @@ class Acheteur
     private $id;
 
     /**
-     * @ORM\Column(type="string", length=255, unique=true)
      * @ORM\OneToOne(targetEntity="Pweb\UserBundle\Entity\User", cascade={"persist"})
      */
     private $username;

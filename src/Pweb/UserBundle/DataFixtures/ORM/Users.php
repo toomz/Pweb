@@ -20,15 +20,15 @@ class Users extends AbstractFixture implements OrderedFixtureInterface{
       $manager->persist($user);
       
       $user = new User;
-      $user->setUsername('client1');
-      $user->setPassword(sha1('pass_client1'));
+      $user->setUsername('THEUILElsa67');
+      $user->setPassword(sha1('THEUIL'));
       $user->setSalt('');
       $user->setRoles(array('ROLE_CLIENT'));
       $manager->persist($user);
       
       $user = new User;
-      $user->setUsername('client2');
-      $user->setPassword(sha1('pass_client2'));
+      $user->setUsername('PIRRIEleonore67');
+      $user->setPassword(sha1('PIRRI'));
       $user->setSalt('');
       $user->setRoles(array('ROLE_CLIENT'));
       $manager->persist($user);

@@ -7,6 +7,7 @@ use Symfony\Component\HttpKernel\Exception\AccessDeniedHttpException;
 use JMS\SecurityExtraBundle\Annotation\Secure;
 use Symfony\Bridge\Doctrine\Form\ChoiceList\EntityChoiceList;
 use Pweb\CompteBundle\Entity\Commande;
+use Pweb\CompteBundle\Entity\CommandeProd;
 use Pweb\CompteBundle\Entity\StatutCom;
 use Pweb\AccueilBundle\Entity\Produit;
 use Symfony\Component\Security\Core\SecurityContext;
@@ -16,7 +17,7 @@ class CmdController extends Controller{
 	public function indexAction(){	
 		
 		$em = $this->getDoctrine()->getEntityManager();
-    	$query = $em->createQuery('SELECT c FROM PwebCompteBundle:Commande c LEFT JOIN c.produits p LEFT JOIN c.statut s');
+    	$query = $em->createQuery('SELECT c FROM PwebCompteBundle:CommandeProd c LEFT JOIN c.commande co LEFT JOIN c.produit p LEFT JOIN co.statut s');
 		$commande_list = $query->getResult();
 
 		$statut_list = $em->getRepository("PwebCompteBundle:StatutCom")->findAll();

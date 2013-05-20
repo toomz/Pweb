@@ -15,6 +15,13 @@ class CommandeProd
 
     /**
      * @ORM\Id
+     * @ORM\ManyToOne(targetEntity="Pweb\CompteBundle\Entity\Acheteur", cascade={"persist"})
+     * @ORM\JoinColumn(nullable=false)
+     */
+    private $acheteur;
+
+    /**
+     * @ORM\Id
      * @ORM\ManyToOne(targetEntity="Pweb\AccueilBundle\Entity\Produit", cascade={"persist"})
      * @ORM\JoinColumn(nullable=false)
      */
