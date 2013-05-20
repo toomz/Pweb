@@ -99,6 +99,9 @@ class CompteController extends Controller{
 
 	public function panierAction(){
 
+		$logger = $this->get('my_logger');
+		$logger->info('Entrée dans Compte:panierAction()');
+
 		$entityManager = $this->getDoctrine()->getEntityManager();
 		$user = $this->container->get('security.context')->getToken()->getUser();
 		$acheteur = $entityManager->getRepository("PwebCompteBundle:Acheteur")->findOneBy(array('username' => $user));
@@ -110,6 +113,7 @@ class CompteController extends Controller{
 		//Utilisé pour récupérer les objets du panier
 		if($panier){
 
+			$logger->info('récupération la session et le panier');
 			$entityManager = $this->getDoctrine()->getManager();
 			$liste_panier = null;
 
@@ -117,12 +121,14 @@ class CompteController extends Controller{
 			foreach($panier as $id){
 				$liste_panier[$id] = $entityManager->getRepository('PwebAccueilBundle:Produit')->find($id);
 			}
+			$logger->info('parcours du panier');
 
 			return $this->render('PwebCompteBundle:Compte:panier.html.twig',array('panier' => $panier, 'acheteur' => $acheteur, 'success' => ''));
 
 		}
 
 		else{
+			$logger->info('panier vide');
       		return $this->render('PwebCompteBundle:Compte:panier.html.twig',array(
       			'success'=>'Aucun produit dans votre panier',
       			'acheteur' => $acheteur
@@ -132,6 +138,9 @@ class CompteController extends Controller{
 	}
 
 	public function ajoutpanierAction($id){
+
+		$logger = $this->get('my_logger');
+		$logger->info('Entrée dans Compte:ajoutpanierAction()');
 
 		$entityManager = $this->getDoctrine()->getEntityManager();
 		$user = $this->container->get('security.context')->getToken()->getUser();
@@ -143,6 +152,7 @@ class CompteController extends Controller{
 		$panier = $session->get('panier');
 
 		//Utilisé pour ajouter un produit au panier
+
 		//$panier[] = $id;
 		if($panier == NULL){
 			$panier = array();
@@ -153,6 +163,26 @@ class CompteController extends Controller{
 		
 
 		return $this->render('PwebCompteBundle:Compte:panier.html.twig', array('panier' => $panier, 'acheteur' => $acheteur, 'success' => ''));
+
+		if($panier == null){
+
+			$logger->info('récupération la session -> panier null');
+			$panier[] = $id;
+			$session->set('panier', $panier);
+			return $this->render('PwebCompteBundle:Compte:ajoutpanier.html.twig', array('panier' => 'votre produit n\'a pas été ajouté', 'acheteur' => $acheteur));
+		}
+
+		else{
+			//Si le produit est déjà dans le panier, on ne l'ajoute plus
+			if(!in_array($id, $panier)){
+				$logger->info('produit deja dans panier');
+				$panier[] = $id;
+				$session->set('panier', $panier);
+				return $this->render('PwebCompteBundle:Compte:ajoutpanier.html.twig', array('panier' => 'votre produit n\'a pas été ajouté', 'acheteur' => $acheteur));
+			}
+		}
+		$logger->info('produit ajouté');
+		return $this->render('PwebCompteBundle:Compte:ajoutpanier.html.twig', array('panier' => 'votre produit a été ajouté', 'acheteur' => $acheteur));
 
 	}
 

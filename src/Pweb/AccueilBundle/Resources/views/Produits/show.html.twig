@@ -5,10 +5,7 @@
 {% block css %} <link rel="stylesheet" media="screen" href="/Pweb/css/produits.css" /> {% endblock %}
 
 {% block body %}
-
-
-  <a href="javascript:history.go(-1)">Retour</a>
-
+  
   <div class="col_img">
     <img src="{{ prod.image }}"/>
   </div>
@@ -20,9 +17,9 @@
     <ul><p> Poids : {{ prod.poids }} gr.</p></ul>
     <ul><p> Date de sortie : {{ prod.dateSortie|date('d/m/Y') }} </p></ul>
     <ul>
-      <button type="button" class="btn_ajout_prod" style="background:url({{ asset('icons/Shopping_basket_add_Icon_32.png') }})" 
-      data-path="{{ path('info_produits', {'idProd': prod.id}) }}"/>
+      <button type="button" class="btn_ajout_prod" style="background:url({{ asset('icons/add.png') }})" onclick="window.open('{{ path('pweb_compte_ajout', {"id": prod.id}) }}')"/>
     </ul>
+    <span class="msg_ajout"></span>
   </div>
 
 
