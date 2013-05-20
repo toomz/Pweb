@@ -283,30 +283,9 @@ div#col_prod {
 	border-radius: 10px;
 }
 .liste_prod li:hover{
-	background:#eee
-}
-/*
-.liste_prod ol li {
-	width: 15%;
-	margin: 0em 0em 0em 0em;
-	line-height: 1.5em;
-	margin-top: 20px;
+	background:#eee;
 }
 
-.liste_prod ol li ol {
-	width: 100%;
-	font-size: 0.8em;
-	border: none;
-	margin: 0;
-}
-
-.liste_prod ol li ol p {
-	font-weight: bold;
-	font-size:15px;
-	width:100em;
-	float:center;
-}
-*/
 .col_img > img {
 	max-width:190px;
 	max-height:400px;
@@ -320,6 +299,9 @@ button.btn_voir_prod , button.btn_ajout_prod {
 	width: 32px;
 	height: 32px;
 }
+
+.btn_voir_prod {margin-right: 0.5em;}
+.btn_ajout_prod {margin-left: 0.5em;}
 
 /*********************************************/
 /*********************************************/
