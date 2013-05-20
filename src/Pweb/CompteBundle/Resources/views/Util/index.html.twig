@@ -18,18 +18,15 @@
 	<table style="margin:15px 15px">
 		<tr>
 			<th style="padding:10px">Identifiant</th>
-			<th style="padding:10px">Role</th>
 		</tr>
 
 	{% for user in user_list %}
 		<tr>
 			<td style="padding:7px">{{ user.username }}</td>
-			{#<td style="padding:7px">{{ user.roles }}</td>#}
 		<tr>
 	
 	{% else %}
 		<tr>
-			<td style="padding:7px">NULL</td>
 			<td style="padding:7px">NULL</td>
 		<tr>
 		

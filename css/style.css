@@ -162,13 +162,22 @@ p {
 
 .texte form > div {
 	display : table;
-	min-width: 45%;
+	width: 45%;
 }
 
 .texte form > div > label, form > div > input  {
 	display : table-cell;
-	min-width:25%;
+	width:20%;
 }
+
+.texte form input[type=text], input[type=email]{
+	width:50%;
+}
+
+input#username, input#password{
+	width:100%;
+}
+
 /*
 .texte form label {
 	margin-left:5%;
