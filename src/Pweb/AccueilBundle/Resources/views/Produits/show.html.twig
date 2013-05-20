@@ -5,8 +5,6 @@
 {% block css %} <link rel="stylesheet" media="screen" href="/Pweb/css/produits.css" /> {% endblock %}
 
 {% block body %}
-
-
   
   <div class="col_img">
     <img src="{{ prod.image }}"/>
@@ -21,6 +19,7 @@
     <ul>
       <button type="button" class="btn_ajout_prod" style="background:url({{ asset('icons/add.png') }})" onclick="window.open('{{ path('pweb_compte_ajout', {"id": prod.id}) }}')"/>
     </ul>
+    <span class="msg_ajout"></span>
   </div>
 
 
