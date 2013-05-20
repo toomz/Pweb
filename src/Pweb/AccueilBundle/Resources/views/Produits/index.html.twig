@@ -49,10 +49,8 @@
 	  <span>- {{ p.prix }} € - </span>	  
           <img src="{{ p.imageMin }}" alt="{{ p.libelleProd }}" class="img_prod"/>
           <span> {{ p.libelleProd }} </span>
-          <button type="button" class="btn_voir_prod" style="background:url({{ asset('icons/loupe-icone-4171-32.png') }})" onclick="window.open('{{ path('info_produits', {'idProd': p.id}) }}')"/>
-          {#<a href="{{ path('pweb_compte_ajout') }}"><button type="button" class="btn_ajout_prod" style="background:url({{ asset('icons/Shopping_basket_add_Icon_32.png') }})" /></a>#}
-          {#<a href="{{ path('pweb_compte_ajout', {"id": p.id}) }}" class="btn_ajout_prod">Ajouter produit</a>#}
-          <button type="button" class="btn_ajout_prod" style="background:url({{ asset('icons/loupe-icone-4171-32.png') }})" onclick="window.open('{{ path('pweb_compte_ajout', {"id": p.id}) }}')"/>
+          <button type="button" class="btn_voir_prod" style="background:url({{ asset('icons/search_b.png') }})" onclick="window.open('{{ path('info_produits', {'idProd': p.id}) }}')"/>
+          <button type="button" class="btn_ajout_prod" style="background:url({{ asset('icons/add.png') }})" onclick="window.open('{{ path('pweb_compte_ajout', {"id": p.id}) }}')"/>
         </li>
 
         {% endfor %}
