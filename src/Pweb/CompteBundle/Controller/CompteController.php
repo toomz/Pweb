@@ -19,7 +19,7 @@ class CompteController extends Controller{
 		$em = $this->getDoctrine()->getEntityManager();
 		
 		$user = $this->container->get('security.context')->getToken()->getUser();
-		$acheteur = $em->getRepository("PwebCompteBundle:Acheteur")->findOneBy(array('username' => $user->getUsername()));
+		$acheteur = $em->getRepository("PwebCompteBundle:Acheteur")->findOneBy(array('username' => $user));
 		
 		return $this->render('PwebCompteBundle:Compte:index.html.twig', array('acheteur' => $acheteur));
 		

@@ -293,7 +293,7 @@ div#col_prod {
 
 button.btn_voir_prod , button.btn_ajout_prod {
 	display: inline;
-	padding: 0em 0em 0em 1em;
+	/*padding: 0em 0em 0em 1em;*/
 	font-size: 1.1em;
 	font-weight: bold;
 	width: 32px;

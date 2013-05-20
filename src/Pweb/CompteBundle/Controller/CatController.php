@@ -25,7 +25,7 @@ class CatController extends Controller{
 
 	public function addAction(){
 
-    $logger = $this->get$logger->info('récuparetion des catégories');('my_logger');
+    $logger = $this->get('my_logger');
     $logger->info('Entrée dans Cat:addAction()');
 
 		$categorie = new Categorie();
